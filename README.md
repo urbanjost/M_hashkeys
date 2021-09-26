@@ -23,8 +23,7 @@ archive files of man(1) pages that can be installed on ULS
 ### Individual man-pages as HTML
 
    An index to HTML versions of the man-pages describes all the routines.
-   - An [index](https://urbanjost.github.io/M_hashkeys/man3.html) to M_hashkeys.f90 HTML versions
-   - An [index](https://urbanjost.github.io/M_sha3/man3.html) to M_sha3.f90 HTML versions
+   - An [index](https://urbanjost.github.io/M_hashkeys/man3.html) to M_hashkeys.f90 and M_sha3.f90 
 
 ### All man-pages amalgamated as HTML
 
