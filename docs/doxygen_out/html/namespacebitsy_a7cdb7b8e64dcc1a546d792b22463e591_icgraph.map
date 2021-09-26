@@ -1,0 +1,27 @@
+<map id="bitsy::sha256b" name="bitsy::sha256b">
+<area shape="rect" id="node1" title="Calculate the SHA&#45;256 hash of the incomming string." alt="" coords="993,31,1109,57"/>
+<area shape="rect" id="node2" href="$namespacebitsy.html#a78f4c8f05aa4758c902067cdc5c08760" title="Quick and dirty SHA&#45;256 interface function (no bit&#45;swapping)." alt="" coords="644,5,789,32"/>
+<area shape="rect" id="node4" href="$namespacebitsy.html#a82757602ad5e9ffcce877594d6f76780" title="SHA&#45;256 interface function." alt="" coords="837,56,945,83"/>
+<area shape="rect" id="node3" href="$bitsy_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="467,5,580,32"/>
+<area shape="rect" id="node5" href="$bitsy_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="671,461,763,488"/>
+<area shape="rect" id="node6" href="$M__hashkeys_8f90.html#a687fd4f04a046f9f03b0706d47b114cc" title=" " alt="" coords="483,56,563,83"/>
+<area shape="rect" id="node7" href="$namespacem__hashkeys.html#aac6abcc45620bff2bc9fc9ba485fbafc" title=" " alt="" coords="230,74,401,115"/>
+<area shape="rect" id="node9" href="$M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="463,157,583,184"/>
+<area shape="rect" id="node10" href="$namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="228,530,403,571"/>
+<area shape="rect" id="node11" href="$M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="463,259,583,285"/>
+<area shape="rect" id="node12" href="$M__hashkeys_8f90.html#aaed7cc35f62554cc2813d9d271eb6220" title=" " alt="" coords="489,309,558,336"/>
+<area shape="rect" id="node13" href="$M__hashkeys_8f90.html#a869c0a36043450961af43f854041dfeb" title=" " alt="" coords="485,360,561,387"/>
+<area shape="rect" id="node14" href="$M__hashkeys_8f90.html#a73e11c18f43f8bd79b0f60629edea01a" title=" " alt="" coords="485,411,561,437"/>
+<area shape="rect" id="node15" href="$M__hashkeys_8f90.html#a139603fa9716a5a8cc5eb80fd0eb67f7" title=" " alt="" coords="482,461,565,488"/>
+<area shape="rect" id="node16" href="$M__hashkeys_8f90.html#a02ca21bdab05a704c20c4dc16920eba5" title=" " alt="" coords="479,512,568,539"/>
+<area shape="rect" id="node17" href="$M__hashkeys_8f90.html#a55878c803a87c9951669af9066724bcc" title=" " alt="" coords="484,563,563,589"/>
+<area shape="rect" id="node18" href="$M__hashkeys_8f90.html#a3e44d55e1ec41faab8606e01adcc1288" title=" " alt="" coords="482,613,565,640"/>
+<area shape="rect" id="node19" href="$M__hashkeys_8f90.html#a4c526a4b187c90fa1bdd484b087e683c" title=" " alt="" coords="482,664,565,691"/>
+<area shape="rect" id="node20" href="$M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="465,715,581,741"/>
+<area shape="rect" id="node21" href="$M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="461,765,585,792"/>
+<area shape="rect" id="node22" href="$M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="465,816,581,843"/>
+<area shape="rect" id="node23" href="$M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="465,867,581,893"/>
+<area shape="rect" id="node24" href="$namespacem__sha3.html#ae6c560cc0fb3e6090c2892bd3ef535a6" title=" " alt="" coords="451,918,596,959"/>
+<area shape="rect" id="node25" href="$M__hashkeys_8f90.html#a8879d1f5543ef3cdc11c101fb59256e5" title=" " alt="" coords="471,984,575,1011"/>
+<area shape="rect" id="node8" href="$namespacem__hashkeys.html#a7d3d75818ba3a23a33128125fa9e49cb" title=" " alt="" coords="5,74,180,115"/>
+</map>

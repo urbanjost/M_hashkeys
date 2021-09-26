@@ -1,0 +1,49 @@
+\hypertarget{interfacem__hashkeys_1_1crc32__hash}{}\doxysection{m\+\_\+hashkeys\+::crc32\+\_\+hash Interface Reference}
+\label{interfacem__hashkeys_1_1crc32__hash}\index{m\_hashkeys::crc32\_hash@{m\_hashkeys::crc32\_hash}}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+integer(int64) function \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash_a91dd2b8a875d5c613e559d1894f8ce6c}{crc32\+\_\+hash\+\_\+arr}} (anything, continue)
+\item 
+integer(kind=int64) function \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash_a94510cb6cbfef2d901575ae153efd3a4}{crc32\+\_\+hash\+\_\+scalar}} (anything, continue)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacem__hashkeys_1_1crc32__hash_a91dd2b8a875d5c613e559d1894f8ce6c}\label{interfacem__hashkeys_1_1crc32__hash_a91dd2b8a875d5c613e559d1894f8ce6c}} 
+\index{m\_hashkeys::crc32\_hash@{m\_hashkeys::crc32\_hash}!crc32\_hash\_arr@{crc32\_hash\_arr}}
+\index{crc32\_hash\_arr@{crc32\_hash\_arr}!m\_hashkeys::crc32\_hash@{m\_hashkeys::crc32\_hash}}
+\doxysubsubsection{\texorpdfstring{crc32\_hash\_arr()}{crc32\_hash\_arr()}}
+{\footnotesize\ttfamily integer(int64) function m\+\_\+hashkeys\+::crc32\+\_\+hash\+::crc32\+\_\+hash\+\_\+arr (\begin{DoxyParamCaption}\item[{class($\ast$), dimension(\+:), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__hashkeys_autotoc_md29}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md29}
+crc32\+\_\+hash(3f) -\/ \mbox{[}M\+\_\+hashkeys\mbox{]} C\+RC (Cyclic Redundancy Check) (L\+I\+C\+E\+N\+SE\+:PD)\hypertarget{namespacem__hashkeys_autotoc_md30}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__hashkeys_autotoc_md30}
+function crc32\+\_\+hash(a,continue) result (crc)
+
+class($\ast$),intent(in) \+:: anything(\+:) logical,intent(in),optional \+:: continue integer(int64) \+:: crc\+\_\+out\hypertarget{namespacem__hashkeys_autotoc_md31}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md31}
+This ia 32-\/bit version of the Cyclic Redundancy Check(\+C\+R\+C). This variant of C\+R\+C-\/32 uses L\+S\+B-\/first order, sets the initial C\+RC to F\+F\+F\+F\+F\+F\+F\+F\+\_\+int32, and complements the final C\+RC.
+
+The result should be in accordance with I\+SO 3309, I\+T\+U-\/T V.\+42, Gzip and P\+NG.\hypertarget{namespacem__hashkeys_autotoc_md32}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md32}
+anything input value to generate a C\+RC check for. May be a array or scalar of numeric or string values of type C\+H\+A\+R\+A\+C\+T\+ER, int8, int16, int32, int64, real32, real64, real128 continue optional parameter. If not present or .F. starts new C\+RC sum. If .T. continues a C\+RC starting with last C\+RC calculated. \hypertarget{namespacem__hashkeys_autotoc_md33}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__hashkeys_autotoc_md33}
+crc The calculated C\+RC sum. It is calculated as a 32-\/bit value but returned as a 64-\/bit value, as Fortran does not currently support unsigned integers.\hypertarget{namespacem__hashkeys_autotoc_md34}{}\doxysubsubsection{R\+E\+F\+E\+R\+E\+N\+C\+ES}\label{namespacem__hashkeys_autotoc_md34}
+Algorithms are described in \char`\"{}\+Computation of C\+R\+C\char`\"{} in Wikipedia. Also see
+
+\href{https://en.wikipedia.org/wiki/Cyclic_redundancy_check}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Cyclic\+\_\+redundancy\+\_\+check}}\hypertarget{namespacem__hashkeys_autotoc_md35}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__hashkeys_autotoc_md35}
+This was derived from an unattributed example on \href{http://rosettacode.org,}{\texttt{ http\+://rosettacode.\+org,}} but has been modified. \hypertarget{namespacem__hashkeys_autotoc_md36}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__hashkeys_autotoc_md36}
+Sample program\+:
+
+program demo\+\_\+crc32\+\_\+hash use,intrinsic \+:: I\+S\+O\+\_\+\+F\+O\+R\+T\+R\+A\+N\+\_\+\+E\+NV, only \+: int64 use M\+\_\+hashkeys, only \+: \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}} implicit none integer \+:: i integer(int64) \+:: crc character($\ast$), parameter \+:: s = \char`\"{}\+The quick brown fox jumps over the lazy dog\char`\"{} ! string crc=crc32\+\_\+hash(s) print \char`\"{}(\+Z8)\char`\"{}, crc print \char`\"{}(i0)\char`\"{}, crc ! character array print \char`\"{}(i0)\char`\"{}, \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}}(\mbox{[} \& \& \textquotesingle{}T\textquotesingle{},\textquotesingle{}h\textquotesingle{},\textquotesingle{}e\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}q\textquotesingle{},\textquotesingle{}u\textquotesingle{},\textquotesingle{}i\textquotesingle{},\textquotesingle{}c\textquotesingle{},\textquotesingle{}k\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}b\textquotesingle{},\textquotesingle{}r\textquotesingle{},\textquotesingle{}o\textquotesingle{},\textquotesingle{}w\textquotesingle{},\textquotesingle{}n\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}f\textquotesingle{},\textquotesingle{}o\textquotesingle{},\textquotesingle{}x\textquotesingle{},\textquotesingle{} \textquotesingle{}\mbox{]}) print \char`\"{}(i0)\char`\"{}, \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}}(\mbox{[} \& \& \textquotesingle{}j\textquotesingle{},\textquotesingle{}u\textquotesingle{},\textquotesingle{}m\textquotesingle{},\textquotesingle{}p\textquotesingle{},\textquotesingle{}s\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}o\textquotesingle{},\textquotesingle{}v\textquotesingle{},\textquotesingle{}e\textquotesingle{},\textquotesingle{}r\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}t\textquotesingle{},\textquotesingle{}h\textquotesingle{},\textquotesingle{}e\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}l\textquotesingle{},\textquotesingle{}a\textquotesingle{},\textquotesingle{}z\textquotesingle{},\textquotesingle{}y\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}d\textquotesingle{},\textquotesingle{}o\textquotesingle{},\textquotesingle{}g\textquotesingle{}\mbox{]},continue=.true.) ! numeric array print \char`\"{}(i0)\char`\"{}, \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}}(\mbox{[}(i,i=1,100)\mbox{]}) end program demo\+\_\+crc32\+\_\+hash
+
+Expected output\+:
+
+414F\+A339 1095738169 2293265890 1095738169 1783575711 \mbox{\Hypertarget{interfacem__hashkeys_1_1crc32__hash_a94510cb6cbfef2d901575ae153efd3a4}\label{interfacem__hashkeys_1_1crc32__hash_a94510cb6cbfef2d901575ae153efd3a4}} 
+\index{m\_hashkeys::crc32\_hash@{m\_hashkeys::crc32\_hash}!crc32\_hash\_scalar@{crc32\_hash\_scalar}}
+\index{crc32\_hash\_scalar@{crc32\_hash\_scalar}!m\_hashkeys::crc32\_hash@{m\_hashkeys::crc32\_hash}}
+\doxysubsubsection{\texorpdfstring{crc32\_hash\_scalar()}{crc32\_hash\_scalar()}}
+{\footnotesize\ttfamily integer(kind=int64) function m\+\_\+hashkeys\+::crc32\+\_\+hash\+::crc32\+\_\+hash\+\_\+scalar (\begin{DoxyParamCaption}\item[{class($\ast$), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/urbanjs/venus/\+V600/github/\+M\+\_\+hashkeys/src/\mbox{\hyperlink{M__hashkeys_8f90}{M\+\_\+hashkeys.\+f90}}\end{DoxyCompactItemize}

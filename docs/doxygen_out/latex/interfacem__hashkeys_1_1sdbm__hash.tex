@@ -1,0 +1,84 @@
+\hypertarget{interfacem__hashkeys_1_1sdbm__hash}{}\doxysection{m\+\_\+hashkeys\+::sdbm\+\_\+hash Interface Reference}
+\label{interfacem__hashkeys_1_1sdbm__hash}\index{m\_hashkeys::sdbm\_hash@{m\_hashkeys::sdbm\_hash}}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function \mbox{\hyperlink{interfacem__hashkeys_1_1sdbm__hash_ab53ba60c7e9fde1414984fefcbff9a3f}{sdbm\+\_\+hash\+\_\+arr}} (anything, continue)
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function \mbox{\hyperlink{interfacem__hashkeys_1_1sdbm__hash_a9ec949ae5c1138f588d054905270c5f1}{sdbm\+\_\+hash\+\_\+scalar}} (anything, continue)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacem__hashkeys_1_1sdbm__hash_ab53ba60c7e9fde1414984fefcbff9a3f}\label{interfacem__hashkeys_1_1sdbm__hash_ab53ba60c7e9fde1414984fefcbff9a3f}} 
+\index{m\_hashkeys::sdbm\_hash@{m\_hashkeys::sdbm\_hash}!sdbm\_hash\_arr@{sdbm\_hash\_arr}}
+\index{sdbm\_hash\_arr@{sdbm\_hash\_arr}!m\_hashkeys::sdbm\_hash@{m\_hashkeys::sdbm\_hash}}
+\doxysubsubsection{\texorpdfstring{sdbm\_hash\_arr()}{sdbm\_hash\_arr()}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function m\+\_\+hashkeys\+::sdbm\+\_\+hash\+::sdbm\+\_\+hash\+\_\+arr (\begin{DoxyParamCaption}\item[{class($\ast$), dimension(\+:), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__hashkeys_autotoc_md37}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md37}
+sdbm\+\_\+hash(3f) -\/ \mbox{[}M\+\_\+hashkeys\+:bucket\+\_\+hash\mbox{]} sdbm string hash (L\+I\+C\+E\+N\+SE\+:PD)\hypertarget{namespacem__hashkeys_autotoc_md38}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__hashkeys_autotoc_md38}
+\begin{DoxyVerb}use,intrinsic : ISO_FORTRAN_ENV, only : int64
+function sdbm_hash_arr(anything,continue) result(hash_128)
+
+ class(*),intent(in)          :: anything(:)
+ logical,intent(in),optional  :: continue
+ integer(kind=int128)         :: hash_128
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md39}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md39}
+sdbm\+\_\+hash(3f) is based on the string hash routine commonly known as sdbm(3c).
+
+this algorithm was created for the sdbm (a public-\/domain reimplementation of ndbm) database library. It was found to do well in scrambling bits, causing good distribution of the keys and fewer splits. it also happens to be a good general hashing function with good distribution. the actual function is
+
+hash(i) = hash(i -\/ 1) $\ast$ 65599 + str\mbox{[}i\mbox{]}
+
+what is available here is the faster version used in gawk. \mbox{[}there is even a faster, duff-\/device version\mbox{]}. The magic constant 65599 was picked out of thin air while experimenting with different constants, and turns out to be a prime. this is one of the algorithms used in berkeley db (see sleepycat) and elsewhere.
+
+This version returns a value calculated using a 64-\/bit hash, which is returned as a 128bit value (not always available in Fortran) to allow the value to always be a positive value; as Fortran does not (currently) support a standard unsigned integer. If the value is changed to be a 64-\/bit value on platforms that do not support 128-\/bit I\+N\+T\+E\+G\+ER values the value may be negative, but is otherwise usable.
+
+Such non-\/reversible hashes may be used for data or file fingerprints, to confirm unchanging results during regression testing, ...
+
+More information is widely available on string hashes (including the well-\/known sdbm(3c) algorithm) on such sources as Wikipedia. Consult such resources to confirm the suitability of this algorithm for your use.
+
+The algorithm does not consider the Endian of the programming environment.\hypertarget{namespacem__hashkeys_autotoc_md40}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md40}
+S\+TR May be a C\+H\+A\+R\+A\+C\+T\+ER string or an array of common intrinsic types. Currently, the types defined in the procedure are character(len=$\ast$); complex; integer(kind=int8); integer(kind=int16); integer(kind=int32); integer(kind=int64); integer(kind=int128); real(kind=real32); real(kind=real64); real(kind=real128).
+
+C\+O\+N\+T\+I\+N\+UE indicate whether to continue accumulating the hash value from the last call. This is not threadsafe. This allows for continued hashes so that a hash can be calculated for a series of calls.\hypertarget{namespacem__hashkeys_autotoc_md41}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__hashkeys_autotoc_md41}
+\mbox{\hyperlink{interfacem__hashkeys_1_1sdbm__hash}{sdbm\+\_\+hash}} A 128-\/bit I\+N\+T\+E\+G\+ER hash value for the (possibly accumulated) data.\hypertarget{namespacem__hashkeys_autotoc_md42}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__hashkeys_autotoc_md42}
+\begin{DoxyVerb}Sample program:
+
+ program demo_sdbm_hash
+ use M_hashkeys, only : sdbm_hash, int128
+ implicit none
+ integer(kind=int128)         :: hash
+ character(len=:),allocatable :: string
+ integer                      :: i
+ ! string
+ string='test sdbm_hash'
+ hash=sdbm_hash(string)
+ write(*,*)'string=',string,' hash=',hash
+ ! array of characters
+ hash=sdbm_hash(['t','e','s','t',' ','s','d','b','m','_','h','a','s','h'])
+ write(*,*)'string=',string,' hash=',hash
+ ! continued hash
+ hash=sdbm_hash(['t','e','s','t'])
+ hash=sdbm_hash([' ','s','d','b','m'],continue=.true.)
+ hash=sdbm_hash(['_','h','a','s','h'],continue=.true.)
+ write(*,*)'string=',string,' hash=',hash
+ ! array of integers
+ hash=sdbm_hash([(i,i=0,100)])
+ write(*,*)'hash for values 0 to 100 is ',hash
+ !
+ end program demo_sdbm_hash
+\end{DoxyVerb}
+ \mbox{\Hypertarget{interfacem__hashkeys_1_1sdbm__hash_a9ec949ae5c1138f588d054905270c5f1}\label{interfacem__hashkeys_1_1sdbm__hash_a9ec949ae5c1138f588d054905270c5f1}} 
+\index{m\_hashkeys::sdbm\_hash@{m\_hashkeys::sdbm\_hash}!sdbm\_hash\_scalar@{sdbm\_hash\_scalar}}
+\index{sdbm\_hash\_scalar@{sdbm\_hash\_scalar}!m\_hashkeys::sdbm\_hash@{m\_hashkeys::sdbm\_hash}}
+\doxysubsubsection{\texorpdfstring{sdbm\_hash\_scalar()}{sdbm\_hash\_scalar()}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function m\+\_\+hashkeys\+::sdbm\+\_\+hash\+::sdbm\+\_\+hash\+\_\+scalar (\begin{DoxyParamCaption}\item[{class($\ast$), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/urbanjs/venus/\+V600/github/\+M\+\_\+hashkeys/src/\mbox{\hyperlink{M__hashkeys_8f90}{M\+\_\+hashkeys.\+f90}}\end{DoxyCompactItemize}

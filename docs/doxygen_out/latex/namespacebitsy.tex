@@ -1,0 +1,442 @@
+\hypertarget{namespacebitsy}{}\doxysection{bitsy Module Reference}
+\label{namespacebitsy}\index{bitsy@{bitsy}}
+
+
+Module for S\+H\+A-\/256 hashing in fortran.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+character(len=64) function \mbox{\hyperlink{namespacebitsy_a82757602ad5e9ffcce877594d6f76780}{sha256}} (str)
+\begin{DoxyCompactList}\small\item\em S\+H\+A-\/256 interface function. \end{DoxyCompactList}\item 
+character(len=64) function \mbox{\hyperlink{namespacebitsy_a78f4c8f05aa4758c902067cdc5c08760}{dirty\+\_\+sha256}} (str)
+\begin{DoxyCompactList}\small\item\em Quick and dirty S\+H\+A-\/256 interface function (no bit-\/swapping). \end{DoxyCompactList}\item 
+character(len=64) function \mbox{\hyperlink{namespacebitsy_a7cdb7b8e64dcc1a546d792b22463e591}{sha256b}} (str, swap)
+\begin{DoxyCompactList}\small\item\em Calculate the S\+H\+A-\/256 hash of the incomming string. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function \mbox{\hyperlink{namespacebitsy_a45ebc61514adf5421545c02d5236036f}{swap32}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 32bit integer. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int64\+\_\+t) function \mbox{\hyperlink{namespacebitsy_a0612b2929efd4aa390086ffe9fe29753}{swap64}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 64 bit integer. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int64\+\_\+t) function \mbox{\hyperlink{namespacebitsy_af788aa0121c647a09f6bd9706972462e}{swap64a}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function \mbox{\hyperlink{namespacebitsy_a363f6184f9287a11e8d956e698e2c865}{ch}} (a, b, c)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}ch\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function \mbox{\hyperlink{namespacebitsy_a169ac64ed6b6ef290e722836ed6c8159}{maj}} (a, b, c)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}maj\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function \mbox{\hyperlink{namespacebitsy_a3073015c8db000bba83d3b23c578bcc0}{cs0}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function \mbox{\hyperlink{namespacebitsy_a5d0109a340d8e5ab0a0e81317e772349}{cs1}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function \mbox{\hyperlink{namespacebitsy_a70344b8f31dee0b873d45a893b6c1eb7}{ms0}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function \mbox{\hyperlink{namespacebitsy_a780da5e7d39931b18c30c7d7dfacd5fd}{ms1}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebitsy_afae447c01a57a97c53ecc85664d48c0b}{consume\+\_\+chunk}} (str, length, inp, pos0, break, swap)
+\begin{DoxyCompactList}\small\item\em Copy 16 32bit words of data from str(pos0) to inp(1\+:16). The data is padded a requiered by the S\+H\+A-\/256 algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Module for S\+H\+A-\/256 hashing in fortran. 
+
+\begin{DoxyAuthor}{Author}
+Mikael Leetmaa @data 05 Jan 2014 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacebitsy_a363f6184f9287a11e8d956e698e2c865}\label{namespacebitsy_a363f6184f9287a11e8d956e698e2c865}} 
+\index{bitsy@{bitsy}!ch@{ch}}
+\index{ch@{ch}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{ch()}{ch()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function bitsy\+::ch (\begin{DoxyParamCaption}\item[{a}]{,  }\item[{b}]{,  }\item[{c}]{ }\end{DoxyParamCaption})}
+
+
+
+The \textquotesingle{}ch\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+{\em b} & \+: (in) The b input integer. \\
+\hline
+{\em c} & \+: (in) The c input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: \mbox{\hyperlink{namespacebitsy_a363f6184f9287a11e8d956e698e2c865}{ch(a,b,c)}}, see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a363f6184f9287a11e8d956e698e2c865_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_afae447c01a57a97c53ecc85664d48c0b}\label{namespacebitsy_afae447c01a57a97c53ecc85664d48c0b}} 
+\index{bitsy@{bitsy}!consume\_chunk@{consume\_chunk}}
+\index{consume\_chunk@{consume\_chunk}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{consume\_chunk()}{consume\_chunk()}}
+{\footnotesize\ttfamily subroutine bitsy\+::consume\+\_\+chunk (\begin{DoxyParamCaption}\item[{str}]{,  }\item[{length}]{,  }\item[{inp}]{,  }\item[{pos0}]{,  }\item[{break}]{,  }\item[{swap}]{ }\end{DoxyParamCaption})}
+
+
+
+Copy 16 32bit words of data from str(pos0) to inp(1\+:16). The data is padded a requiered by the S\+H\+A-\/256 algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \+: (in) The message to take a chunk from. \\
+\hline
+{\em length} & \+: (in) The length of the message in 8bit words. \\
+\hline
+{\em inp} & \+: (inout) The work area to copy the data to. \\
+\hline
+{\em pos0} & \+: (inout) Variable to store the start of the next chunk. \\
+\hline
+{\em break} & \+: (inout) Indicates the position in the work flow. break=0 on entry -\/$>$ continue to consume a chunk, pad if needed. break=2 on entry -\/$>$ continue to consume, padding was allready done. break=1 one exit -\/$>$ the last chunk was consumed. \\
+\hline
+{\em swap} & \+: (in) Flag to indicate if swapping to big-\/endian input (swap=1) should be used. swap=1 is needed for the routine to pass the standard tests, but decreases speed with a factor 2. \\
+\hline
+\end{DoxyParams}
+
+
+References swap32(), and swap64a().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{namespacebitsy_afae447c01a57a97c53ecc85664d48c0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_afae447c01a57a97c53ecc85664d48c0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a3073015c8db000bba83d3b23c578bcc0}\label{namespacebitsy_a3073015c8db000bba83d3b23c578bcc0}} 
+\index{bitsy@{bitsy}!cs0@{cs0}}
+\index{cs0@{cs0}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{cs0()}{cs0()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function bitsy\+::cs0 (\begin{DoxyParamCaption}\item[{a}]{ }\end{DoxyParamCaption})}
+
+
+
+The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: \mbox{\hyperlink{namespacebitsy_a3073015c8db000bba83d3b23c578bcc0}{cs0(a)}}, see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a3073015c8db000bba83d3b23c578bcc0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a5d0109a340d8e5ab0a0e81317e772349}\label{namespacebitsy_a5d0109a340d8e5ab0a0e81317e772349}} 
+\index{bitsy@{bitsy}!cs1@{cs1}}
+\index{cs1@{cs1}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{cs1()}{cs1()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function bitsy\+::cs1 (\begin{DoxyParamCaption}\item[{a}]{ }\end{DoxyParamCaption})}
+
+
+
+The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: \mbox{\hyperlink{namespacebitsy_a5d0109a340d8e5ab0a0e81317e772349}{cs1(a)}}, see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a5d0109a340d8e5ab0a0e81317e772349_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a78f4c8f05aa4758c902067cdc5c08760}\label{namespacebitsy_a78f4c8f05aa4758c902067cdc5c08760}} 
+\index{bitsy@{bitsy}!dirty\_sha256@{dirty\_sha256}}
+\index{dirty\_sha256@{dirty\_sha256}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{dirty\_sha256()}{dirty\_sha256()}}
+{\footnotesize\ttfamily character(len=64) function bitsy\+::dirty\+\_\+sha256 (\begin{DoxyParamCaption}\item[{str}]{ }\end{DoxyParamCaption})}
+
+
+
+Quick and dirty S\+H\+A-\/256 interface function (no bit-\/swapping). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \+: (in) The message to digest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The S\+H\+A-\/256 digest as a string of length 64. 
+\end{DoxyReturn}
+
+
+References sha256b().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a78f4c8f05aa4758c902067cdc5c08760_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{namespacebitsy_a78f4c8f05aa4758c902067cdc5c08760_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a169ac64ed6b6ef290e722836ed6c8159}\label{namespacebitsy_a169ac64ed6b6ef290e722836ed6c8159}} 
+\index{bitsy@{bitsy}!maj@{maj}}
+\index{maj@{maj}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{maj()}{maj()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function bitsy\+::maj (\begin{DoxyParamCaption}\item[{a}]{,  }\item[{b}]{,  }\item[{c}]{ }\end{DoxyParamCaption})}
+
+
+
+The \textquotesingle{}maj\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+{\em b} & \+: (in) The b input integer. \\
+\hline
+{\em c} & \+: (in) The c input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: \mbox{\hyperlink{namespacebitsy_a169ac64ed6b6ef290e722836ed6c8159}{maj(a,b,c)}}, see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a169ac64ed6b6ef290e722836ed6c8159_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a70344b8f31dee0b873d45a893b6c1eb7}\label{namespacebitsy_a70344b8f31dee0b873d45a893b6c1eb7}} 
+\index{bitsy@{bitsy}!ms0@{ms0}}
+\index{ms0@{ms0}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{ms0()}{ms0()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function bitsy\+::ms0 (\begin{DoxyParamCaption}\item[{a}]{ }\end{DoxyParamCaption})}
+
+
+
+The \textquotesingle{}\textbackslash{}sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: \mbox{\hyperlink{namespacebitsy_a70344b8f31dee0b873d45a893b6c1eb7}{ms0(a)}}, see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a70344b8f31dee0b873d45a893b6c1eb7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a780da5e7d39931b18c30c7d7dfacd5fd}\label{namespacebitsy_a780da5e7d39931b18c30c7d7dfacd5fd}} 
+\index{bitsy@{bitsy}!ms1@{ms1}}
+\index{ms1@{ms1}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{ms1()}{ms1()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function bitsy\+::ms1 (\begin{DoxyParamCaption}\item[{a}]{ }\end{DoxyParamCaption})}
+
+
+
+The \textquotesingle{}\textbackslash{}sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: \mbox{\hyperlink{namespacebitsy_a780da5e7d39931b18c30c7d7dfacd5fd}{ms1(a)}}, see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a780da5e7d39931b18c30c7d7dfacd5fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a82757602ad5e9ffcce877594d6f76780}\label{namespacebitsy_a82757602ad5e9ffcce877594d6f76780}} 
+\index{bitsy@{bitsy}!sha256@{sha256}}
+\index{sha256@{sha256}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{sha256()}{sha256()}}
+{\footnotesize\ttfamily character(len=64) function bitsy\+::sha256 (\begin{DoxyParamCaption}\item[{str}]{ }\end{DoxyParamCaption})}
+
+
+
+S\+H\+A-\/256 interface function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \+: (in) The message to digest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The S\+H\+A-\/256 digest as a string of length 64. 
+\end{DoxyReturn}
+
+
+References sha256b().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a82757602ad5e9ffcce877594d6f76780_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a82757602ad5e9ffcce877594d6f76780_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a7cdb7b8e64dcc1a546d792b22463e591}\label{namespacebitsy_a7cdb7b8e64dcc1a546d792b22463e591}} 
+\index{bitsy@{bitsy}!sha256b@{sha256b}}
+\index{sha256b@{sha256b}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{sha256b()}{sha256b()}}
+{\footnotesize\ttfamily character(len=64) function bitsy\+::sha256b (\begin{DoxyParamCaption}\item[{str}]{,  }\item[{swap}]{ }\end{DoxyParamCaption})}
+
+
+
+Calculate the S\+H\+A-\/256 hash of the incomming string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \+: (in) The message to take digest. \\
+\hline
+{\em swap} & \+: (in) Flag to indicate if swapping to big-\/endian input (swap=1) should be used. swap=1 is needed for the routine to pass the standard tests, but decreases speed with a factor 2. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The S\+H\+A-\/256 digest as a string of length 64. 
+\end{DoxyReturn}
+
+
+References ch(), consume\+\_\+chunk(), cs0(), cs1(), maj(), ms0(), and ms1().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a7cdb7b8e64dcc1a546d792b22463e591_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a7cdb7b8e64dcc1a546d792b22463e591_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a45ebc61514adf5421545c02d5236036f}\label{namespacebitsy_a45ebc61514adf5421545c02d5236036f}} 
+\index{bitsy@{bitsy}!swap32@{swap32}}
+\index{swap32@{swap32}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{swap32()}{swap32()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function bitsy\+::swap32 (\begin{DoxyParamCaption}\item[{inp}]{ }\end{DoxyParamCaption})}
+
+
+
+Swap the byte order on a 32bit integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & \+: (in) The integer to byte swap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The byte swapped integer. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_a45ebc61514adf5421545c02d5236036f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebitsy_a0612b2929efd4aa390086ffe9fe29753}\label{namespacebitsy_a0612b2929efd4aa390086ffe9fe29753}} 
+\index{bitsy@{bitsy}!swap64@{swap64}}
+\index{swap64@{swap64}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{swap64()}{swap64()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int64\+\_\+t) function bitsy\+::swap64 (\begin{DoxyParamCaption}\item[{inp}]{ }\end{DoxyParamCaption})}
+
+
+
+Swap the byte order on a 64 bit integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & \+: (in) The integer to byte swap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The byte swapped integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacebitsy_af788aa0121c647a09f6bd9706972462e}\label{namespacebitsy_af788aa0121c647a09f6bd9706972462e}} 
+\index{bitsy@{bitsy}!swap64a@{swap64a}}
+\index{swap64a@{swap64a}!bitsy@{bitsy}}
+\doxysubsubsection{\texorpdfstring{swap64a()}{swap64a()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int64\+\_\+t) function bitsy\+::swap64a (\begin{DoxyParamCaption}\item[{inp}]{ }\end{DoxyParamCaption})}
+
+
+
+Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & \+: (in) The integer to byte swap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The byte swapped integer. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebitsy_af788aa0121c647a09f6bd9706972462e_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,1389 @@
+\hypertarget{namespacem__hashkeys}{}\doxysection{m\+\_\+hashkeys Module Reference}
+\label{namespacem__hashkeys}\index{m\_hashkeys@{m\_hashkeys}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacem__hashkeys_1_1anything__to__bytes}{anything\+\_\+to\+\_\+bytes}}
+\item 
+interface \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}}
+\item 
+interface \mbox{\hyperlink{interfacem__hashkeys_1_1djb2__hash}{djb2\+\_\+hash}}
+\item 
+interface \mbox{\hyperlink{interfacem__hashkeys_1_1sdbm__hash}{sdbm\+\_\+hash}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+character(len=64) function, public \mbox{\hyperlink{namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa}{sha256}} (str)
+\item 
+character(len=64) function, public \mbox{\hyperlink{namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c}{dirty\+\_\+sha256}} (str)
+\item 
+character(len=64) function, private \mbox{\hyperlink{namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4}{sha256b}} (str, swap)
+\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf}{swap32}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 32bit integer. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int64\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_ac78b1526bef4d540a919b7b197bd6bad}{swap64}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 64 bit integer. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int64\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055}{swap64a}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a662a154173922cb178bded0029cdbb48}{ch}} (a, b, c)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}ch\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a3347b21962255779e27534039324e5d6}{maj}} (a, b, c)
+\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79}{cs0}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af}{cs1}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd}{ms0}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b}{ms1}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+subroutine, private \mbox{\hyperlink{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575}{consume\+\_\+chunk}} (str, length, inp, pos0, break, swap)
+\begin{DoxyCompactList}\small\item\em Copy 16 32bit words of data from str(pos0) to inp(1\+:16). The data is padded as required by the S\+H\+A-\/256 algorithm. \end{DoxyCompactList}\item 
+subroutine, public \mbox{\hyperlink{namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f}{test\+\_\+suite\+\_\+sha256}} ()
+\item 
+character(len=\+:) function, allocatable, public \mbox{\hyperlink{namespacem__hashkeys_a852eddaaa71287688e762ab4f9f13977}{luhn\+\_\+checksum}} (string)
+\item 
+subroutine \mbox{\hyperlink{namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc}{test\+\_\+luhn\+\_\+checksum}} ()
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function \mbox{\hyperlink{namespacem__hashkeys_a2b9cc524440ba0c375c428b5dad3e82d}{djb2\+\_\+hash\+\_\+arr}} (anything, continue)
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function \mbox{\hyperlink{namespacem__hashkeys_a28b1e406e6b45dba8fcb3da20de37a3b}{djb2\+\_\+hash\+\_\+scalar}} (anything, continue)
+\item 
+integer(int64) function \mbox{\hyperlink{namespacem__hashkeys_a9cbbdaf23703ed4aa52995de0d62729b}{crc32\+\_\+hash\+\_\+arr}} (anything, continue)
+\item 
+integer(kind=int64) function \mbox{\hyperlink{namespacem__hashkeys_af2017df2d856347d11ba5a248672c0c8}{crc32\+\_\+hash\+\_\+scalar}} (anything, continue)
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function \mbox{\hyperlink{namespacem__hashkeys_aef7c2d10b734eec099766af4df8415fc}{sdbm\+\_\+hash\+\_\+arr}} (anything, continue)
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function \mbox{\hyperlink{namespacem__hashkeys_a1d0d3747d4e3165a7b16f4291758f554}{sdbm\+\_\+hash\+\_\+scalar}} (anything, continue)
+\item 
+integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function, public \mbox{\hyperlink{namespacem__hashkeys_ad185c3f1d5f9c51cc4c459cacd2ae1f4}{djb2}} (anything)
+\item 
+integer function, public \mbox{\hyperlink{namespacem__hashkeys_a753f2b709e297bcb4d276504e7650b59}{b3hs\+\_\+hash\+\_\+key\+\_\+jenkins}} (key, range)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb}{test\+\_\+suite\+\_\+m\+\_\+hashkeys}}
+\item 
+character(len=1) function, dimension(\+:), allocatable \mbox{\hyperlink{namespacem__hashkeys_a25eb97efb8c3fdf36ffdbab127d38311}{anything\+\_\+to\+\_\+bytes\+\_\+arr}} (anything)
+\item 
+character(len=1) function, dimension(\+:), allocatable \mbox{\hyperlink{namespacem__hashkeys_a1aac9c163db6716d15b50c69ac887035}{anything\+\_\+to\+\_\+bytes\+\_\+scalar}} (anything)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, public \mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}} = selected\+\_\+real\+\_\+kind(1$\ast$precision(1.\+0\+\_\+int64))
+\item 
+logical, save \mbox{\hyperlink{namespacem__hashkeys_a0398941b72452bd99fc4461790e8649e}{debug}} =.false.
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__hashkeys_a6c4b5da23a8de2a97269d8399ff6828a}{dp}} =kind(0.\+0d0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacem__hashkeys_a25eb97efb8c3fdf36ffdbab127d38311}\label{namespacem__hashkeys_a25eb97efb8c3fdf36ffdbab127d38311}} 
+\index{m\_hashkeys@{m\_hashkeys}!anything\_to\_bytes\_arr@{anything\_to\_bytes\_arr}}
+\index{anything\_to\_bytes\_arr@{anything\_to\_bytes\_arr}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{anything\_to\_bytes\_arr()}{anything\_to\_bytes\_arr()}}
+{\footnotesize\ttfamily character(len=1) function, dimension(\+:), allocatable m\+\_\+hashkeys\+::anything\+\_\+to\+\_\+bytes\+\_\+arr (\begin{DoxyParamCaption}\item[{class($\ast$), dimension(\+:), intent(in)}]{anything }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__hashkeys_a1aac9c163db6716d15b50c69ac887035}\label{namespacem__hashkeys_a1aac9c163db6716d15b50c69ac887035}} 
+\index{m\_hashkeys@{m\_hashkeys}!anything\_to\_bytes\_scalar@{anything\_to\_bytes\_scalar}}
+\index{anything\_to\_bytes\_scalar@{anything\_to\_bytes\_scalar}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{anything\_to\_bytes\_scalar()}{anything\_to\_bytes\_scalar()}}
+{\footnotesize\ttfamily character(len=1) function, dimension(\+:), allocatable m\+\_\+hashkeys\+::anything\+\_\+to\+\_\+bytes\+\_\+scalar (\begin{DoxyParamCaption}\item[{class($\ast$), intent(in)}]{anything }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__hashkeys_a753f2b709e297bcb4d276504e7650b59}\label{namespacem__hashkeys_a753f2b709e297bcb4d276504e7650b59}} 
+\index{m\_hashkeys@{m\_hashkeys}!b3hs\_hash\_key\_jenkins@{b3hs\_hash\_key\_jenkins}}
+\index{b3hs\_hash\_key\_jenkins@{b3hs\_hash\_key\_jenkins}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{b3hs\_hash\_key\_jenkins()}{b3hs\_hash\_key\_jenkins()}}
+{\footnotesize\ttfamily integer function, public m\+\_\+hashkeys\+::b3hs\+\_\+hash\+\_\+key\+\_\+jenkins (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{key,  }\item[{integer, intent(in)}]{range }\end{DoxyParamCaption})}
+
+\hypertarget{namespacem__hashkeys_autotoc_md43}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md43}
+b3hs\+\_\+hash\+\_\+key\+\_\+jenkins(3f) -\/ \mbox{[}M\+\_\+hashkeys\mbox{]} hash key algorithm by Bob Jenkins (L\+I\+C\+E\+N\+SE\+:PD)\hypertarget{namespacem__hashkeys_autotoc_md44}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__hashkeys_autotoc_md44}
+function b3hs\+\_\+hash\+\_\+key\+\_\+jenkins (key, range) result (code)
+
+character($\ast$), intent(in) \+:: key integer, intent(in) \+:: range integer \+:: code\hypertarget{namespacem__hashkeys_autotoc_md45}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md45}
+Based on implementation of Bob Jenkins hash function by Rich Townsen, posted 2008-\/03-\/23 at
+
+\href{http://computer-programming-forum.com/49-fortran/0596e59d0fa2e5e4.htm}{\texttt{ http\+://computer-\/programming-\/forum.\+com/49-\/fortran/0596e59d0fa2e5e4.\+htm}}\hypertarget{namespacem__hashkeys_autotoc_md46}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md46}
+K\+EY string to generate a hash key for R\+A\+N\+GE range should be a power of 2. Note that the 32-\/bit algorithm is used\hypertarget{namespacem__hashkeys_autotoc_md47}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__hashkeys_autotoc_md47}
+C\+O\+DE returned hash value in range specified by R\+A\+N\+GE 
+
+References b3hs\+\_\+hash\+\_\+key\+\_\+jenkins\+\_\+mix\+\_\+().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a753f2b709e297bcb4d276504e7650b59_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a662a154173922cb178bded0029cdbb48}\label{namespacem__hashkeys_a662a154173922cb178bded0029cdbb48}} 
+\index{m\_hashkeys@{m\_hashkeys}!ch@{ch}}
+\index{ch@{ch}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{ch()}{ch()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function, private m\+\_\+hashkeys\+::ch (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{a,  }\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{b,  }\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \textquotesingle{}ch\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+{\em b} & \+: (in) The b input integer. \\
+\hline
+{\em c} & \+: (in) The c input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: ch(a,b,c), see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a662a154173922cb178bded0029cdbb48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575}\label{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575}} 
+\index{m\_hashkeys@{m\_hashkeys}!consume\_chunk@{consume\_chunk}}
+\index{consume\_chunk@{consume\_chunk}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{consume\_chunk()}{consume\_chunk()}}
+{\footnotesize\ttfamily subroutine m\+\_\+hashkeys\+::consume\+\_\+chunk (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{str,  }\item[{integer(kind=c\+\_\+int64\+\_\+t), intent(in)}]{length,  }\item[{integer(kind=c\+\_\+int32\+\_\+t), dimension($\ast$), intent(inout)}]{inp,  }\item[{integer, intent(inout)}]{pos0,  }\item[{integer, intent(inout)}]{break,  }\item[{integer, intent(in)}]{swap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Copy 16 32bit words of data from str(pos0) to inp(1\+:16). The data is padded as required by the S\+H\+A-\/256 algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \+: (in) The message to take a chunk from. \\
+\hline
+{\em length} & \+: (in) The length of the message in 8bit words. \\
+\hline
+{\em inp} & \+: (inout) The work area to copy the data to. \\
+\hline
+{\em pos0} & \+: (inout) Variable to store the start of the next chunk. \\
+\hline
+{\em break} & \+: (inout) Indicates the position in the work flow. break=0 on entry -\/$>$ continue to consume a chunk, pad if needed. break=2 on entry -\/$>$ continue to consume, padding was already done. break=1 one exit -\/$>$ the last chunk was consumed. \\
+\hline
+{\em swap} & \+: (in) Flag to indicate if swapping to big-\/endian input (swap=1) should be used. swap=1 is needed for the routine to pass the standard tests, but decreases speed with a factor 2. \\
+\hline
+\end{DoxyParams}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+
+
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+
+
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+
+
+References swap32(), and swap64a().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a9cbbdaf23703ed4aa52995de0d62729b}\label{namespacem__hashkeys_a9cbbdaf23703ed4aa52995de0d62729b}} 
+\index{m\_hashkeys@{m\_hashkeys}!crc32\_hash\_arr@{crc32\_hash\_arr}}
+\index{crc32\_hash\_arr@{crc32\_hash\_arr}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{crc32\_hash\_arr()}{crc32\_hash\_arr()}}
+{\footnotesize\ttfamily integer(int64) function m\+\_\+hashkeys\+::crc32\+\_\+hash\+\_\+arr (\begin{DoxyParamCaption}\item[{class($\ast$), dimension(\+:), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__hashkeys_autotoc_md29}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md29}
+crc32\+\_\+hash(3f) -\/ \mbox{[}M\+\_\+hashkeys\mbox{]} C\+RC (Cyclic Redundancy Check) (L\+I\+C\+E\+N\+SE\+:PD)\hypertarget{namespacem__hashkeys_autotoc_md30}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__hashkeys_autotoc_md30}
+function crc32\+\_\+hash(a,continue) result (crc)
+
+class($\ast$),intent(in) \+:: anything(\+:) logical,intent(in),optional \+:: continue integer(int64) \+:: crc\+\_\+out\hypertarget{namespacem__hashkeys_autotoc_md31}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md31}
+This ia 32-\/bit version of the Cyclic Redundancy Check(\+C\+R\+C). This variant of C\+R\+C-\/32 uses L\+S\+B-\/first order, sets the initial C\+RC to F\+F\+F\+F\+F\+F\+F\+F\+\_\+int32, and complements the final C\+RC.
+
+The result should be in accordance with I\+SO 3309, I\+T\+U-\/T V.\+42, Gzip and P\+NG.\hypertarget{namespacem__hashkeys_autotoc_md32}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md32}
+anything input value to generate a C\+RC check for. May be a array or scalar of numeric or string values of type C\+H\+A\+R\+A\+C\+T\+ER, int8, int16, int32, int64, real32, real64, real128 continue optional parameter. If not present or .F. starts new C\+RC sum. If .T. continues a C\+RC starting with last C\+RC calculated. \hypertarget{namespacem__hashkeys_autotoc_md33}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__hashkeys_autotoc_md33}
+crc The calculated C\+RC sum. It is calculated as a 32-\/bit value but returned as a 64-\/bit value, as Fortran does not currently support unsigned integers.\hypertarget{namespacem__hashkeys_autotoc_md34}{}\doxysubsubsection{R\+E\+F\+E\+R\+E\+N\+C\+ES}\label{namespacem__hashkeys_autotoc_md34}
+Algorithms are described in \char`\"{}\+Computation of C\+R\+C\char`\"{} in Wikipedia. Also see
+
+\href{https://en.wikipedia.org/wiki/Cyclic_redundancy_check}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Cyclic\+\_\+redundancy\+\_\+check}}\hypertarget{namespacem__hashkeys_autotoc_md35}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__hashkeys_autotoc_md35}
+This was derived from an unattributed example on \href{http://rosettacode.org,}{\texttt{ http\+://rosettacode.\+org,}} but has been modified. \hypertarget{namespacem__hashkeys_autotoc_md36}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__hashkeys_autotoc_md36}
+Sample program\+:
+
+program demo\+\_\+crc32\+\_\+hash use,intrinsic \+:: I\+S\+O\+\_\+\+F\+O\+R\+T\+R\+A\+N\+\_\+\+E\+NV, only \+: int64 use M\+\_\+hashkeys, only \+: \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}} implicit none integer \+:: i integer(int64) \+:: crc character($\ast$), parameter \+:: s = \char`\"{}\+The quick brown fox jumps over the lazy dog\char`\"{} ! string crc=crc32\+\_\+hash(s) print \char`\"{}(\+Z8)\char`\"{}, crc print \char`\"{}(i0)\char`\"{}, crc ! character array print \char`\"{}(i0)\char`\"{}, \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}}(\mbox{[} \& \& \textquotesingle{}T\textquotesingle{},\textquotesingle{}h\textquotesingle{},\textquotesingle{}e\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}q\textquotesingle{},\textquotesingle{}u\textquotesingle{},\textquotesingle{}i\textquotesingle{},\textquotesingle{}c\textquotesingle{},\textquotesingle{}k\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}b\textquotesingle{},\textquotesingle{}r\textquotesingle{},\textquotesingle{}o\textquotesingle{},\textquotesingle{}w\textquotesingle{},\textquotesingle{}n\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}f\textquotesingle{},\textquotesingle{}o\textquotesingle{},\textquotesingle{}x\textquotesingle{},\textquotesingle{} \textquotesingle{}\mbox{]}) print \char`\"{}(i0)\char`\"{}, \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}}(\mbox{[} \& \& \textquotesingle{}j\textquotesingle{},\textquotesingle{}u\textquotesingle{},\textquotesingle{}m\textquotesingle{},\textquotesingle{}p\textquotesingle{},\textquotesingle{}s\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}o\textquotesingle{},\textquotesingle{}v\textquotesingle{},\textquotesingle{}e\textquotesingle{},\textquotesingle{}r\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}t\textquotesingle{},\textquotesingle{}h\textquotesingle{},\textquotesingle{}e\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}l\textquotesingle{},\textquotesingle{}a\textquotesingle{},\textquotesingle{}z\textquotesingle{},\textquotesingle{}y\textquotesingle{},\textquotesingle{} \textquotesingle{},\& \& \textquotesingle{}d\textquotesingle{},\textquotesingle{}o\textquotesingle{},\textquotesingle{}g\textquotesingle{}\mbox{]},continue=.true.) ! numeric array print \char`\"{}(i0)\char`\"{}, \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{crc32\+\_\+hash}}(\mbox{[}(i,i=1,100)\mbox{]}) end program demo\+\_\+crc32\+\_\+hash
+
+Expected output\+:
+
+414F\+A339 1095738169 2293265890 1095738169 1783575711 
+
+References debug.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a9cbbdaf23703ed4aa52995de0d62729b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_af2017df2d856347d11ba5a248672c0c8}\label{namespacem__hashkeys_af2017df2d856347d11ba5a248672c0c8}} 
+\index{m\_hashkeys@{m\_hashkeys}!crc32\_hash\_scalar@{crc32\_hash\_scalar}}
+\index{crc32\_hash\_scalar@{crc32\_hash\_scalar}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{crc32\_hash\_scalar()}{crc32\_hash\_scalar()}}
+{\footnotesize\ttfamily integer(kind=int64) function m\+\_\+hashkeys\+::crc32\+\_\+hash\+\_\+scalar (\begin{DoxyParamCaption}\item[{class($\ast$), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References crc32\+\_\+hash\+\_\+arr().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_af2017df2d856347d11ba5a248672c0c8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79}\label{namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79}} 
+\index{m\_hashkeys@{m\_hashkeys}!cs0@{cs0}}
+\index{cs0@{cs0}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{cs0()}{cs0()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function, private m\+\_\+hashkeys\+::cs0 (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: cs0(a), see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af}\label{namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af}} 
+\index{m\_hashkeys@{m\_hashkeys}!cs1@{cs1}}
+\index{cs1@{cs1}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{cs1()}{cs1()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function, private m\+\_\+hashkeys\+::cs1 (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: cs1(a), see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c}\label{namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c}} 
+\index{m\_hashkeys@{m\_hashkeys}!dirty\_sha256@{dirty\_sha256}}
+\index{dirty\_sha256@{dirty\_sha256}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{dirty\_sha256()}{dirty\_sha256()}}
+{\footnotesize\ttfamily character(len=64) function, public m\+\_\+hashkeys\+::dirty\+\_\+sha256 (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{str }\end{DoxyParamCaption})}
+
+\hypertarget{namespacem__hashkeys_autotoc_md9}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md9}
+dirtys\+\_\+sha256(3f) -\/ \mbox{[}M\+\_\+hashkeys\mbox{]} generate a S\+H\+A-\/256 hashing \hypertarget{namespacem__hashkeys_autotoc_md10}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__hashkeys_autotoc_md10}
+function dirtys\+\_\+sha256(str)
+
+character(len=64) \+:: dirtys\+\_\+sha256 character(len=$\ast$), intent(in) \+:: str\hypertarget{namespacem__hashkeys_autotoc_md11}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md11}
+\begin{DoxyVerb}A Fortran module for SHA-256 hashing.
+
+The quick and dirty routine (dirtys_sha256(3f)) operates on whatever
+bits that come in, without swapping to big-endian words, and does
+therefore not pass any of the standard tests - but works at roughly
+twice the speed. Use this if you want a good hash function but don't
+care about following the SHA-256 standard specifications.
+
+Note that this code will not produce the same results on big-endian
+machines and the module was only tested on a little-endian Ubuntu
+LTS 12.04 system using gfortran 4.6.3 and CygWin using Gortran 7.3.0.
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md12}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md12}
+str The message to digest.\hypertarget{namespacem__hashkeys_autotoc_md13}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__hashkeys_autotoc_md13}
+dirtys\+\_\+sha256 The S\+H\+A-\/256 digest as a string of length 64.\hypertarget{namespacem__hashkeys_autotoc_md14}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__hashkeys_autotoc_md14}
+\begin{DoxyVerb}This routine is heavily based on the SHA-256 routines by Mikael Leetmaa
+<leetmaa@kth.se>, 2014-01-05. changes have been made to incorporate
+it into the GPF (General Purpose Fortran) framework.
+
+If you found this useful, please let Mikael Leetmaa know.
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md15}{}\doxysubsubsection{E\+X\+A\+M\+P\+L\+ES}\label{namespacem__hashkeys_autotoc_md15}
+\begin{DoxyVerb}Using slurp(3f) and switch(3f) from the GPF (General Purpose Fortran)
+collection to read in a file and convert it into a string, generate
+digest values for a list of files. Note that this example reads the
+entire input file into memory twice, and so requires very large
+amounts of memory if very large files are processed.
+
+ program demo_dirty_sha256
+ use,intrinsic :: iso_fortran_env, only : ERROR_UNIT
+ use M_hashkeys,                   only : sha256, dirty_sha256
+ use M_io,                         only : slurp
+ use M_strings,                    only : switch
+ implicit none
+ character(len=1),allocatable :: text(:) ! array to hold file in memory
+ character(len=:),allocatable :: string
+ integer                      :: i
+ character(len=4096)          :: filename
+    do i=1,command_argument_count()  ! step through filenames on command line
+       call get_command_argument(i, filename)
+       call slurp(filename,text) ! allocate character array and copy file into it
+       if(.not.allocated(text))then
+          write(ERROR_UNIT,*)'*rever* ERROR: failed to load file '//trim(filename)
+       else
+          string=switch(text) ! switch array to a single character variable
+          deallocate(text)    ! release memory
+          write(*,*)dirty_sha256(string),len(string),trim(filename) ! write digest value
+       endif
+    enddo
+ end program demo_dirty_sha256
+\end{DoxyVerb}
+
+
+Sample output\+:
+
+F\+A9\+D11011034\+F1081\+A367\+D4\+F2\+F1\+E\+B909\+A\+C0849\+F\+F090\+A9320\+B6824156\+C5628\+D\+FD 2011 dynamic\+\_\+dummy\+\_\+arrays.\+f90 F\+E48473\+B\+C7\+B9\+C13067\+E\+C2\+C108\+C\+B8\+A650\+A186605\+D5\+F905736\+D9\+C\+B9\+D\+E76\+E9\+A1\+A21 5444 fspiro.\+f90 306C\+D\+B5\+B\+B2\+A8\+C30\+C711\+F\+A5\+D35\+A6\+A12\+F4\+F\+D\+B4\+F003\+E\+D77438\+E922\+B56\+B\+B\+A1024\+F49 27108 pprint.\+f90 
+
+References sha256b().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_ad185c3f1d5f9c51cc4c459cacd2ae1f4}\label{namespacem__hashkeys_ad185c3f1d5f9c51cc4c459cacd2ae1f4}} 
+\index{m\_hashkeys@{m\_hashkeys}!djb2@{djb2}}
+\index{djb2@{djb2}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{djb2()}{djb2()}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function, public m\+\_\+hashkeys\+::djb2 (\begin{DoxyParamCaption}\item[{class($\ast$), dimension(\+:), intent(in)}]{anything }\end{DoxyParamCaption})}
+
+
+
+References debug.
+
+\mbox{\Hypertarget{namespacem__hashkeys_a2b9cc524440ba0c375c428b5dad3e82d}\label{namespacem__hashkeys_a2b9cc524440ba0c375c428b5dad3e82d}} 
+\index{m\_hashkeys@{m\_hashkeys}!djb2\_hash\_arr@{djb2\_hash\_arr}}
+\index{djb2\_hash\_arr@{djb2\_hash\_arr}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{djb2\_hash\_arr()}{djb2\_hash\_arr()}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function m\+\_\+hashkeys\+::djb2\+\_\+hash\+\_\+arr (\begin{DoxyParamCaption}\item[{class($\ast$), dimension(\+:), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__hashkeys_autotoc_md23}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md23}
+djb2\+\_\+hash(3f) -\/ \mbox{[}M\+\_\+hashkeys\+:bucket\+\_\+hash\mbox{]} djb2 string hash (algorithm by Daniel J. Bernstein) (L\+I\+C\+E\+N\+SE\+:PD)\hypertarget{namespacem__hashkeys_autotoc_md24}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__hashkeys_autotoc_md24}
+\begin{DoxyVerb}function djb2_hash_arr(anything,continue) result(hash_128)
+
+ class(*),intent(in)          :: anything(:)
+ logical,intent(in),optional  :: continue
+ !! use,intrinsic : ISO_FORTRAN_ENV, only : int64
+ integer(kind=int128)         :: hash_128
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md25}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md25}
+djb2\+\_\+hash(3f) is based on the string hash routine commonly known as djb2(3c). This algorithm was first described by Dan J. Bernstein many years ago in comp.\+lang.\+c. This version returns a value calculated using a 64-\/bit hash, which is returned as a 128bit value (not always available in Fortran) to allow the value to always be a positive value; as Fortran does not (currently) support a standard unsigned integer. If the value is changed to be a 64-\/bit value on platforms that do not support 128-\/bit I\+N\+T\+E\+G\+ER values the value may be negative, but is otherwise usable.
+
+Such non-\/reversible hashes may be used for data or file fingerprints, to confirm unchanging results during regression testing, ...
+
+More information is widely available on string hashes (including the well-\/known djb2(3c) algorithm) on such sources as Wikipedia. Consult such resources to confirm the suitability of this algorithm for your use. This algorithm was probably first proposed as a bucket hash.
+
+The algorithm does not consider the Endian of the programming environment.\hypertarget{namespacem__hashkeys_autotoc_md26}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md26}
+S\+TR May be a C\+H\+A\+R\+A\+C\+T\+ER string or an array of common intrinsic types. Currently, the types defined in the procedure are character(len=$\ast$); complex; integer(kind=int8); integer(kind=int16); integer(kind=int32); integer(kind=int64); integer(kind=int128); real(kind=real32); real(kind=real64); real(kind=real128).
+
+C\+O\+N\+T\+I\+N\+UE indicate whether to continue accumulating the hash value from the last call. This is not threadsafe. This allows for continued hashes so that a hash can be calculated for a series of calls.\hypertarget{namespacem__hashkeys_autotoc_md27}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__hashkeys_autotoc_md27}
+\mbox{\hyperlink{interfacem__hashkeys_1_1djb2__hash}{djb2\+\_\+hash}} A 128-\/bit I\+N\+T\+E\+G\+ER hash value for the (possibly accumulated) data.\hypertarget{namespacem__hashkeys_autotoc_md28}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__hashkeys_autotoc_md28}
+\begin{DoxyVerb}Sample program:
+
+ program demo_djb2_hash
+ use M_hashkeys, only : djb2_hash, int128
+ implicit none
+ integer(kind=int128)         :: hash
+ character(len=:),allocatable :: string
+ integer                      :: i
+ ! string
+ string='test djb2_hash'
+ hash=djb2_hash(string)
+ write(*,*)'string=',string,' hash=',hash
+ ! array of characters
+ hash=djb2_hash(['t','e','s','t',' ','d','j','b','2','_','h','a','s','h'])
+ write(*,*)'string=',string,' hash=',hash
+ ! continued hash
+ hash=djb2_hash(['t','e','s','t'])
+ hash=djb2_hash([' ','d','j','b','2'],continue=.true.)
+ hash=djb2_hash(['_','h','a','s','h'],continue=.true.)
+ write(*,*)'string=',string,' hash=',hash
+ ! array of integers
+ hash=djb2_hash([(i,i=0,100)])
+ write(*,*)'hash for values 0 to 100 is ',hash
+ !
+ end program demo_djb2_hash
+\end{DoxyVerb}
+ 
+
+References debug.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a2b9cc524440ba0c375c428b5dad3e82d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a28b1e406e6b45dba8fcb3da20de37a3b}\label{namespacem__hashkeys_a28b1e406e6b45dba8fcb3da20de37a3b}} 
+\index{m\_hashkeys@{m\_hashkeys}!djb2\_hash\_scalar@{djb2\_hash\_scalar}}
+\index{djb2\_hash\_scalar@{djb2\_hash\_scalar}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{djb2\_hash\_scalar()}{djb2\_hash\_scalar()}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function m\+\_\+hashkeys\+::djb2\+\_\+hash\+\_\+scalar (\begin{DoxyParamCaption}\item[{class($\ast$), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References djb2\+\_\+hash\+\_\+arr().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a28b1e406e6b45dba8fcb3da20de37a3b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a852eddaaa71287688e762ab4f9f13977}\label{namespacem__hashkeys_a852eddaaa71287688e762ab4f9f13977}} 
+\index{m\_hashkeys@{m\_hashkeys}!luhn\_checksum@{luhn\_checksum}}
+\index{luhn\_checksum@{luhn\_checksum}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{luhn\_checksum()}{luhn\_checksum()}}
+{\footnotesize\ttfamily character(len=\+:) function, allocatable, public m\+\_\+hashkeys\+::luhn\+\_\+checksum (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{string }\end{DoxyParamCaption})}
+
+\hypertarget{namespacem__hashkeys_autotoc_md16}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md16}
+luhn\+\_\+checksum(3f) -\/ \mbox{[}M\+\_\+hashkeys\mbox{]} Luhn checksum algorithm applied to a string of numeric values\hypertarget{namespacem__hashkeys_autotoc_md17}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md17}
+\begin{DoxyVerb}The Luhn algorithm or Luhn formula, also known as the "modulus 10" or
+"mod 10" algorithm, named after IBM scientist Hans Peter Luhn, is a simple
+checksum formula used to validate a variety of identification numbers
+such as credit card numbers, IMEI numbers, National Provider Identifier
+numbers in the United States, Canadian Social Insurance Numbers, Israel
+ID Numbers, Greek Social Security Numbers, and survey codes appearing on
+McDonald's, Taco Bell, and Tractor Supply Co. receipts. It was created by
+IBM scientist Hans Peter Luhn and described in U.S. Patent No. 2,950,048,
+filed on January 6, 1954, and granted on August 23, 1960.
+
+The algorithm is in the public domain and is in wide use today. It
+is specified in ISO/IEC 7812-1.[1] It is not intended to be a
+cryptographically secure hash function; it was designed to protect against
+accidental errors, not malicious attacks. Most credit cards and many
+government identification numbers use the algorithm as a simple method of
+distinguishing valid numbers from mistyped or otherwise incorrect numbers.
+
+The formula verifies a number against its included check digit, which
+is usually appended to a partial account number to generate the full
+account number. This number must pass the following test:
+
+1. From the rightmost digit, which is the check digit, and moving left,
+   double the value of every second digit. The check digit is not doubled;
+   the first digit doubled is immediately to the left of the check digit. If
+   the result of this doubling operation is greater than 9 (e.g., 8 × 2 =
+   16), then add the digits of the result (e.g., 16: 1 + 6 = 7, 18: 1 + 8 =
+   9) or, alternatively, the same final result can be found by subtracting
+   9 from that result (e.g., 16: 16 − 9 = 7, 18: 18 − 9 = 9).
+
+2. Take the sum of all the digits.
+
+3. If the total modulo 10 is equal to 0 (if the total ends in zero) then
+   the number is valid according to the Luhn formula; else it is not valid.
+
+Assume an example of an account number "7992739871" that will have a
+check digit added, making it of the form 7992739871x:
+
+Account number
+
+    7  9  9  2  7  3  9  8  7  1  x
+
+Double every other
+
+    7  18  9  4  7  6  9  16  7  2  x
+
+Sum digits
+
+    7  9  9  4  7  6  9  7  7  2  x
+
+The sum of all the digits in the third row is 67+x.
+
+The check digit (x) is obtained by computing the sum of the non-check
+digits then computing 9 times that value modulo 10 (in equation form,
+((67 × 9) mod 10)). In algorithm form:
+
+ 1. Compute the sum of the non-check digits (67).
+ 2. Multiply by 9 (603).
+ 3. The units digit (3) is the check digit. Thus, x=3.
+
+(Alternative method) The check digit (x) is obtained by computing the sum
+of the other digits (third row) then subtracting the units digit from 10
+(67 => Units digit 7; 10 − 7 = check digit 3). In algorithm form:
+
+ 1. Compute the sum of the non-check digits (67).
+ 2. Take the units digit (7).
+ 3. Subtract the units digit from 10.
+ 4. The result (3) is the check digit. In case the sum of digits ends in
+    0 then 0 is the check digit.
+
+This makes the full account number read 79927398713.
+
+Each of the numbers 79927398710, 79927398711, 79927398712, 79927398713,
+79927398714, 79927398715, 79927398716, 79927398717, 79927398718,
+79927398719 can be validated as follows.
+
+ 1. Double every second digit, from the rightmost: (1×2) = 2, (8×2) = 16,
+    (3×2) = 6, (2×2) = 4, (9×2) = 18
+ 2. Sum all the individual digits (digits in parentheses are the products
+    from Step 1): x (the check digit) + (2) + 7 + (1+6) + 9 + (6) + 7 +
+    (4) + 9 + (1+8) + 7 = x + 67.
+ 3. If the sum is a multiple of 10, the account number is possibly
+    valid. Note that 3 is the only valid digit that produces a sum (70)
+    that is a multiple of 10.
+ 4. Thus these account numbers are all invalid except possibly 79927398713
+    which has the correct check digit.
+
+Alternately, you can use the same checksum creation algorithm, ignoring
+the checksum already in place as if it had not yet been calculated. Then
+calculate the checksum and compare this calculated checksum to the
+original checksum included with the credit card number. If the included
+checksum matches the calculated checksum, then the number is valid.
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md18}{}\doxysubsubsection{S\+T\+R\+E\+N\+G\+T\+H\+S A\+N\+D W\+E\+A\+K\+N\+E\+S\+S\+ES}\label{namespacem__hashkeys_autotoc_md18}
+\begin{DoxyVerb}The Luhn algorithm will detect any single-digit error, as well as almost
+all transpositions of adjacent digits. It will not, however, detect
+transposition of the two-digit sequence 09 to 90 (or vice versa). It will
+detect 7 of the 10 possible twin errors (it will not detect 22 ↔ 55,
+33 ↔ 66 or 44 ↔ 77).
+
+Other, more complex check-digit algorithms (such as the Verhoeff algorithm
+and the Damm algorithm) can detect more transcription errors. The Luhn
+mod N algorithm is an extension that supports non-numerical strings.
+
+Because the algorithm operates on the digits in a right-to-left manner
+and zero digits affect the result only if they cause shift in position,
+zero-padding the beginning of a string of numbers does not affect the
+calculation. Therefore, systems that pad to a specific number of digits
+(by converting 1234 to 0001234 for instance) can perform Luhn validation
+before or after the padding and achieve the same result.
+
+Prepending a 0 to odd-length numbers makes it possible to process
+the number from left to right rather than right to left, doubling the
+odd-place digits.
+
+The algorithm appeared in a US Patent[2] for a hand-held, mechanical
+device for computing the checksum. It was therefore required to be
+rather simple. The device took the mod 10 sum by mechanical means. The
+substitution digits, that is, the results of the double and reduce
+procedure, were not produced mechanically. Rather, the digits were marked
+in their permuted order on the body of the machine.
+\end{DoxyVerb}
+ \hypertarget{namespacem__hashkeys_autotoc_md19}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md19}
+\begin{DoxyVerb}  S                 the string of digits to be checked. Spaces and dashes
+                    are ignored.
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md20}{}\doxysubsubsection{R\+E\+S\+U\+LT}\label{namespacem__hashkeys_autotoc_md20}
+\begin{DoxyVerb}  LUHN_CHECKSUM     the Luhn checksum of the string; which is the digits in the
+                    input string with the checksum digit appended.
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md21}{}\doxysubsubsection{R\+E\+F\+E\+R\+E\+N\+C\+ES}\label{namespacem__hashkeys_autotoc_md21}
+From Wikipedia, the free encyclopedia \begin{DoxyVerb}(https://en.wikipedia.org/wiki/Luhn_algorithm)
+\end{DoxyVerb}
+ \hypertarget{namespacem__hashkeys_autotoc_md22}{}\doxysubsubsection{E\+X\+A\+M\+P\+L\+ES}\label{namespacem__hashkeys_autotoc_md22}
+Sample program
+
+program demo\+\_\+luhn\+\_\+checksum use M\+\_\+hashkeys, only \+: luhn\+\_\+checksum implicit none character(len=\+:),allocatable \+:: ccards(\+:), string integer \+:: i, j write($\ast$,$\ast$)\textquotesingle{}G\+O\+OD V\+A\+L\+U\+ES\textquotesingle{} ccards=\mbox{[} character(len=20) \+:: \textquotesingle{}79927398713\textquotesingle{}, \textquotesingle{}49927398716\textquotesingle{}, \textquotesingle{}1234567812345670\textquotesingle{} \mbox{]} call \mbox{\hyperlink{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc}{checkem()}} write($\ast$,$\ast$)\textquotesingle{}B\+AD V\+A\+L\+U\+ES\textquotesingle{} ccards=\mbox{[} character(len=20) \+:: \& \textquotesingle{}79927398710\textquotesingle{},\textquotesingle{}79927398711\textquotesingle{},\textquotesingle{}79927398712\textquotesingle{},\textquotesingle{}79927398714\textquotesingle{}, \& \textquotesingle{}79927398715\textquotesingle{},\textquotesingle{}79927398716\textquotesingle{},\textquotesingle{}79927398717\textquotesingle{},\textquotesingle{}79927398718\textquotesingle{},\textquotesingle{}79927398719\textquotesingle{}, \& \textquotesingle{}49927398717\textquotesingle{}, \textquotesingle{}1234567812345678\textquotesingle{} \mbox{]} call \mbox{\hyperlink{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc}{checkem()}} contains subroutine checkem ! validate these numbers do i=1,size(ccards) j=len(trim(ccards(i))) string=luhn\+\_\+checksum(ccards(i)(\+:j-\/1)) write($\ast$,\textquotesingle{}(a,1x,a,1x,l1)\textquotesingle{})ccards(i),string,ccards(i).eq.\+string enddo
+
+string=\textquotesingle{}123456 781-\/234-\/567\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{}from \textquotesingle{},string,\textquotesingle{} got \textquotesingle{},luhn\+\_\+checksum(string),\textquotesingle{} which should be 1234567812345670\textquotesingle{} end subroutine checkem end program demo\+\_\+luhn\+\_\+checksum Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a852eddaaa71287688e762ab4f9f13977_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a3347b21962255779e27534039324e5d6}\label{namespacem__hashkeys_a3347b21962255779e27534039324e5d6}} 
+\index{m\_hashkeys@{m\_hashkeys}!maj@{maj}}
+\index{maj@{maj}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{maj()}{maj()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function, private m\+\_\+hashkeys\+::maj (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{a,  }\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{b,  }\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyReturn}{Returns}
+The \textquotesingle{}maj\textquotesingle{} function in S\+H\+A-\/2. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+{\em b} & \+: (in) The b input integer. \\
+\hline
+{\em c} & \+: (in) The c input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: maj(a,b,c), see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a3347b21962255779e27534039324e5d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd}\label{namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd}} 
+\index{m\_hashkeys@{m\_hashkeys}!ms0@{ms0}}
+\index{ms0@{ms0}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{ms0()}{ms0()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function, private m\+\_\+hashkeys\+::ms0 (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \textquotesingle{}\textbackslash{}sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: ms0(a), see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b}\label{namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b}} 
+\index{m\_hashkeys@{m\_hashkeys}!ms1@{ms1}}
+\index{ms1@{ms1}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{ms1()}{ms1()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function, private m\+\_\+hashkeys\+::ms1 (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \textquotesingle{}\textbackslash{}sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \+: (in) The a input integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: ms1(a), see the code. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_aef7c2d10b734eec099766af4df8415fc}\label{namespacem__hashkeys_aef7c2d10b734eec099766af4df8415fc}} 
+\index{m\_hashkeys@{m\_hashkeys}!sdbm\_hash\_arr@{sdbm\_hash\_arr}}
+\index{sdbm\_hash\_arr@{sdbm\_hash\_arr}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{sdbm\_hash\_arr()}{sdbm\_hash\_arr()}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function m\+\_\+hashkeys\+::sdbm\+\_\+hash\+\_\+arr (\begin{DoxyParamCaption}\item[{class($\ast$), dimension(\+:), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{namespacem__hashkeys_autotoc_md37}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md37}
+sdbm\+\_\+hash(3f) -\/ \mbox{[}M\+\_\+hashkeys\+:bucket\+\_\+hash\mbox{]} sdbm string hash (L\+I\+C\+E\+N\+SE\+:PD)\hypertarget{namespacem__hashkeys_autotoc_md38}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__hashkeys_autotoc_md38}
+\begin{DoxyVerb}use,intrinsic : ISO_FORTRAN_ENV, only : int64
+function sdbm_hash_arr(anything,continue) result(hash_128)
+
+ class(*),intent(in)          :: anything(:)
+ logical,intent(in),optional  :: continue
+ integer(kind=int128)         :: hash_128
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md39}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md39}
+sdbm\+\_\+hash(3f) is based on the string hash routine commonly known as sdbm(3c).
+
+this algorithm was created for the sdbm (a public-\/domain reimplementation of ndbm) database library. It was found to do well in scrambling bits, causing good distribution of the keys and fewer splits. it also happens to be a good general hashing function with good distribution. the actual function is
+
+hash(i) = hash(i -\/ 1) $\ast$ 65599 + str\mbox{[}i\mbox{]}
+
+what is available here is the faster version used in gawk. \mbox{[}there is even a faster, duff-\/device version\mbox{]}. The magic constant 65599 was picked out of thin air while experimenting with different constants, and turns out to be a prime. this is one of the algorithms used in berkeley db (see sleepycat) and elsewhere.
+
+This version returns a value calculated using a 64-\/bit hash, which is returned as a 128bit value (not always available in Fortran) to allow the value to always be a positive value; as Fortran does not (currently) support a standard unsigned integer. If the value is changed to be a 64-\/bit value on platforms that do not support 128-\/bit I\+N\+T\+E\+G\+ER values the value may be negative, but is otherwise usable.
+
+Such non-\/reversible hashes may be used for data or file fingerprints, to confirm unchanging results during regression testing, ...
+
+More information is widely available on string hashes (including the well-\/known sdbm(3c) algorithm) on such sources as Wikipedia. Consult such resources to confirm the suitability of this algorithm for your use.
+
+The algorithm does not consider the Endian of the programming environment.\hypertarget{namespacem__hashkeys_autotoc_md40}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md40}
+S\+TR May be a C\+H\+A\+R\+A\+C\+T\+ER string or an array of common intrinsic types. Currently, the types defined in the procedure are character(len=$\ast$); complex; integer(kind=int8); integer(kind=int16); integer(kind=int32); integer(kind=int64); integer(kind=int128); real(kind=real32); real(kind=real64); real(kind=real128).
+
+C\+O\+N\+T\+I\+N\+UE indicate whether to continue accumulating the hash value from the last call. This is not threadsafe. This allows for continued hashes so that a hash can be calculated for a series of calls.\hypertarget{namespacem__hashkeys_autotoc_md41}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__hashkeys_autotoc_md41}
+\mbox{\hyperlink{interfacem__hashkeys_1_1sdbm__hash}{sdbm\+\_\+hash}} A 128-\/bit I\+N\+T\+E\+G\+ER hash value for the (possibly accumulated) data.\hypertarget{namespacem__hashkeys_autotoc_md42}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__hashkeys_autotoc_md42}
+\begin{DoxyVerb}Sample program:
+
+ program demo_sdbm_hash
+ use M_hashkeys, only : sdbm_hash, int128
+ implicit none
+ integer(kind=int128)         :: hash
+ character(len=:),allocatable :: string
+ integer                      :: i
+ ! string
+ string='test sdbm_hash'
+ hash=sdbm_hash(string)
+ write(*,*)'string=',string,' hash=',hash
+ ! array of characters
+ hash=sdbm_hash(['t','e','s','t',' ','s','d','b','m','_','h','a','s','h'])
+ write(*,*)'string=',string,' hash=',hash
+ ! continued hash
+ hash=sdbm_hash(['t','e','s','t'])
+ hash=sdbm_hash([' ','s','d','b','m'],continue=.true.)
+ hash=sdbm_hash(['_','h','a','s','h'],continue=.true.)
+ write(*,*)'string=',string,' hash=',hash
+ ! array of integers
+ hash=sdbm_hash([(i,i=0,100)])
+ write(*,*)'hash for values 0 to 100 is ',hash
+ !
+ end program demo_sdbm_hash
+\end{DoxyVerb}
+ 
+
+References debug.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_aef7c2d10b734eec099766af4df8415fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a1d0d3747d4e3165a7b16f4291758f554}\label{namespacem__hashkeys_a1d0d3747d4e3165a7b16f4291758f554}} 
+\index{m\_hashkeys@{m\_hashkeys}!sdbm\_hash\_scalar@{sdbm\_hash\_scalar}}
+\index{sdbm\_hash\_scalar@{sdbm\_hash\_scalar}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{sdbm\_hash\_scalar()}{sdbm\_hash\_scalar()}}
+{\footnotesize\ttfamily integer(kind=\mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{int128}}) function m\+\_\+hashkeys\+::sdbm\+\_\+hash\+\_\+scalar (\begin{DoxyParamCaption}\item[{class($\ast$), intent(in)}]{anything,  }\item[{logical, intent(in), optional}]{continue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References debug, and sdbm\+\_\+hash\+\_\+arr().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a1d0d3747d4e3165a7b16f4291758f554_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa}\label{namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa}} 
+\index{m\_hashkeys@{m\_hashkeys}!sha256@{sha256}}
+\index{sha256@{sha256}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{sha256()}{sha256()}}
+{\footnotesize\ttfamily character(len=64) function, public m\+\_\+hashkeys\+::sha256 (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{str }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For the sha256 and dirty_sha256 procedures and supporting private routines:
+
+Copyright (c) 2014 Mikael Leetmaa
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+   1. The origin of this software must not be misrepresented; you must not
+      claim that you wrote the original software. If you use this software
+      in a product, an acknowledgment in the product documentation would be
+      appreciated but is not required.
+
+   2. Altered source versions must be plainly marked as such, and must not be
+      misrepresented as being the original software.
+
+   3. This notice may not be removed or altered from any source
+      distribution.
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md0}{}\doxysubsubsection{N\+A\+ME}\label{namespacem__hashkeys_autotoc_md0}
+sha256(3f) -\/ \mbox{[}M\+\_\+hashkeys\mbox{]} generate a S\+H\+A-\/256 hashing\hypertarget{namespacem__hashkeys_autotoc_md1}{}\doxysubsubsection{S\+Y\+N\+O\+P\+S\+IS}\label{namespacem__hashkeys_autotoc_md1}
+function sha256(str)
+
+character(len=64) \+:: sha256 character(len=$\ast$), intent(in) \+:: str\hypertarget{namespacem__hashkeys_autotoc_md2}{}\doxysubsubsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{namespacem__hashkeys_autotoc_md2}
+\begin{DoxyVerb}A Fortran module for SHA-256 hashing.
+
+Note that this code will not produce the same results on big-endian
+machines and the module was only tested on a little-endian Ubuntu LTS
+12.04 system using gfortran 4.6.3.
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md3}{}\doxysubsubsection{O\+P\+T\+I\+O\+NS}\label{namespacem__hashkeys_autotoc_md3}
+str The message to digest.\hypertarget{namespacem__hashkeys_autotoc_md4}{}\doxysubsubsection{R\+E\+T\+U\+R\+NS}\label{namespacem__hashkeys_autotoc_md4}
+sha256 The S\+H\+A-\/256 digest as a string of length 64.\hypertarget{namespacem__hashkeys_autotoc_md5}{}\doxysubsubsection{C\+O\+M\+P\+I\+L\+E N\+O\+T\+ES}\label{namespacem__hashkeys_autotoc_md5}
+\begin{DoxyVerb}The '-fno-range-check' flag is required on gfortran(1) since the
+Fortran standard otherwise doesn't currently allow us to work with
+all bits in the integers (as if they were unsigned).
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md6}{}\doxysubsubsection{A\+U\+T\+H\+OR}\label{namespacem__hashkeys_autotoc_md6}
+\begin{DoxyVerb}This routine is heavily based on the SHA-256 routines by
+Mikael Leetmaa <leetmaa@kth.se>, 2014-01-05. changes have
+been made to incorporate it into the GPF (General Purpose Fortran)
+framework.
+
+If you found this useful, please let Mikael Leetmaa know.
+\end{DoxyVerb}
+\hypertarget{namespacem__hashkeys_autotoc_md7}{}\doxysubsubsection{E\+X\+A\+M\+P\+LE}\label{namespacem__hashkeys_autotoc_md7}
+Sample program\+:
+
+program demo\+\_\+sha256 use M\+\_\+hashkeys, only \+: sha256, dirty\+\_\+sha256 implicit none character(len=\+:),allocatable \+:: str character(len=64) \+:: ref
+
+! Test the sha256 function with a set of reference strings.
+
+str=\char`\"{}\char`\"{} ref=\char`\"{}\+E3\+B0\+C44298\+F\+C1\+C149\+A\+F\+B\+F4\+C8996\+F\+B92427\+A\+E41\+E4649\+B934\+C\+A495991\+B7852\+B855\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 1\textquotesingle{})
+
+str=\char`\"{}abc\char`\"{} ref=\char`\"{}\+B\+A7816\+B\+F8\+F01\+C\+F\+E\+A414140\+D\+E5\+D\+A\+E2223\+B00361\+A396177\+A9\+C\+B410\+F\+F61\+F20015\+A\+D\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 2\textquotesingle{})
+
+str=\char`\"{}abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq\char`\"{} ref=\char`\"{}248\+D6\+A61\+D20638\+B8\+E5\+C026930\+C3\+E6039\+A33\+C\+E45964\+F\+F2167\+F6\+E\+C\+E\+D\+D419\+D\+B06\+C1\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 3\textquotesingle{})
+
+str=\char`\"{}abcdefghbcdefghicdefghijdefghijkefghijklfghi\&
+         \&jklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu\char`\"{} ref=\char`\"{}\+C\+F5\+B16\+A778\+A\+F8380036\+C\+E59\+E7\+B0492370\+B249\+B11\+E8\+F07\+A51\+A\+F\+A\+C45037\+A\+F\+E\+E9\+D1\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 4\textquotesingle{})
+
+str=repeat(\char`\"{}a\char`\"{},1000000) ref=\char`\"{}\+C\+D\+C76\+E5\+C9914\+F\+B9281\+A1\+C7\+E284\+D73\+E67\+F1809\+A48\+A497200\+E046\+D39\+C\+C\+C7112\+C\+D0\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 5\textquotesingle{})
+
+str=\char`\"{}message digest\char`\"{} ref=\char`\"{}\+F7846\+F55\+C\+F23\+E14\+E\+E\+B\+E\+A\+B5\+B4\+E1550\+C\+A\+D5\+B509\+E3348\+F\+B\+C4\+E\+F\+A3\+A1413\+D393\+C\+B650\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 6\textquotesingle{})
+
+str=\char`\"{}secure hash algorithm\char`\"{} ref=\char`\"{}\+F30\+C\+E\+B2\+B\+B2829\+E79\+E4\+C\+A9753\+D35\+A8\+E\+C\+C00262\+D164\+C\+C077080295381\+C\+B\+D643\+F0\+D\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 7\textquotesingle{})
+
+str=\char`\"{}\+S\+H\+A256 is considered to be safe\char`\"{} ref=\char`\"{}6819\+D915\+C73\+F4\+D1\+E77\+E4\+E1\+B52\+D1\+F\+A0\+F9\+C\+F9\+B\+E\+A\+E\+A\+D3939\+F15874\+B\+D988\+E2\+A23630\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 8\textquotesingle{})
+
+str=\char`\"{}\+For this sample, this 63-\/byte string will be used as input data\char`\"{} ref=\char`\"{}\+F08\+A78\+C\+B\+B\+A\+E\+E082\+B052\+A\+E0708\+F32\+F\+A1\+E50\+C5\+C421\+A\+A772\+B\+A5\+D\+B\+B406\+A2\+E\+A6\+B\+E342\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 9\textquotesingle{})
+
+str=\char`\"{}\+This is exactly 64 bytes long, not counting the terminating byte\char`\"{} ref=\char`\"{}\+A\+B64\+E\+F\+F7\+E88\+E2\+E46165\+E29\+F2\+B\+C\+E41826\+B\+D4\+C7\+B3552\+F6\+B382\+A9\+E7\+D3\+A\+F47\+C245\+F8\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 10\textquotesingle{})
+
+! Check the quick and dirty implementation as well. ref=\char`\"{}69\+E3\+F\+A\+C\+D5\+F08321\+F78117\+B\+D53476\+E5321845433356\+F106\+E7013\+E68\+E\+C367\+F3017\char`\"{} call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},dirty\+\_\+sha256(str)==ref,\textquotesingle{}test dirtysha256 1\textquotesingle{})
+
+!!str=repeat(\char`\"{}abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno\char`\"{},16777216) !!ref=\char`\"{}50\+E72\+A0\+E26442\+F\+E2552\+D\+C3938\+A\+C58658228\+C0\+C\+B\+F\+B1\+D2\+C\+A872\+A\+E435266\+F\+C\+D055\+E\char`\"{} !!call unit\+\_\+check(\textquotesingle{}sha256\textquotesingle{},sha256(str)==ref,\textquotesingle{}test sha256 11 -- long test\textquotesingle{})
+
+contains subroutine unit\+\_\+check(name,test,message) character(len=$\ast$),intent(in) \+:: name logical,intent(in) \+:: test character(len=$\ast$),intent(in) \+:: message write($\ast$,\textquotesingle{}(a)\textquotesingle{}) repeat(\char`\"{}=\char`\"{},64) write($\ast$,\textquotesingle{}(a)\textquotesingle{}) sha256(str) write($\ast$,\textquotesingle{}(a)\textquotesingle{}) ref if(test)then write($\ast$,$\ast$)trim(name),\char`\"{} P\+A\+S\+S\+E\+D\+: \char`\"{},trim(message) else write($\ast$,$\ast$)trim(name),\char`\"{} F\+A\+I\+L\+E\+D\+: \char`\"{},trim(message) endif end subroutine unit\+\_\+check ! end program demo\+\_\+sha256\hypertarget{namespacem__hashkeys_autotoc_md8}{}\doxysubsubsection{U\+N\+I\+T T\+E\+ST}\label{namespacem__hashkeys_autotoc_md8}
+When porting to a new programming environment use the built-\/in unit test ...
+
+program test\+\_\+sha256 use M\+\_\+hashkeys, only \+: test\+\_\+suite\+\_\+sha256 call \mbox{\hyperlink{namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f}{test\+\_\+suite\+\_\+sha256()}} end program test\+\_\+sha256 
+
+References sha256b().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4}\label{namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4}} 
+\index{m\_hashkeys@{m\_hashkeys}!sha256b@{sha256b}}
+\index{sha256b@{sha256b}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{sha256b()}{sha256b()}}
+{\footnotesize\ttfamily character(len=64) function, private m\+\_\+hashkeys\+::sha256b (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{str,  }\item[{integer, intent(in)}]{swap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References ch(), consume\+\_\+chunk(), cs0(), cs1(), maj(), ms0(), and ms1().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf}\label{namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf}} 
+\index{m\_hashkeys@{m\_hashkeys}!swap32@{swap32}}
+\index{swap32@{swap32}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{swap32()}{swap32()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int32\+\_\+t) function, private m\+\_\+hashkeys\+::swap32 (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int32\+\_\+t), intent(in)}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Swap the byte order on a 32bit integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & \+: (in) The integer to byte swap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The byte swapped integer. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_ac78b1526bef4d540a919b7b197bd6bad}\label{namespacem__hashkeys_ac78b1526bef4d540a919b7b197bd6bad}} 
+\index{m\_hashkeys@{m\_hashkeys}!swap64@{swap64}}
+\index{swap64@{swap64}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{swap64()}{swap64()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int64\+\_\+t) function, private m\+\_\+hashkeys\+::swap64 (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int64\+\_\+t), intent(in)}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Swap the byte order on a 64 bit integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & \+: (in) The integer to byte swap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The byte swapped integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055}\label{namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055}} 
+\index{m\_hashkeys@{m\_hashkeys}!swap64a@{swap64a}}
+\index{swap64a@{swap64a}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{swap64a()}{swap64a()}}
+{\footnotesize\ttfamily integer(kind=c\+\_\+int64\+\_\+t) function, private m\+\_\+hashkeys\+::swap64a (\begin{DoxyParamCaption}\item[{integer(kind=c\+\_\+int64\+\_\+t), intent(in)}]{inp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inp} & \+: (in) The integer to byte swap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The byte swapped integer. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc}\label{namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc}} 
+\index{m\_hashkeys@{m\_hashkeys}!test\_luhn\_checksum@{test\_luhn\_checksum}}
+\index{test\_luhn\_checksum@{test\_luhn\_checksum}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{test\_luhn\_checksum()}{test\_luhn\_checksum()}}
+{\footnotesize\ttfamily subroutine m\+\_\+hashkeys\+::test\+\_\+luhn\+\_\+checksum}
+
+
+
+References checkem(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb}\label{namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb}} 
+\index{m\_hashkeys@{m\_hashkeys}!test\_suite\_m\_hashkeys@{test\_suite\_m\_hashkeys}}
+\index{test\_suite\_m\_hashkeys@{test\_suite\_m\_hashkeys}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{test\_suite\_m\_hashkeys()}{test\_suite\_m\_hashkeys()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+hashkeys\+::test\+\_\+suite\+\_\+m\+\_\+hashkeys}
+
+
+
+References test\+\_\+luhn\+\_\+checksum().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f}\label{namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f}} 
+\index{m\_hashkeys@{m\_hashkeys}!test\_suite\_sha256@{test\_suite\_sha256}}
+\index{test\_suite\_sha256@{test\_suite\_sha256}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{test\_suite\_sha256()}{test\_suite\_sha256()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+hashkeys\+::test\+\_\+suite\+\_\+sha256}
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+
+
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+
+
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+
+
+References pad\+\_\+message1(), pad\+\_\+message2(), test\+\_\+ch(), test\+\_\+cs0(), test\+\_\+cs1(), test\+\_\+ishft(), test\+\_\+ishftc(), test\+\_\+maj(), test\+\_\+ms0(), test\+\_\+ms1(), test\+\_\+sha256\+\_\+1(), test\+\_\+sha256\+\_\+11(), test\+\_\+sha256\+\_\+5(), test\+\_\+sha256\+\_\+6(), test\+\_\+swap32(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacem__hashkeys_a0398941b72452bd99fc4461790e8649e}\label{namespacem__hashkeys_a0398941b72452bd99fc4461790e8649e}} 
+\index{m\_hashkeys@{m\_hashkeys}!debug@{debug}}
+\index{debug@{debug}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily logical, save m\+\_\+hashkeys\+::debug =.false.\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__hashkeys_a6c4b5da23a8de2a97269d8399ff6828a}\label{namespacem__hashkeys_a6c4b5da23a8de2a97269d8399ff6828a}} 
+\index{m\_hashkeys@{m\_hashkeys}!dp@{dp}}
+\index{dp@{dp}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{dp}{dp}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+hashkeys\+::dp =kind(0.\+0d0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}\label{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}} 
+\index{m\_hashkeys@{m\_hashkeys}!int128@{int128}}
+\index{int128@{int128}!m\_hashkeys@{m\_hashkeys}}
+\doxysubsubsection{\texorpdfstring{int128}{int128}}
+{\footnotesize\ttfamily integer, parameter, public m\+\_\+hashkeys\+::int128 = selected\+\_\+real\+\_\+kind(1$\ast$precision(1.\+0\+\_\+int64))}
+

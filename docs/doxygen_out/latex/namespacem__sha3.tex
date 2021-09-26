@@ -1,0 +1,541 @@
+\hypertarget{namespacem__sha3}{}\doxysection{m\+\_\+sha3 Module Reference}
+\label{namespacem__sha3}\index{m\_sha3@{m\_sha3}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structm__sha3_1_1sha3__state}{sha3\+\_\+state}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__sha3_ac72add9acf48acb32a7a6e696164428d}{sha3\+\_\+file}} (d, fname, hdigest)
+\item 
+character(len=size(d) $\ast$2) function, public \mbox{\hyperlink{namespacem__sha3_af6efbd64a19f6428f4bd63ed6384b5dd}{sha3\+\_\+hexdigest}} (d)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__sha3_ad90d52584f17b664b598e2d9afbd0637}{sha3\+\_\+update}} (state, buffer, d)
+\item 
+subroutine \mbox{\hyperlink{namespacem__sha3_aba37a9b66390585555092b009ecd146b}{sha3\+\_\+block}} (S, buffer, r8)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__sha3_ace327fc0140be2d5a73d602f96a42f23}{sha3\+\_\+digest}} (state, digest)
+\item 
+integer(kind=int8) function, dimension(d/8), public \mbox{\hyperlink{namespacem__sha3_a6c24e73f12033d6336daaac026961885}{sha3}} (buffer, d)
+\item 
+integer(kind=int8) function, dimension(d/8) \mbox{\hyperlink{namespacem__sha3_a5fcbb1c67c25f69d26c0443b40b30258}{sha3\+\_\+keccak}} (M, d, c)
+\item 
+integer(kind=int8) function, dimension(d/8) \mbox{\hyperlink{namespacem__sha3_a0729a28894b5433145f2b41fa3d44a39}{sha3\+\_\+sponge}} (M, d, r)
+\item 
+integer(kind=int8) function, dimension(b/8) \mbox{\hyperlink{namespacem__sha3_ab0acb8530a0c4dd427e723defabf8ddf}{sha3\+\_\+keccak\+\_\+p}} (S, b, nr)
+\item 
+subroutine \mbox{\hyperlink{namespacem__sha3_a350b88c77c4140c034e2fa18d529ab17}{sha3\+\_\+round}} (state, round\+\_\+index)
+\item 
+subroutine \mbox{\hyperlink{namespacem__sha3_afca48779b2d72b01f3576f386bc64d13}{sha3\+\_\+theta}} (A)
+\item 
+subroutine \mbox{\hyperlink{namespacem__sha3_ab442992c14d893b346f18afedc28dab6}{sha3\+\_\+rho}} (A)
+\item 
+subroutine \mbox{\hyperlink{namespacem__sha3_a697ae025211dbc4c934d7580e3a636c1}{sha3\+\_\+pi}} (A)
+\item 
+subroutine \mbox{\hyperlink{namespacem__sha3_af1f21c79566e467af4c0d837bcc9767a}{sha3\+\_\+khi}} (A)
+\item 
+integer(kind=int8) function \mbox{\hyperlink{namespacem__sha3_aa42fdcdbb981586540f9d5e45545e4b8}{sha3\+\_\+reverse}} (b)
+\item 
+integer(kind=int64) function, dimension(5, 5) \mbox{\hyperlink{namespacem__sha3_a53ef69a317fbc2e3ee6713cd67dafea0}{sha3\+\_\+string2state}} (S)
+\item 
+integer(kind=int8) function, dimension(sz) \mbox{\hyperlink{namespacem__sha3_a854d3ba55e6cb5b9814315a1443ad457}{sha3\+\_\+state2string2}} (S, sz)
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__sha3_a5f14887760d5b0c8055e576fadefc269}{sha3\+\_\+auto\+\_\+test}} ()
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__sha3_ae6c560cc0fb3e6090c2892bd3ef535a6}{test\+\_\+suite\+\_\+m\+\_\+sha3}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__sha3_a3c873369d0dd8edd2b46f2bf244b12ba}{lane}} = 8
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__sha3_aa3c7bc43bbe7170269dc8ac67e341640}{w}} = 64
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__sha3_a002c3bfd76371d914b9a8541e0990f0a}{ell}} = 6
+\item 
+integer(kind=int64), dimension(5, 5) \mbox{\hyperlink{namespacem__sha3_ab23786567d049bd9bf1bcb896769b007}{sbuf}}
+\item 
+integer(kind=int64), dimension(24), save \mbox{\hyperlink{namespacem__sha3_a4e09c0913cf8b6501715d1e72acca977}{rc\+\_\+c}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacem__sha3_a6c24e73f12033d6336daaac026961885}\label{namespacem__sha3_a6c24e73f12033d6336daaac026961885}} 
+\index{m\_sha3@{m\_sha3}!sha3@{sha3}}
+\index{sha3@{sha3}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3()}{sha3()}}
+{\footnotesize\ttfamily integer(kind=int8) function, dimension(d/8), public m\+\_\+sha3\+::sha3 (\begin{DoxyParamCaption}\item[{integer(kind=int8), dimension(\+:), intent(in)}]{buffer,  }\item[{integer, intent(in)}]{d }\end{DoxyParamCaption})}
+
+
+
+References sha3\+\_\+keccak().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a6c24e73f12033d6336daaac026961885_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a6c24e73f12033d6336daaac026961885_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_a5f14887760d5b0c8055e576fadefc269}\label{namespacem__sha3_a5f14887760d5b0c8055e576fadefc269}} 
+\index{m\_sha3@{m\_sha3}!sha3\_auto\_test@{sha3\_auto\_test}}
+\index{sha3\_auto\_test@{sha3\_auto\_test}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_auto\_test()}{sha3\_auto\_test()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+sha3\+::sha3\+\_\+auto\+\_\+test}
+
+
+
+References sha3\+\_\+test21(), sha3\+\_\+test31(), sha3\+\_\+test41(), sha3\+\_\+test51(), and sha3\+\_\+test61().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a5f14887760d5b0c8055e576fadefc269_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_aba37a9b66390585555092b009ecd146b}\label{namespacem__sha3_aba37a9b66390585555092b009ecd146b}} 
+\index{m\_sha3@{m\_sha3}!sha3\_block@{sha3\_block}}
+\index{sha3\_block@{sha3\_block}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_block()}{sha3\_block()}}
+{\footnotesize\ttfamily subroutine m\+\_\+sha3\+::sha3\+\_\+block (\begin{DoxyParamCaption}\item[{integer(kind=int64), dimension(5,5), intent(inout)}]{S,  }\item[{integer(kind=int8), dimension(\+:), intent(in)}]{buffer,  }\item[{integer, intent(in)}]{r8 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References ell, lane, sha3\+\_\+reverse(), and sha3\+\_\+round().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_aba37a9b66390585555092b009ecd146b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_aba37a9b66390585555092b009ecd146b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_ace327fc0140be2d5a73d602f96a42f23}\label{namespacem__sha3_ace327fc0140be2d5a73d602f96a42f23}} 
+\index{m\_sha3@{m\_sha3}!sha3\_digest@{sha3\_digest}}
+\index{sha3\_digest@{sha3\_digest}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_digest()}{sha3\_digest()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+sha3\+::sha3\+\_\+digest (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structm__sha3_1_1sha3__state}{sha3\+\_\+state}}), intent(inout)}]{state,  }\item[{integer(kind=int8), dimension(\+:), intent(out)}]{digest }\end{DoxyParamCaption})}
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+
+
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+
+
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+
+
+References sha3\+\_\+block(), sha3\+\_\+reverse(), sha3\+\_\+state2string2(), and w.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ace327fc0140be2d5a73d602f96a42f23_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ace327fc0140be2d5a73d602f96a42f23_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_ac72add9acf48acb32a7a6e696164428d}\label{namespacem__sha3_ac72add9acf48acb32a7a6e696164428d}} 
+\index{m\_sha3@{m\_sha3}!sha3\_file@{sha3\_file}}
+\index{sha3\_file@{sha3\_file}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_file()}{sha3\_file()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+sha3\+::sha3\+\_\+file (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{d,  }\item[{character(len=$\ast$), intent(in)}]{fname,  }\item[{character(len=$\ast$), intent(out), optional}]{hdigest }\end{DoxyParamCaption})}
+
+
+
+References sha3\+\_\+digest(), sha3\+\_\+hexdigest(), and sha3\+\_\+update().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ac72add9acf48acb32a7a6e696164428d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ac72add9acf48acb32a7a6e696164428d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_af6efbd64a19f6428f4bd63ed6384b5dd}\label{namespacem__sha3_af6efbd64a19f6428f4bd63ed6384b5dd}} 
+\index{m\_sha3@{m\_sha3}!sha3\_hexdigest@{sha3\_hexdigest}}
+\index{sha3\_hexdigest@{sha3\_hexdigest}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_hexdigest()}{sha3\_hexdigest()}}
+{\footnotesize\ttfamily character(len=size(d)$\ast$2) function, public m\+\_\+sha3\+::sha3\+\_\+hexdigest (\begin{DoxyParamCaption}\item[{integer(kind=int8), dimension(\+:), intent(in)}]{d }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_af6efbd64a19f6428f4bd63ed6384b5dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_a5fcbb1c67c25f69d26c0443b40b30258}\label{namespacem__sha3_a5fcbb1c67c25f69d26c0443b40b30258}} 
+\index{m\_sha3@{m\_sha3}!sha3\_keccak@{sha3\_keccak}}
+\index{sha3\_keccak@{sha3\_keccak}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_keccak()}{sha3\_keccak()}}
+{\footnotesize\ttfamily integer(kind=int8) function, dimension(d/8) m\+\_\+sha3\+::sha3\+\_\+keccak (\begin{DoxyParamCaption}\item[{integer(kind=int8), dimension(\+:), intent(in)}]{M,  }\item[{integer, intent(in)}]{d,  }\item[{integer, intent(in)}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References sha3\+\_\+sponge(), and w.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a5fcbb1c67c25f69d26c0443b40b30258_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a5fcbb1c67c25f69d26c0443b40b30258_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_ab0acb8530a0c4dd427e723defabf8ddf}\label{namespacem__sha3_ab0acb8530a0c4dd427e723defabf8ddf}} 
+\index{m\_sha3@{m\_sha3}!sha3\_keccak\_p@{sha3\_keccak\_p}}
+\index{sha3\_keccak\_p@{sha3\_keccak\_p}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_keccak\_p()}{sha3\_keccak\_p()}}
+{\footnotesize\ttfamily integer(kind=int8) function, dimension(b/8) m\+\_\+sha3\+::sha3\+\_\+keccak\+\_\+p (\begin{DoxyParamCaption}\item[{integer(kind=int8), dimension(\+:), intent(in)}]{S,  }\item[{integer, intent(in)}]{b,  }\item[{integer, intent(in)}]{nr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References ell, sha3\+\_\+round(), sha3\+\_\+state2string2(), and sha3\+\_\+string2state().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ab0acb8530a0c4dd427e723defabf8ddf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ab0acb8530a0c4dd427e723defabf8ddf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_af1f21c79566e467af4c0d837bcc9767a}\label{namespacem__sha3_af1f21c79566e467af4c0d837bcc9767a}} 
+\index{m\_sha3@{m\_sha3}!sha3\_khi@{sha3\_khi}}
+\index{sha3\_khi@{sha3\_khi}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_khi()}{sha3\_khi()}}
+{\footnotesize\ttfamily subroutine m\+\_\+sha3\+::sha3\+\_\+khi (\begin{DoxyParamCaption}\item[{integer(kind=int64), dimension(5,5), intent(inout)}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References sbuf.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_af1f21c79566e467af4c0d837bcc9767a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_a697ae025211dbc4c934d7580e3a636c1}\label{namespacem__sha3_a697ae025211dbc4c934d7580e3a636c1}} 
+\index{m\_sha3@{m\_sha3}!sha3\_pi@{sha3\_pi}}
+\index{sha3\_pi@{sha3\_pi}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_pi()}{sha3\_pi()}}
+{\footnotesize\ttfamily subroutine m\+\_\+sha3\+::sha3\+\_\+pi (\begin{DoxyParamCaption}\item[{integer(kind=int64), dimension(5,5), intent(inout)}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a697ae025211dbc4c934d7580e3a636c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_aa42fdcdbb981586540f9d5e45545e4b8}\label{namespacem__sha3_aa42fdcdbb981586540f9d5e45545e4b8}} 
+\index{m\_sha3@{m\_sha3}!sha3\_reverse@{sha3\_reverse}}
+\index{sha3\_reverse@{sha3\_reverse}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_reverse()}{sha3\_reverse()}}
+{\footnotesize\ttfamily integer(kind=int8) function m\+\_\+sha3\+::sha3\+\_\+reverse (\begin{DoxyParamCaption}\item[{integer(kind=int8), intent(in)}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_aa42fdcdbb981586540f9d5e45545e4b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_ab442992c14d893b346f18afedc28dab6}\label{namespacem__sha3_ab442992c14d893b346f18afedc28dab6}} 
+\index{m\_sha3@{m\_sha3}!sha3\_rho@{sha3\_rho}}
+\index{sha3\_rho@{sha3\_rho}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_rho()}{sha3\_rho()}}
+{\footnotesize\ttfamily subroutine m\+\_\+sha3\+::sha3\+\_\+rho (\begin{DoxyParamCaption}\item[{integer(kind=int64), dimension(5,5), intent(inout)}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ab442992c14d893b346f18afedc28dab6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_a350b88c77c4140c034e2fa18d529ab17}\label{namespacem__sha3_a350b88c77c4140c034e2fa18d529ab17}} 
+\index{m\_sha3@{m\_sha3}!sha3\_round@{sha3\_round}}
+\index{sha3\_round@{sha3\_round}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_round()}{sha3\_round()}}
+{\footnotesize\ttfamily subroutine m\+\_\+sha3\+::sha3\+\_\+round (\begin{DoxyParamCaption}\item[{integer(kind=int64), dimension(5,5), intent(inout)}]{state,  }\item[{integer, intent(in)}]{round\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References rc\+\_\+c, sha3\+\_\+khi(), sha3\+\_\+pi(), sha3\+\_\+rho(), and sha3\+\_\+theta().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespacem__sha3_a350b88c77c4140c034e2fa18d529ab17_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a350b88c77c4140c034e2fa18d529ab17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_a0729a28894b5433145f2b41fa3d44a39}\label{namespacem__sha3_a0729a28894b5433145f2b41fa3d44a39}} 
+\index{m\_sha3@{m\_sha3}!sha3\_sponge@{sha3\_sponge}}
+\index{sha3\_sponge@{sha3\_sponge}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_sponge()}{sha3\_sponge()}}
+{\footnotesize\ttfamily integer(kind=int8) function, dimension(d/8) m\+\_\+sha3\+::sha3\+\_\+sponge (\begin{DoxyParamCaption}\item[{integer(kind=int8), dimension(\+:), intent(in)}]{M,  }\item[{integer, intent(in)}]{d,  }\item[{integer, intent(in)}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References ell, sha3\+\_\+keccak\+\_\+p(), sha3\+\_\+reverse(), and w.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a0729a28894b5433145f2b41fa3d44a39_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a0729a28894b5433145f2b41fa3d44a39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_a854d3ba55e6cb5b9814315a1443ad457}\label{namespacem__sha3_a854d3ba55e6cb5b9814315a1443ad457}} 
+\index{m\_sha3@{m\_sha3}!sha3\_state2string2@{sha3\_state2string2}}
+\index{sha3\_state2string2@{sha3\_state2string2}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_state2string2()}{sha3\_state2string2()}}
+{\footnotesize\ttfamily integer(kind=int8) function, dimension(sz) m\+\_\+sha3\+::sha3\+\_\+state2string2 (\begin{DoxyParamCaption}\item[{integer(kind=int64), dimension(5,5), intent(in)}]{S,  }\item[{integer, intent(in)}]{sz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References lane.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a854d3ba55e6cb5b9814315a1443ad457_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_a53ef69a317fbc2e3ee6713cd67dafea0}\label{namespacem__sha3_a53ef69a317fbc2e3ee6713cd67dafea0}} 
+\index{m\_sha3@{m\_sha3}!sha3\_string2state@{sha3\_string2state}}
+\index{sha3\_string2state@{sha3\_string2state}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_string2state()}{sha3\_string2state()}}
+{\footnotesize\ttfamily integer(kind=int64) function, dimension(5,5) m\+\_\+sha3\+::sha3\+\_\+string2state (\begin{DoxyParamCaption}\item[{integer(kind=int8), dimension(\+:), intent(in)}]{S }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References lane.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_a53ef69a317fbc2e3ee6713cd67dafea0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_afca48779b2d72b01f3576f386bc64d13}\label{namespacem__sha3_afca48779b2d72b01f3576f386bc64d13}} 
+\index{m\_sha3@{m\_sha3}!sha3\_theta@{sha3\_theta}}
+\index{sha3\_theta@{sha3\_theta}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_theta()}{sha3\_theta()}}
+{\footnotesize\ttfamily subroutine m\+\_\+sha3\+::sha3\+\_\+theta (\begin{DoxyParamCaption}\item[{integer(kind=int64), dimension(5,5), intent(inout)}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_afca48779b2d72b01f3576f386bc64d13_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_ad90d52584f17b664b598e2d9afbd0637}\label{namespacem__sha3_ad90d52584f17b664b598e2d9afbd0637}} 
+\index{m\_sha3@{m\_sha3}!sha3\_update@{sha3\_update}}
+\index{sha3\_update@{sha3\_update}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sha3\_update()}{sha3\_update()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+sha3\+::sha3\+\_\+update (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structm__sha3_1_1sha3__state}{sha3\+\_\+state}}), intent(inout)}]{state,  }\item[{integer(kind=int8), dimension(\+:), intent(in)}]{buffer,  }\item[{integer, intent(in), optional}]{d }\end{DoxyParamCaption})}
+
+
+
+References sha3\+\_\+block(), and w.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ad90d52584f17b664b598e2d9afbd0637_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ad90d52584f17b664b598e2d9afbd0637_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacem__sha3_ae6c560cc0fb3e6090c2892bd3ef535a6}\label{namespacem__sha3_ae6c560cc0fb3e6090c2892bd3ef535a6}} 
+\index{m\_sha3@{m\_sha3}!test\_suite\_m\_sha3@{test\_suite\_m\_sha3}}
+\index{test\_suite\_m\_sha3@{test\_suite\_m\_sha3}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{test\_suite\_m\_sha3()}{test\_suite\_m\_sha3()}}
+{\footnotesize\ttfamily subroutine, public m\+\_\+sha3\+::test\+\_\+suite\+\_\+m\+\_\+sha3}
+
+
+
+References test\+\_\+sha3(), test\+\_\+sha3\+\_\+auto\+\_\+test(), test\+\_\+sha3\+\_\+digest(), test\+\_\+sha3\+\_\+file(), test\+\_\+sha3\+\_\+hexdigest(), test\+\_\+sha3\+\_\+update(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacem__sha3_ae6c560cc0fb3e6090c2892bd3ef535a6_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacem__sha3_a002c3bfd76371d914b9a8541e0990f0a}\label{namespacem__sha3_a002c3bfd76371d914b9a8541e0990f0a}} 
+\index{m\_sha3@{m\_sha3}!ell@{ell}}
+\index{ell@{ell}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{ell}{ell}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+sha3\+::ell = 6\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__sha3_a3c873369d0dd8edd2b46f2bf244b12ba}\label{namespacem__sha3_a3c873369d0dd8edd2b46f2bf244b12ba}} 
+\index{m\_sha3@{m\_sha3}!lane@{lane}}
+\index{lane@{lane}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{lane}{lane}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+sha3\+::lane = 8\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__sha3_a4e09c0913cf8b6501715d1e72acca977}\label{namespacem__sha3_a4e09c0913cf8b6501715d1e72acca977}} 
+\index{m\_sha3@{m\_sha3}!rc\_c@{rc\_c}}
+\index{rc\_c@{rc\_c}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{rc\_c}{rc\_c}}
+{\footnotesize\ttfamily integer(kind=int64), dimension(24), save m\+\_\+sha3\+::rc\+\_\+c\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__sha3_ab23786567d049bd9bf1bcb896769b007}\label{namespacem__sha3_ab23786567d049bd9bf1bcb896769b007}} 
+\index{m\_sha3@{m\_sha3}!sbuf@{sbuf}}
+\index{sbuf@{sbuf}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{sbuf}{sbuf}}
+{\footnotesize\ttfamily integer(kind=int64), dimension(5,5) m\+\_\+sha3\+::sbuf\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacem__sha3_aa3c7bc43bbe7170269dc8ac67e341640}\label{namespacem__sha3_aa3c7bc43bbe7170269dc8ac67e341640}} 
+\index{m\_sha3@{m\_sha3}!w@{w}}
+\index{w@{w}!m\_sha3@{m\_sha3}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily integer, parameter m\+\_\+sha3\+::w = 64\hspace{0.3cm}{\ttfamily [private]}}
+

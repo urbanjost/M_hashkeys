@@ -1,0 +1,45 @@
+\hypertarget{C-M__hashkeys_8c}{}\doxysection{/home/urbanjs/venus/\+V600/github/\+M\+\_\+hashkeys/src/\+C-\/\+M\+\_\+hashkeys.c File Reference}
+\label{C-M__hashkeys_8c}\index{/home/urbanjs/venus/V600/github/M\_hashkeys/src/C-\/M\_hashkeys.c@{/home/urbanjs/venus/V600/github/M\_hashkeys/src/C-\/M\_hashkeys.c}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for C-\/\+M\+\_\+hashkeys.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{C-M__hashkeys_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{C-M__hashkeys_8c_afc1dec87d7f43b0939814d4a26371ebf}{C\+\_\+djb2}} (unsigned char $\ast$str)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{C-M__hashkeys_8c_aff5dd0c648410774ca2cfd0573991beb}{rc\+\_\+crc32}} (uint32\+\_\+t crc, const char $\ast$buf, size\+\_\+t len)
+\item 
+static unsigned long \mbox{\hyperlink{C-M__hashkeys_8c_a2318783a1d889c03ea543fb4eddf6946}{sdbm}} (unsigned char $\ast$str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{C-M__hashkeys_8c_afc1dec87d7f43b0939814d4a26371ebf}\label{C-M__hashkeys_8c_afc1dec87d7f43b0939814d4a26371ebf}} 
+\index{C-\/M\_hashkeys.c@{C-\/M\_hashkeys.c}!C\_djb2@{C\_djb2}}
+\index{C\_djb2@{C\_djb2}!C-\/M\_hashkeys.c@{C-\/M\_hashkeys.c}}
+\doxysubsubsection{\texorpdfstring{C\_djb2()}{C\_djb2()}}
+{\footnotesize\ttfamily long C\+\_\+djb2 (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{C-M__hashkeys_8c_aff5dd0c648410774ca2cfd0573991beb}\label{C-M__hashkeys_8c_aff5dd0c648410774ca2cfd0573991beb}} 
+\index{C-\/M\_hashkeys.c@{C-\/M\_hashkeys.c}!rc\_crc32@{rc\_crc32}}
+\index{rc\_crc32@{rc\_crc32}!C-\/M\_hashkeys.c@{C-\/M\_hashkeys.c}}
+\doxysubsubsection{\texorpdfstring{rc\_crc32()}{rc\_crc32()}}
+{\footnotesize\ttfamily uint32\+\_\+t rc\+\_\+crc32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{crc,  }\item[{const char $\ast$}]{buf,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{C-M__hashkeys_8c_a2318783a1d889c03ea543fb4eddf6946}\label{C-M__hashkeys_8c_a2318783a1d889c03ea543fb4eddf6946}} 
+\index{C-\/M\_hashkeys.c@{C-\/M\_hashkeys.c}!sdbm@{sdbm}}
+\index{sdbm@{sdbm}!C-\/M\_hashkeys.c@{C-\/M\_hashkeys.c}}
+\doxysubsubsection{\texorpdfstring{sdbm()}{sdbm()}}
+{\footnotesize\ttfamily static unsigned long sdbm (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+

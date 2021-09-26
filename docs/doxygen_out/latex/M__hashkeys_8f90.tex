@@ -1,0 +1,551 @@
+\hypertarget{M__hashkeys_8f90}{}\doxysection{/home/urbanjs/venus/\+V600/github/\+M\+\_\+hashkeys/src/\+M\+\_\+hashkeys.f90 File Reference}
+\label{M__hashkeys_8f90}\index{/home/urbanjs/venus/V600/github/M\_hashkeys/src/M\_hashkeys.f90@{/home/urbanjs/venus/V600/github/M\_hashkeys/src/M\_hashkeys.f90}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacem__hashkeys_1_1crc32__hash}{m\+\_\+hashkeys\+::crc32\+\_\+hash}}
+\item 
+interface \mbox{\hyperlink{interfacem__hashkeys_1_1djb2__hash}{m\+\_\+hashkeys\+::djb2\+\_\+hash}}
+\item 
+interface \mbox{\hyperlink{interfacem__hashkeys_1_1sdbm__hash}{m\+\_\+hashkeys\+::sdbm\+\_\+hash}}
+\item 
+interface \mbox{\hyperlink{interfacem__hashkeys_1_1anything__to__bytes}{m\+\_\+hashkeys\+::anything\+\_\+to\+\_\+bytes}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacem__hashkeys}{m\+\_\+hashkeys}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+character(len=64) function, public \mbox{\hyperlink{namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa}{m\+\_\+hashkeys\+::sha256}} (str)
+\item 
+character(len=64) function, public \mbox{\hyperlink{namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c}{m\+\_\+hashkeys\+::dirty\+\_\+sha256}} (str)
+\item 
+character(len=64) function, private \mbox{\hyperlink{namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4}{m\+\_\+hashkeys\+::sha256b}} (str, swap)
+\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf}{m\+\_\+hashkeys\+::swap32}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 32bit integer. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int64\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_ac78b1526bef4d540a919b7b197bd6bad}{m\+\_\+hashkeys\+::swap64}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 64 bit integer. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int64\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055}{m\+\_\+hashkeys\+::swap64a}} (inp)
+\begin{DoxyCompactList}\small\item\em Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a662a154173922cb178bded0029cdbb48}{m\+\_\+hashkeys\+::ch}} (a, b, c)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}ch\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a3347b21962255779e27534039324e5d6}{m\+\_\+hashkeys\+::maj}} (a, b, c)
+\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79}{m\+\_\+hashkeys\+::cs0}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af}{m\+\_\+hashkeys\+::cs1}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd}{m\+\_\+hashkeys\+::ms0}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b}{m\+\_\+hashkeys\+::ms1}} (a)
+\begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
+subroutine, private \mbox{\hyperlink{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575}{m\+\_\+hashkeys\+::consume\+\_\+chunk}} (str, length, inp, pos0, break, swap)
+\begin{DoxyCompactList}\small\item\em Copy 16 32bit words of data from str(pos0) to inp(1\+:16). The data is padded as required by the S\+H\+A-\/256 algorithm. \end{DoxyCompactList}\item 
+subroutine, public \mbox{\hyperlink{namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f}{m\+\_\+hashkeys\+::test\+\_\+suite\+\_\+sha256}} ()
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a8879d1f5543ef3cdc11c101fb59256e5}{test\+\_\+swap32}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a02ca21bdab05a704c20c4dc16920eba5}{test\+\_\+ishftc}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a139603fa9716a5a8cc5eb80fd0eb67f7}{test\+\_\+ishft}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a7c035adc35f1ccc7434bad1933c23272}{pad\+\_\+message1}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a4185f9c51efcf5eec80fc708428c07c5}{pad\+\_\+message2}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_aaed7cc35f62554cc2813d9d271eb6220}{test\+\_\+ch}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a55878c803a87c9951669af9066724bcc}{test\+\_\+maj}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a869c0a36043450961af43f854041dfeb}{test\+\_\+cs0}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a73e11c18f43f8bd79b0f60629edea01a}{test\+\_\+cs1}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a3e44d55e1ec41faab8606e01adcc1288}{test\+\_\+ms0}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a4c526a4b187c90fa1bdd484b087e683c}{test\+\_\+ms1}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a5549e0459822c0f28961bb9ab89ebadf}{test\+\_\+sha256\+\_\+1}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a6bb327c146e9218f07cdd8462382b414}{test\+\_\+sha256\+\_\+5}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a0c4c60319b2584361587213c9c88295a}{test\+\_\+sha256\+\_\+6}}
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a4673967deb9108bb9bda47c9776c27f7}{test\+\_\+sha256\+\_\+11}}
+\item 
+character(len=\+:) function, allocatable, public \mbox{\hyperlink{namespacem__hashkeys_a852eddaaa71287688e762ab4f9f13977}{m\+\_\+hashkeys\+::luhn\+\_\+checksum}} (string)
+\item 
+subroutine \mbox{\hyperlink{namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc}{m\+\_\+hashkeys\+::test\+\_\+luhn\+\_\+checksum}} ()
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc}{checkem}} (goodbad)
+\item 
+integer(kind=int128) function \mbox{\hyperlink{namespacem__hashkeys_a2b9cc524440ba0c375c428b5dad3e82d}{m\+\_\+hashkeys\+::djb2\+\_\+hash\+\_\+arr}} (anything, continue)
+\item 
+integer(kind=int128) function \mbox{\hyperlink{namespacem__hashkeys_a28b1e406e6b45dba8fcb3da20de37a3b}{m\+\_\+hashkeys\+::djb2\+\_\+hash\+\_\+scalar}} (anything, continue)
+\item 
+integer(int64) function \mbox{\hyperlink{namespacem__hashkeys_a9cbbdaf23703ed4aa52995de0d62729b}{m\+\_\+hashkeys\+::crc32\+\_\+hash\+\_\+arr}} (anything, continue)
+\item 
+integer(kind=int64) function \mbox{\hyperlink{namespacem__hashkeys_af2017df2d856347d11ba5a248672c0c8}{m\+\_\+hashkeys\+::crc32\+\_\+hash\+\_\+scalar}} (anything, continue)
+\item 
+integer(kind=int128) function \mbox{\hyperlink{namespacem__hashkeys_aef7c2d10b734eec099766af4df8415fc}{m\+\_\+hashkeys\+::sdbm\+\_\+hash\+\_\+arr}} (anything, continue)
+\item 
+integer(kind=int128) function \mbox{\hyperlink{namespacem__hashkeys_a1d0d3747d4e3165a7b16f4291758f554}{m\+\_\+hashkeys\+::sdbm\+\_\+hash\+\_\+scalar}} (anything, continue)
+\item 
+integer(kind=int128) function, public \mbox{\hyperlink{namespacem__hashkeys_ad185c3f1d5f9c51cc4c459cacd2ae1f4}{m\+\_\+hashkeys\+::djb2}} (anything)
+\item 
+integer function, public \mbox{\hyperlink{namespacem__hashkeys_a753f2b709e297bcb4d276504e7650b59}{m\+\_\+hashkeys\+::b3hs\+\_\+hash\+\_\+key\+\_\+jenkins}} (key, range)
+\item 
+subroutine \mbox{\hyperlink{M__hashkeys_8f90_a88f157f65b06d57d4cfa55dbbc18b340}{b3hs\+\_\+hash\+\_\+key\+\_\+jenkins\+\_\+mix\+\_\+}}
+\item 
+subroutine, public \mbox{\hyperlink{namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb}{m\+\_\+hashkeys\+::test\+\_\+suite\+\_\+m\+\_\+hashkeys}}
+\item 
+character(len=1) function, dimension(\+:), allocatable \mbox{\hyperlink{namespacem__hashkeys_a25eb97efb8c3fdf36ffdbab127d38311}{m\+\_\+hashkeys\+::anything\+\_\+to\+\_\+bytes\+\_\+arr}} (anything)
+\item 
+character(len=1) function, dimension(\+:), allocatable \mbox{\hyperlink{namespacem__hashkeys_a1aac9c163db6716d15b50c69ac887035}{m\+\_\+hashkeys\+::anything\+\_\+to\+\_\+bytes\+\_\+scalar}} (anything)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, public \mbox{\hyperlink{namespacem__hashkeys_a8bc0a13e5c0cdee0743fa2c8d75f5d0e}{m\+\_\+hashkeys\+::int128}} = selected\+\_\+real\+\_\+kind(1$\ast$precision(1.\+0\+\_\+int64))
+\item 
+logical, save \mbox{\hyperlink{namespacem__hashkeys_a0398941b72452bd99fc4461790e8649e}{m\+\_\+hashkeys\+::debug}} =.false.
+\item 
+integer, parameter \mbox{\hyperlink{namespacem__hashkeys_a6c4b5da23a8de2a97269d8399ff6828a}{m\+\_\+hashkeys\+::dp}} =kind(0.\+0d0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{M__hashkeys_8f90_a88f157f65b06d57d4cfa55dbbc18b340}\label{M__hashkeys_8f90_a88f157f65b06d57d4cfa55dbbc18b340}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!b3hs\_hash\_key\_jenkins\_mix\_@{b3hs\_hash\_key\_jenkins\_mix\_}}
+\index{b3hs\_hash\_key\_jenkins\_mix\_@{b3hs\_hash\_key\_jenkins\_mix\_}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{b3hs\_hash\_key\_jenkins\_mix\_()}{b3hs\_hash\_key\_jenkins\_mix\_()}}
+{\footnotesize\ttfamily subroutine b3hs\+\_\+hash\+\_\+key\+\_\+jenkins\+::b3hs\+\_\+hash\+\_\+key\+\_\+jenkins\+\_\+mix\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a88f157f65b06d57d4cfa55dbbc18b340_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc}\label{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!checkem@{checkem}}
+\index{checkem@{checkem}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{checkem()}{checkem()}}
+{\footnotesize\ttfamily subroutine test\+\_\+luhn\+\_\+checksum\+::checkem (\begin{DoxyParamCaption}\item[{logical, intent(in)}]{goodbad }\end{DoxyParamCaption})}
+
+
+
+References m\+\_\+hashkeys\+::luhn\+\_\+checksum(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a7c035adc35f1ccc7434bad1933c23272}\label{M__hashkeys_8f90_a7c035adc35f1ccc7434bad1933c23272}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!pad\_message1@{pad\_message1}}
+\index{pad\_message1@{pad\_message1}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{pad\_message1()}{pad\_message1()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::pad\+\_\+message1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::consume\+\_\+chunk(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a7c035adc35f1ccc7434bad1933c23272_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{M__hashkeys_8f90_a7c035adc35f1ccc7434bad1933c23272_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a4185f9c51efcf5eec80fc708428c07c5}\label{M__hashkeys_8f90_a4185f9c51efcf5eec80fc708428c07c5}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!pad\_message2@{pad\_message2}}
+\index{pad\_message2@{pad\_message2}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{pad\_message2()}{pad\_message2()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::pad\+\_\+message2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::consume\+\_\+chunk(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a4185f9c51efcf5eec80fc708428c07c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{M__hashkeys_8f90_a4185f9c51efcf5eec80fc708428c07c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_aaed7cc35f62554cc2813d9d271eb6220}\label{M__hashkeys_8f90_aaed7cc35f62554cc2813d9d271eb6220}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_ch@{test\_ch}}
+\index{test\_ch@{test\_ch}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_ch()}{test\_ch()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+ch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::maj(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_aaed7cc35f62554cc2813d9d271eb6220_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{M__hashkeys_8f90_aaed7cc35f62554cc2813d9d271eb6220_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a869c0a36043450961af43f854041dfeb}\label{M__hashkeys_8f90_a869c0a36043450961af43f854041dfeb}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_cs0@{test\_cs0}}
+\index{test\_cs0@{test\_cs0}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_cs0()}{test\_cs0()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+cs0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::cs0(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a869c0a36043450961af43f854041dfeb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{M__hashkeys_8f90_a869c0a36043450961af43f854041dfeb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a73e11c18f43f8bd79b0f60629edea01a}\label{M__hashkeys_8f90_a73e11c18f43f8bd79b0f60629edea01a}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_cs1@{test\_cs1}}
+\index{test\_cs1@{test\_cs1}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_cs1()}{test\_cs1()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+cs1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::cs1(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a73e11c18f43f8bd79b0f60629edea01a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{M__hashkeys_8f90_a73e11c18f43f8bd79b0f60629edea01a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a139603fa9716a5a8cc5eb80fd0eb67f7}\label{M__hashkeys_8f90_a139603fa9716a5a8cc5eb80fd0eb67f7}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_ishft@{test\_ishft}}
+\index{test\_ishft@{test\_ishft}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_ishft()}{test\_ishft()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+ishft\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a139603fa9716a5a8cc5eb80fd0eb67f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{M__hashkeys_8f90_a139603fa9716a5a8cc5eb80fd0eb67f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a02ca21bdab05a704c20c4dc16920eba5}\label{M__hashkeys_8f90_a02ca21bdab05a704c20c4dc16920eba5}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_ishftc@{test\_ishftc}}
+\index{test\_ishftc@{test\_ishftc}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_ishftc()}{test\_ishftc()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+ishftc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a02ca21bdab05a704c20c4dc16920eba5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{M__hashkeys_8f90_a02ca21bdab05a704c20c4dc16920eba5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a55878c803a87c9951669af9066724bcc}\label{M__hashkeys_8f90_a55878c803a87c9951669af9066724bcc}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_maj@{test\_maj}}
+\index{test\_maj@{test\_maj}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_maj()}{test\_maj()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+maj\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::maj(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a55878c803a87c9951669af9066724bcc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{M__hashkeys_8f90_a55878c803a87c9951669af9066724bcc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a3e44d55e1ec41faab8606e01adcc1288}\label{M__hashkeys_8f90_a3e44d55e1ec41faab8606e01adcc1288}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_ms0@{test\_ms0}}
+\index{test\_ms0@{test\_ms0}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_ms0()}{test\_ms0()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+ms0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::ms0(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a3e44d55e1ec41faab8606e01adcc1288_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{M__hashkeys_8f90_a3e44d55e1ec41faab8606e01adcc1288_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a4c526a4b187c90fa1bdd484b087e683c}\label{M__hashkeys_8f90_a4c526a4b187c90fa1bdd484b087e683c}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_ms1@{test\_ms1}}
+\index{test\_ms1@{test\_ms1}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_ms1()}{test\_ms1()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+ms1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::ms1(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a4c526a4b187c90fa1bdd484b087e683c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{M__hashkeys_8f90_a4c526a4b187c90fa1bdd484b087e683c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a5549e0459822c0f28961bb9ab89ebadf}\label{M__hashkeys_8f90_a5549e0459822c0f28961bb9ab89ebadf}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_sha256\_1@{test\_sha256\_1}}
+\index{test\_sha256\_1@{test\_sha256\_1}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_sha256\_1()}{test\_sha256\_1()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+sha256\+\_\+1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::sha256(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a5549e0459822c0f28961bb9ab89ebadf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{M__hashkeys_8f90_a5549e0459822c0f28961bb9ab89ebadf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a4673967deb9108bb9bda47c9776c27f7}\label{M__hashkeys_8f90_a4673967deb9108bb9bda47c9776c27f7}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_sha256\_11@{test\_sha256\_11}}
+\index{test\_sha256\_11@{test\_sha256\_11}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_sha256\_11()}{test\_sha256\_11()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+sha256\+\_\+11\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::sha256(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a4673967deb9108bb9bda47c9776c27f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{M__hashkeys_8f90_a4673967deb9108bb9bda47c9776c27f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a6bb327c146e9218f07cdd8462382b414}\label{M__hashkeys_8f90_a6bb327c146e9218f07cdd8462382b414}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_sha256\_5@{test\_sha256\_5}}
+\index{test\_sha256\_5@{test\_sha256\_5}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_sha256\_5()}{test\_sha256\_5()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+sha256\+\_\+5\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::dirty\+\_\+sha256(), m\+\_\+hashkeys\+::sha256(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a6bb327c146e9218f07cdd8462382b414_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{M__hashkeys_8f90_a6bb327c146e9218f07cdd8462382b414_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a0c4c60319b2584361587213c9c88295a}\label{M__hashkeys_8f90_a0c4c60319b2584361587213c9c88295a}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_sha256\_6@{test\_sha256\_6}}
+\index{test\_sha256\_6@{test\_sha256\_6}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_sha256\_6()}{test\_sha256\_6()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+sha256\+\_\+6\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+References m\+\_\+hashkeys\+::sha256(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a0c4c60319b2584361587213c9c88295a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{M__hashkeys_8f90_a0c4c60319b2584361587213c9c88295a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{M__hashkeys_8f90_a8879d1f5543ef3cdc11c101fb59256e5}\label{M__hashkeys_8f90_a8879d1f5543ef3cdc11c101fb59256e5}} 
+\index{M\_hashkeys.f90@{M\_hashkeys.f90}!test\_swap32@{test\_swap32}}
+\index{test\_swap32@{test\_swap32}!M\_hashkeys.f90@{M\_hashkeys.f90}}
+\doxysubsubsection{\texorpdfstring{test\_swap32()}{test\_swap32()}}
+{\footnotesize\ttfamily subroutine test\+\_\+suite\+\_\+sha256\+::test\+\_\+swap32}
+
+
+
+References m\+\_\+hashkeys\+::swap32(), and unit\+\_\+check().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{M__hashkeys_8f90_a8879d1f5543ef3cdc11c101fb59256e5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{M__hashkeys_8f90_a8879d1f5543ef3cdc11c101fb59256e5_icgraph}
+\end{center}
+\end{figure}
