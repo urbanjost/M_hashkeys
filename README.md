@@ -1,4 +1,6 @@
+<!--
 ![sample](docs/images/snap2b.gif)
+-->
 
 NOTE: This repository requires being built with fpm ( [Fortran Package Manager](https://github.com/fortran-lang/fpm) )
       Alternatively, it may be found as a part of the GPF( [General Purpose Fortran](https://github.com/urbanjost/general-purpose-fortran) )
