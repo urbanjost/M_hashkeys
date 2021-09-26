@@ -111,8 +111,7 @@ C\+O\+DE returned hash value in range specified by R\+A\+N\+GE
 
 References b3hs\+\_\+hash\+\_\+key\+\_\+jenkins\+\_\+mix\+\_\+().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -141,8 +140,7 @@ The \textquotesingle{}ch\textquotesingle{} function in S\+H\+A-\/2.
 \begin{DoxyReturn}{Returns}
 \+: ch(a,b,c), see the code. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -316,16 +314,14 @@ Copy 16 32bit words of data from str(pos0) to inp(1\+:16). The data is padded as
 
 References swap32(), and swap64a().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -362,8 +358,7 @@ Expected output\+:
 
 References debug.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -380,8 +375,7 @@ Here is the caller graph for this function\+:
 
 References crc32\+\_\+hash\+\_\+arr().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -406,8 +400,7 @@ The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+0\textquotesingle{} function 
 \begin{DoxyReturn}{Returns}
 \+: cs0(a), see the code. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -432,8 +425,7 @@ The \textquotesingle{}\textbackslash{}\+Sigma\+\_\+1\textquotesingle{} function 
 \begin{DoxyReturn}{Returns}
 \+: cs1(a), see the code. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -510,16 +502,14 @@ F\+A9\+D11011034\+F1081\+A367\+D4\+F2\+F1\+E\+B909\+A\+C0849\+F\+F090\+A9320\+B6
 
 References sha256b().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -593,8 +583,7 @@ C\+O\+N\+T\+I\+N\+UE indicate whether to continue accumulating the hash value fr
 
 References debug.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -611,8 +600,7 @@ Here is the caller graph for this function\+:
 
 References djb2\+\_\+hash\+\_\+arr().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -760,12 +748,39 @@ in their permuted order on the body of the machine.
 From Wikipedia, the free encyclopedia \begin{DoxyVerb}(https://en.wikipedia.org/wiki/Luhn_algorithm)
 \end{DoxyVerb}
  \hypertarget{namespacem__hashkeys_autotoc_md22}{}\doxysubsubsection{E\+X\+A\+M\+P\+L\+ES}\label{namespacem__hashkeys_autotoc_md22}
-Sample program
+Sample program \begin{DoxyVerb}program demo_luhn_checksum
+use M_hashkeys, only : luhn_checksum
+implicit none
+character(len=:),allocatable :: ccards(:), string
+integer :: i, j
+write(*,*)'GOOD VALUES'
+ccards=[ character(len=20) :: '79927398713', &
+                            & '49927398716',&
+                            & '1234567812345670' ]
+call checkem()
+write(*,*)'BAD VALUES'
+ccards=[ character(len=20) :: &
+  & '79927398710', '79927398711', '79927398712', '79927398714',  &
+  & '79927398715', '79927398716', '79927398717', '79927398718',  &
+  & '79927398719',  &
+   '49927398717', '1234567812345678' ]
+call checkem()
+contains
+subroutine checkem
+   ! validate these numbers
+   do i=1,size(ccards)
+      j=len(trim(ccards(i)))
+      string=luhn_checksum(ccards(i)(:j-1))
+      write(*,'(a,1x,a,1x,l1)')ccards(i),string,ccards(i).eq.string
+   enddo
 
-program demo\+\_\+luhn\+\_\+checksum use M\+\_\+hashkeys, only \+: luhn\+\_\+checksum implicit none character(len=\+:),allocatable \+:: ccards(\+:), string integer \+:: i, j write($\ast$,$\ast$)\textquotesingle{}G\+O\+OD V\+A\+L\+U\+ES\textquotesingle{} ccards=\mbox{[} character(len=20) \+:: \textquotesingle{}79927398713\textquotesingle{}, \textquotesingle{}49927398716\textquotesingle{}, \textquotesingle{}1234567812345670\textquotesingle{} \mbox{]} call \mbox{\hyperlink{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc}{checkem()}} write($\ast$,$\ast$)\textquotesingle{}B\+AD V\+A\+L\+U\+ES\textquotesingle{} ccards=\mbox{[} character(len=20) \+:: \& \textquotesingle{}79927398710\textquotesingle{},\textquotesingle{}79927398711\textquotesingle{},\textquotesingle{}79927398712\textquotesingle{},\textquotesingle{}79927398714\textquotesingle{}, \& \textquotesingle{}79927398715\textquotesingle{},\textquotesingle{}79927398716\textquotesingle{},\textquotesingle{}79927398717\textquotesingle{},\textquotesingle{}79927398718\textquotesingle{},\textquotesingle{}79927398719\textquotesingle{}, \& \textquotesingle{}49927398717\textquotesingle{}, \textquotesingle{}1234567812345678\textquotesingle{} \mbox{]} call \mbox{\hyperlink{M__hashkeys_8f90_a687fd4f04a046f9f03b0706d47b114cc}{checkem()}} contains subroutine checkem ! validate these numbers do i=1,size(ccards) j=len(trim(ccards(i))) string=luhn\+\_\+checksum(ccards(i)(\+:j-\/1)) write($\ast$,\textquotesingle{}(a,1x,a,1x,l1)\textquotesingle{})ccards(i),string,ccards(i).eq.\+string enddo
-
-string=\textquotesingle{}123456 781-\/234-\/567\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{}from \textquotesingle{},string,\textquotesingle{} got \textquotesingle{},luhn\+\_\+checksum(string),\textquotesingle{} which should be 1234567812345670\textquotesingle{} end subroutine checkem end program demo\+\_\+luhn\+\_\+checksum Here is the caller graph for this function\+:
-\nopagebreak
+   string='123456 781-234-567'
+   write(*,*)'from ',string,' got ',luhn_checksum(string), &
+   & ' which should be 1234567812345670'
+end subroutine checkem
+end program demo_luhn_checksum
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -793,8 +808,7 @@ The \textquotesingle{}maj\textquotesingle{} function in S\+H\+A-\/2.
 \begin{DoxyReturn}{Returns}
 \+: maj(a,b,c), see the code. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -819,8 +833,7 @@ The \textquotesingle{}\textbackslash{}sigma\+\_\+0\textquotesingle{} function in
 \begin{DoxyReturn}{Returns}
 \+: ms0(a), see the code. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -845,8 +858,7 @@ The \textquotesingle{}\textbackslash{}sigma\+\_\+1\textquotesingle{} function in
 \begin{DoxyReturn}{Returns}
 \+: ms1(a), see the code. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -918,8 +930,7 @@ C\+O\+N\+T\+I\+N\+UE indicate whether to continue accumulating the hash value fr
 
 References debug.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -936,8 +947,7 @@ Here is the caller graph for this function\+:
 
 References debug, and sdbm\+\_\+hash\+\_\+arr().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1038,16 +1048,14 @@ program test\+\_\+sha256 use M\+\_\+hashkeys, only \+: test\+\_\+suite\+\_\+sha2
 
 References sha256b().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1064,16 +1072,14 @@ Here is the caller graph for this function\+:
 
 References ch(), consume\+\_\+chunk(), cs0(), cs1(), maj(), ms0(), and ms1().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1098,8 +1104,7 @@ Swap the byte order on a 32bit integer.
 \begin{DoxyReturn}{Returns}
 \+: The byte swapped integer. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1142,8 +1147,7 @@ Swap the byte order on a 64bit integer as if each half was a 32bit integer to sw
 \begin{DoxyReturn}{Returns}
 \+: The byte swapped integer. 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1160,16 +1164,14 @@ Here is the caller graph for this function\+:
 
 References checkem(), and unit\+\_\+check().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1186,8 +1188,7 @@ Here is the caller graph for this function\+:
 
 References test\+\_\+luhn\+\_\+checksum().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1358,8 +1359,7 @@ Here is the call graph for this function\+:
 
 References pad\+\_\+message1(), pad\+\_\+message2(), test\+\_\+ch(), test\+\_\+cs0(), test\+\_\+cs1(), test\+\_\+ishft(), test\+\_\+ishftc(), test\+\_\+maj(), test\+\_\+ms0(), test\+\_\+ms1(), test\+\_\+sha256\+\_\+1(), test\+\_\+sha256\+\_\+11(), test\+\_\+sha256\+\_\+5(), test\+\_\+sha256\+\_\+6(), test\+\_\+swap32(), and unit\+\_\+check().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
