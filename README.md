@@ -11,7 +11,7 @@ NOTE: This repository requires being built with fpm ( [Fortran Package Manager](
 
 ## DESCRIPTION
 
-   M_hashkeys(3f) is a Fortran module that contains several modules 
+   M_hashkeys(3f) is a Fortran repository that contains several modules 
    of hash generators.
 
 ## USER DOCUMENTATION
@@ -22,16 +22,16 @@ archive files of man(1) pages that can be installed on ULS
 
 ### Individual man-pages as HTML
 
-   - An [index](https://urbanjost.github.io/M_hashkeys/man3.html) to HTML versions
-     of the man-pages describes all the routines. Alternatively, they may be accessed individually:
-   - [M_hashkeys](https://urbanjost.github.io/M_hashkeys/M_hashkeys.3m_hashkeys.html)  -- An overview of the M_hashkeys module
+   An index to HTML versions of the man-pages describes all the routines.
+   - An [index](https://urbanjost.github.io/M_hashkeys/man3.html) to M_hashkeys.f90 HTML versions
+   - An [index](https://urbanjost.github.io/M_sha3/man3.html) to M_sha3.f90 HTML versions
 
 ### All man-pages amalgamated as HTML
 
-   - Another view of these documents (that uses javascript to combine all
-     the HTML descriptions of the man-pages) is in a
-     [_book_](https://urbanjost.github.io/M_hashkeys/BOOK_M_hashkeys.html) form that can easily be printed
-     as a single document.
+   Another view of these documents (that uses javascript to combine all
+   the HTML descriptions of the man-pages) is in a form that can easily be printed as a single document.
+   - [*BOOK_M_hashkeys*](https://urbanjost.github.io/M_hashkeys/BOOK_M_hashkeys.html) 
+   - [*BOOK_M_sha3*](https://urbanjost.github.io/M_sha3/BOOK_M_sha3.html) 
 
 ## real man-pages ![gmake](docs/images/manpages.gif)
 
