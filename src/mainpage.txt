@@ -1,0 +1,13 @@
+'mainpage.txt
+/**
+         @mainpage M_hashkeys Fortran Library
+
+         @section Introduction
+
+     M_hashkeys and M_sha3 - Fortran modules for generating hash keys
+
+     This package consists of two modules that contain algorithms
+     to generate hash keys from strings, arrays, and files
+
+         @image html html/images/yarnball.gif
+*/'
