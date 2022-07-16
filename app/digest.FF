@@ -1,4 +1,4 @@
-$BLOCK NULL -file digest.1.man
+$BLOCK COMMENT -file digest.1.man
 NAME
    digest(1f) - [FUNIX] compute SHA256 message digest
    (LICENSE:PD)

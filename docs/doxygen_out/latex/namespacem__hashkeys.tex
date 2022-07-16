@@ -38,7 +38,7 @@ integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem_
 \begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}sigma\+\_\+0\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
 integer(kind=c\+\_\+int32\+\_\+t) function, private \mbox{\hyperlink{namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b}{ms1}} (a)
 \begin{DoxyCompactList}\small\item\em The \textquotesingle{}\textbackslash{}sigma\+\_\+1\textquotesingle{} function in S\+H\+A-\/2. \end{DoxyCompactList}\item 
-subroutine, private \mbox{\hyperlink{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575}{consume\+\_\+chunk}} (str, length, inp, pos0, break, swap)
+subroutine, private \mbox{\hyperlink{namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834}{consume\+\_\+chunk}} (str, length, inp, pos0, break, swap)
 \begin{DoxyCompactList}\small\item\em Copy 16 32bit words of data from str(pos0) to inp(1\+:16). The data is padded as required by the S\+H\+A-\/256 algorithm. \end{DoxyCompactList}\item 
 subroutine, public \mbox{\hyperlink{namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f}{test\+\_\+suite\+\_\+sha256}} ()
 \item 
@@ -147,11 +147,11 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{namespacem__hashkeys_a662a154173922cb178bded0029cdbb48_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575}\label{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575}} 
+\mbox{\Hypertarget{namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834}\label{namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834}} 
 \index{m\_hashkeys@{m\_hashkeys}!consume\_chunk@{consume\_chunk}}
 \index{consume\_chunk@{consume\_chunk}!m\_hashkeys@{m\_hashkeys}}
 \doxysubsubsection{\texorpdfstring{consume\_chunk()}{consume\_chunk()}}
-{\footnotesize\ttfamily subroutine m\+\_\+hashkeys\+::consume\+\_\+chunk (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{str,  }\item[{integer(kind=c\+\_\+int64\+\_\+t), intent(in)}]{length,  }\item[{integer(kind=c\+\_\+int32\+\_\+t), dimension($\ast$), intent(inout)}]{inp,  }\item[{integer, intent(inout)}]{pos0,  }\item[{integer, intent(inout)}]{break,  }\item[{integer, intent(in)}]{swap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily subroutine, private m\+\_\+hashkeys\+::consume\+\_\+chunk (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{str,  }\item[{integer(kind=c\+\_\+int64\+\_\+t), intent(in)}]{length,  }\item[{integer(kind=c\+\_\+int32\+\_\+t), dimension($\ast$), intent(inout)}]{inp,  }\item[{integer, intent(inout)}]{pos0,  }\item[{integer, intent(inout)}]{break,  }\item[{integer, intent(in)}]{swap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -318,14 +318,14 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_cgraph}
+\includegraphics[width=350pt]{namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_icgraph}
+\includegraphics[width=350pt]{namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespacem__hashkeys_a9cbbdaf23703ed4aa52995de0d62729b}\label{namespacem__hashkeys_a9cbbdaf23703ed4aa52995de0d62729b}} 
@@ -1162,7 +1162,7 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-References checkem(), and unit\+\_\+check().
+References checkem().
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -1357,7 +1357,7 @@ Here is the call graph for this function\+:\nopagebreak
 \end{quote}
 
 
-References pad\+\_\+message1(), pad\+\_\+message2(), test\+\_\+ch(), test\+\_\+cs0(), test\+\_\+cs1(), test\+\_\+ishft(), test\+\_\+ishftc(), test\+\_\+maj(), test\+\_\+ms0(), test\+\_\+ms1(), test\+\_\+sha256\+\_\+1(), test\+\_\+sha256\+\_\+11(), test\+\_\+sha256\+\_\+5(), test\+\_\+sha256\+\_\+6(), test\+\_\+swap32(), and unit\+\_\+check().
+References pad\+\_\+message1(), pad\+\_\+message2(), test\+\_\+ch(), test\+\_\+cs0(), test\+\_\+cs1(), test\+\_\+ishft(), test\+\_\+ishftc(), test\+\_\+maj(), test\+\_\+ms0(), test\+\_\+ms1(), test\+\_\+sha256\+\_\+1(), test\+\_\+sha256\+\_\+11(), test\+\_\+sha256\+\_\+5(), test\+\_\+sha256\+\_\+6(), and test\+\_\+swap32().
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]

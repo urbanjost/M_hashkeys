@@ -4,13 +4,13 @@ src_dir: src
          example
          test
 output_dir: docs/fpm-ford
-project: M_attr
+project: M_hashkeys
 summary: hash algorithms
-project_github: https://github.com/urbanjost/M_attr
+project_github: https://github.com/urbanjost/M_hashkeys
 project_download:
 author: John S. Urban
 author_email: urbanjost@comcast.net
-github: https://github.com/urbanjost/M_attr
+github: https://github.com/urbanjost/M_hashkeys
 media_dir: ./docs/images
 exclude_dir: ./archive
              ./FODDER
@@ -32,3 +32,5 @@ author_pic:
 twitter:
 website:
 -->
+{!README.md!}
+---

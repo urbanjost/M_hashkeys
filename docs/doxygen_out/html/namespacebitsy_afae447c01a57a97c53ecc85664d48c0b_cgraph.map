@@ -1,5 +1,0 @@
-<map id="bitsy::consume_chunk" name="bitsy::consume_chunk">
-<area shape="rect" id="node1" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded a requiered by the SHA&#45;25..." alt="" coords="5,31,172,57"/>
-<area shape="rect" id="node2" href="$namespacebitsy.html#a45ebc61514adf5421545c02d5236036f" title="Swap the byte order on a 32bit integer." alt="" coords="224,5,335,32"/>
-<area shape="rect" id="node3" href="$namespacebitsy.html#af788aa0121c647a09f6bd9706972462e" title="Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap." alt="" coords="220,56,339,83"/>
-</map>

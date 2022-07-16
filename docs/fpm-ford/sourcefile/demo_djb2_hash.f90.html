@@ -10,7 +10,7 @@
     <meta name="author" content="John S. Urban" >
     <link rel="icon" href="../favicon.png">
 
-    <title>demo_djb2_hash.f90 &ndash; M_attr</title>
+    <title>demo_djb2_hash.f90 &ndash; M_hashkeys</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">M_attr </a>
+          <a class="navbar-brand" href="../index.html">M_hashkeys </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for source files.">18 statements</a>
+    title=" 0.9% of total for source files.">18 statements</a>
      </li> 
      
      
@@ -269,29 +269,29 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a name="ln-1"></a>           <span class="k">program </span><span class="n">demo_djb2_hash</span>
-<a name="ln-2"></a>           <span class="k">use </span><span class="n">M_hashkeys</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">djb2_hash</span><span class="p">,</span> <span class="n">int128</span>
-<a name="ln-3"></a>           <span class="k">implicit none</span>
-<a name="ln-4"></a><span class="k">           </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int128</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">hash</span>
-<a name="ln-5"></a>           <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">string</span>
-<a name="ln-6"></a>           <span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">i</span>
-<a name="ln-7"></a>           <span class="c">! string</span>
-<a name="ln-8"></a>           <span class="n">string</span><span class="o">=</span><span class="s1">&#39;test djb2_hash&#39;</span>
-<a name="ln-9"></a>           <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-<a name="ln-10"></a>           <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;string=&#39;</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; hash=&#39;</span><span class="p">,</span><span class="n">hash</span>
-<a name="ln-11"></a>           <span class="c">! array of characters</span>
-<a name="ln-12"></a>           <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;j&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">])</span>
-<a name="ln-13"></a>           <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;string=&#39;</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; hash=&#39;</span><span class="p">,</span><span class="n">hash</span>
-<a name="ln-14"></a>           <span class="c">! continued hash</span>
-<a name="ln-15"></a>           <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">])</span>
-<a name="ln-16"></a>           <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;j&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">],</span><span class="k">continue</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
-<a name="ln-17"></a>           <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">],</span><span class="k">continue</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
-<a name="ln-18"></a>           <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;string=&#39;</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; hash=&#39;</span><span class="p">,</span><span class="n">hash</span>
-<a name="ln-19"></a>           <span class="c">! array of integers</span>
-<a name="ln-20"></a>           <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)])</span>
-<a name="ln-21"></a>           <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;hash for values 0 to 100 is &#39;</span><span class="p">,</span><span class="n">hash</span>
-<a name="ln-22"></a>           <span class="c">!</span>
-<a name="ln-23"></a>           <span class="k">end program </span><span class="n">demo_djb2_hash</span>
+    <div class="hl"><pre><span></span><a name="ln-1"></a>      <span class="k">program </span><span class="n">demo_djb2_hash</span>
+<a name="ln-2"></a>      <span class="k">use </span><span class="n">M_hashkeys</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">djb2_hash</span><span class="p">,</span> <span class="n">int128</span>
+<a name="ln-3"></a>      <span class="k">implicit none</span>
+<a name="ln-4"></a><span class="k">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int128</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">hash</span>
+<a name="ln-5"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">string</span>
+<a name="ln-6"></a>      <span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">i</span>
+<a name="ln-7"></a>      <span class="c">! string</span>
+<a name="ln-8"></a>      <span class="n">string</span><span class="o">=</span><span class="s1">&#39;test djb2_hash&#39;</span>
+<a name="ln-9"></a>      <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<a name="ln-10"></a>      <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;string=&#39;</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; hash=&#39;</span><span class="p">,</span><span class="n">hash</span>
+<a name="ln-11"></a>      <span class="c">! array of characters</span>
+<a name="ln-12"></a>      <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;j&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">])</span>
+<a name="ln-13"></a>      <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;string=&#39;</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; hash=&#39;</span><span class="p">,</span><span class="n">hash</span>
+<a name="ln-14"></a>      <span class="c">! continued hash</span>
+<a name="ln-15"></a>      <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">])</span>
+<a name="ln-16"></a>      <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;j&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">],</span><span class="k">continue</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
+<a name="ln-17"></a>      <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">],</span><span class="k">continue</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
+<a name="ln-18"></a>      <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;string=&#39;</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; hash=&#39;</span><span class="p">,</span><span class="n">hash</span>
+<a name="ln-19"></a>      <span class="c">! array of integers</span>
+<a name="ln-20"></a>      <span class="n">hash</span><span class="o">=</span><span class="n">djb2_hash</span><span class="p">([(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)])</span>
+<a name="ln-21"></a>      <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;hash for values 0 to 100 is &#39;</span><span class="p">,</span><span class="n">hash</span>
+<a name="ln-22"></a>      <span class="c">!</span>
+<a name="ln-23"></a>      <span class="k">end program </span><span class="n">demo_djb2_hash</span>
 </pre></div>
 
     </section>
@@ -304,16 +304,16 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2022 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-09-26 10:14  
+             on 2022-07-15 22:20  
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_attr was developed by John S. Urban</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_hashkeys was developed by John S. Urban</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

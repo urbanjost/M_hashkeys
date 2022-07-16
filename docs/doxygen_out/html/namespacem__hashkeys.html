@@ -116,9 +116,9 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a51b646d1cc026d38998b44cf99b53c2b"><td class="memItemLeft" align="right" valign="top">integer(kind=c_int32_t) function, private&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__hashkeys.html#a51b646d1cc026d38998b44cf99b53c2b">ms1</a> (a)</td></tr>
 <tr class="memdesc:a51b646d1cc026d38998b44cf99b53c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The '\sigma_1' function in SHA-2.  <a href="namespacem__hashkeys.html#a51b646d1cc026d38998b44cf99b53c2b">More...</a><br /></td></tr>
 <tr class="separator:a51b646d1cc026d38998b44cf99b53c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8c86c5ecf9b3482e9f35016987c7575"><td class="memItemLeft" align="right" valign="top">subroutine, private&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575">consume_chunk</a> (str, length, inp, pos0, break, swap)</td></tr>
-<tr class="memdesc:af8c86c5ecf9b3482e9f35016987c7575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA-256 algorithm.  <a href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575">More...</a><br /></td></tr>
-<tr class="separator:af8c86c5ecf9b3482e9f35016987c7575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe7c21bee5c8fd920adc3e1d00bb834"><td class="memItemLeft" align="right" valign="top">subroutine, private&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834">consume_chunk</a> (str, length, inp, pos0, break, swap)</td></tr>
+<tr class="memdesc:aafe7c21bee5c8fd920adc3e1d00bb834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA-256 algorithm.  <a href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834">More...</a><br /></td></tr>
+<tr class="separator:aafe7c21bee5c8fd920adc3e1d00bb834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec5dcca50d5d862955abdc4f3db6052f"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f">test_suite_sha256</a> ()</td></tr>
 <tr class="separator:aec5dcca50d5d862955abdc4f3db6052f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a852eddaaa71287688e762ab4f9f13977"><td class="memItemLeft" align="right" valign="top">character(len=:) function, allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__hashkeys.html#a852eddaaa71287688e762ab4f9f13977">luhn_checksum</a> (string)</td></tr>
@@ -321,24 +321,22 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a662a154173922cb178bded0029cdbb48_icgraph.png" border="0" usemap="#namespacem__hashkeys_a662a154173922cb178bded0029cdbb48_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a662a154173922cb178bded0029cdbb48_icgraph" id="namespacem__hashkeys_a662a154173922cb178bded0029cdbb48_icgraph">
-<area shape="rect" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="857,81,984,108"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,81,809,108"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,56,595,83"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,107,577,133"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,5,347,32"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,56,348,83"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,125,180,166"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,157,348,184"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,208,352,235"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,107,348,133"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,259,336,285"/>
+<area shape="rect" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="857,31,984,57"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,31,809,57"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,5,595,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,56,577,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,5,348,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,74,180,115"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,56,348,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,107,352,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,157,348,184"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="af8c86c5ecf9b3482e9f35016987c7575"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8c86c5ecf9b3482e9f35016987c7575">&#9670;&nbsp;</a></span>consume_chunk()</h2>
+<a id="aafe7c21bee5c8fd920adc3e1d00bb834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafe7c21bee5c8fd920adc3e1d00bb834">&#9670;&nbsp;</a></span>consume_chunk()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,7 +345,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">subroutine m_hashkeys::consume_chunk </td>
+          <td class="memname">subroutine, private m_hashkeys::consume_chunk </td>
           <td>(</td>
           <td class="paramtype">character(len=*), intent(in)&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -548,8 +546,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_cgraph.png" border="0" usemap="#namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_cgraph" alt=""/></div>
-<map name="namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_cgraph" id="namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_cgraph">
+<div class="center"><img src="namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_cgraph.png" border="0" usemap="#namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_cgraph" alt=""/></div>
+<map name="namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_cgraph" id="namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_cgraph">
 <area shape="rect" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="5,23,176,65"/>
 <area shape="rect" href="namespacem__hashkeys.html#a5fb3c1d0d31442f917df4db0210cfebf" title="Swap the byte order on a 32bit integer." alt="" coords="228,5,389,32"/>
 <area shape="rect" href="namespacem__hashkeys.html#ad95227305d17d8d8162e6ff787830055" title="Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap." alt="" coords="224,56,393,83"/>
@@ -558,21 +556,19 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_icgraph.png" border="0" usemap="#namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_icgraph" alt=""/></div>
-<map name="namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_icgraph" id="namespacem__hashkeys_af8c86c5ecf9b3482e9f35016987c7575_icgraph">
+<div class="center"><img src="namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_icgraph.png" border="0" usemap="#namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_icgraph" alt=""/></div>
+<map name="namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_icgraph" id="namespacem__hashkeys_aafe7c21bee5c8fd920adc3e1d00bb834_icgraph">
 <area shape="rect" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="857,49,1028,90"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="437,56,557,83"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="666,6,786,32"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,132,809,159"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,176,180,217"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,132,595,159"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,208,577,235"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,107,347,134"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,158,348,184"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,360,348,387"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="437,5,557,32"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="666,56,786,83"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,107,809,133"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,125,180,166"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,107,595,133"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,157,577,184"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,107,348,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,157,348,184"/>
 <area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,208,352,235"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,259,348,286"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,310,336,336"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,259,348,285"/>
 </map>
 </div>
 
@@ -739,18 +735,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79_icgraph.png" border="0" usemap="#namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79_icgraph" id="namespacem__hashkeys_a91b1f13f5021f577620ae8a83299db79_icgraph">
-<area shape="rect" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="857,112,991,139"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,175,809,201"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a869c0a36043450961af43f854041dfeb" title=" " alt="" coords="688,48,764,75"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,251,595,277"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,175,577,201"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,301,347,328"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,251,348,277"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,142,180,183"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,48,348,75"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,149,352,176"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,200,348,227"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,99,336,125"/>
+<area shape="rect" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="857,132,991,159"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,81,809,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a869c0a36043450961af43f854041dfeb" title=" " alt="" coords="688,157,764,184"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,19,595,45"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,81,577,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,5,348,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,99,180,141"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,56,348,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,107,352,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,157,348,184"/>
 </map>
 </div>
 
@@ -793,18 +787,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af_icgraph.png" border="0" usemap="#namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af_icgraph" id="namespacem__hashkeys_ae99d2c939adfd9953d4b75c8483594af_icgraph">
-<area shape="rect" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="857,112,991,139"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,175,809,201"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a73e11c18f43f8bd79b0f60629edea01a" title=" " alt="" coords="688,48,764,75"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,251,595,277"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,175,577,201"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,301,347,328"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,251,348,277"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,142,180,183"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,48,348,75"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,149,352,176"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,200,348,227"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,99,336,125"/>
+<area shape="rect" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="857,132,991,159"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,81,809,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a73e11c18f43f8bd79b0f60629edea01a" title=" " alt="" coords="688,157,764,184"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,19,595,45"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,81,577,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,5,348,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,99,180,141"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,56,348,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,107,352,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,157,348,184"/>
 </map>
 </div>
 
@@ -900,7 +892,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,173,200,200"/>
 <area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="248,173,415,200"/>
 <area shape="rect" href="namespacem__hashkeys.html#a662a154173922cb178bded0029cdbb48" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="485,5,611,32"/>
-<area shape="rect" href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="463,57,633,98"/>
+<area shape="rect" href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="463,57,633,98"/>
 <area shape="rect" href="namespacem__hashkeys.html#a91b1f13f5021f577620ae8a83299db79" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="481,123,615,149"/>
 <area shape="rect" href="namespacem__hashkeys.html#ae99d2c939adfd9953d4b75c8483594af" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="481,173,615,200"/>
 <area shape="rect" href="namespacem__hashkeys.html#a3347b21962255779e27534039324e5d6" title=" " alt="" coords="480,224,616,251"/>
@@ -915,10 +907,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c_icgraph.png" border="0" usemap="#namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c_icgraph" id="namespacem__hashkeys_a2e9a37f0a344f358f1da613de93db35c_icgraph">
-<area shape="rect" title=" " alt="" coords="392,31,587,57"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="229,5,343,32"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="228,56,344,83"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,49,180,90"/>
+<area shape="rect" title=" " alt="" coords="392,13,587,39"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="228,13,344,39"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,5,180,47"/>
 </map>
 </div>
 
@@ -1341,19 +1332,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a3347b21962255779e27534039324e5d6_icgraph.png" border="0" usemap="#namespacem__hashkeys_a3347b21962255779e27534039324e5d6_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a3347b21962255779e27534039324e5d6_icgraph" id="namespacem__hashkeys_a3347b21962255779e27534039324e5d6_icgraph">
-<area shape="rect" title=" " alt="" coords="857,222,993,248"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,222,809,248"/>
-<area shape="rect" href="M__hashkeys_8f90.html#aaed7cc35f62554cc2813d9d271eb6220" title=" " alt="" coords="463,336,532,363"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a55878c803a87c9951669af9066724bcc" title=" " alt="" coords="687,70,765,96"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,247,595,274"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,196,577,223"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,247,347,274"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,298,348,324"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,138,180,180"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,44,348,71"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,95,352,122"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,196,348,223"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,146,336,172"/>
+<area shape="rect" title=" " alt="" coords="857,208,993,235"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,81,809,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#aaed7cc35f62554cc2813d9d271eb6220" title=" " alt="" coords="463,208,532,235"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a55878c803a87c9951669af9066724bcc" title=" " alt="" coords="687,259,765,285"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,19,595,45"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,81,577,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,5,348,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,125,180,166"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,56,348,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,107,352,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,157,348,184"/>
 </map>
 </div>
 
@@ -1396,18 +1385,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd_icgraph.png" border="0" usemap="#namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd_icgraph" id="namespacem__hashkeys_aebeb776948d57c7689abd27bc0e466dd_icgraph">
-<area shape="rect" title="The &#39;\sigma_0&#39; function in SHA&#45;2." alt="" coords="857,112,996,139"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,175,809,201"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a3e44d55e1ec41faab8606e01adcc1288" title=" " alt="" coords="685,48,767,75"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,251,595,277"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,175,577,201"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,301,347,328"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,251,348,277"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,142,180,183"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,48,348,75"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,149,352,176"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,200,348,227"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,99,336,125"/>
+<area shape="rect" title="The &#39;\sigma_0&#39; function in SHA&#45;2." alt="" coords="857,132,996,159"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,81,809,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a3e44d55e1ec41faab8606e01adcc1288" title=" " alt="" coords="685,157,767,184"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,19,595,45"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,81,577,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,5,348,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,99,180,141"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,56,348,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,107,352,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,157,348,184"/>
 </map>
 </div>
 
@@ -1450,18 +1437,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b_icgraph.png" border="0" usemap="#namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b_icgraph" id="namespacem__hashkeys_a51b646d1cc026d38998b44cf99b53c2b_icgraph">
-<area shape="rect" title="The &#39;\sigma_1&#39; function in SHA&#45;2." alt="" coords="857,112,996,139"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,175,809,201"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4c526a4b187c90fa1bdd484b087e683c" title=" " alt="" coords="685,48,767,75"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,251,595,277"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,175,577,201"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,301,347,328"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,251,348,277"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,142,180,183"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,48,348,75"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,149,352,176"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,200,348,227"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,99,336,125"/>
+<area shape="rect" title="The &#39;\sigma_1&#39; function in SHA&#45;2." alt="" coords="857,132,996,159"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,81,809,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4c526a4b187c90fa1bdd484b087e683c" title=" " alt="" coords="685,157,767,184"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,19,595,45"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,81,577,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,5,348,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,99,180,141"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,56,348,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,107,352,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,157,348,184"/>
 </map>
 </div>
 
@@ -1719,7 +1704,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,173,164,200"/>
 <area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="212,173,379,200"/>
 <area shape="rect" href="namespacem__hashkeys.html#a662a154173922cb178bded0029cdbb48" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="449,5,575,32"/>
-<area shape="rect" href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="427,57,597,98"/>
+<area shape="rect" href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="427,57,597,98"/>
 <area shape="rect" href="namespacem__hashkeys.html#a91b1f13f5021f577620ae8a83299db79" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="445,123,579,149"/>
 <area shape="rect" href="namespacem__hashkeys.html#ae99d2c939adfd9953d4b75c8483594af" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="445,173,579,200"/>
 <area shape="rect" href="namespacem__hashkeys.html#a3347b21962255779e27534039324e5d6" title=" " alt="" coords="444,224,580,251"/>
@@ -1734,14 +1719,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa_icgraph.png" border="0" usemap="#namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa_icgraph" id="namespacem__hashkeys_a951b5d07e1369182625571eeb65c4eaa_icgraph">
-<area shape="rect" title=" " alt="" coords="400,132,559,159"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,5,347,32"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,56,348,83"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,107,352,133"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,157,348,184"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,208,348,235"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,259,336,285"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,125,180,166"/>
+<area shape="rect" title=" " alt="" coords="400,81,559,108"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,5,348,32"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,56,352,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,107,348,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,157,348,184"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,74,180,115"/>
 </map>
 </div>
 
@@ -1781,7 +1764,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="namespacem__hashkeys.html#a662a154173922cb178bded0029cdbb48">ch()</a>, <a class="el" href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575">consume_chunk()</a>, <a class="el" href="namespacem__hashkeys.html#a91b1f13f5021f577620ae8a83299db79">cs0()</a>, <a class="el" href="namespacem__hashkeys.html#ae99d2c939adfd9953d4b75c8483594af">cs1()</a>, <a class="el" href="namespacem__hashkeys.html#a3347b21962255779e27534039324e5d6">maj()</a>, <a class="el" href="namespacem__hashkeys.html#aebeb776948d57c7689abd27bc0e466dd">ms0()</a>, and <a class="el" href="namespacem__hashkeys.html#a51b646d1cc026d38998b44cf99b53c2b">ms1()</a>.</p>
+<p class="reference">References <a class="el" href="namespacem__hashkeys.html#a662a154173922cb178bded0029cdbb48">ch()</a>, <a class="el" href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834">consume_chunk()</a>, <a class="el" href="namespacem__hashkeys.html#a91b1f13f5021f577620ae8a83299db79">cs0()</a>, <a class="el" href="namespacem__hashkeys.html#ae99d2c939adfd9953d4b75c8483594af">cs1()</a>, <a class="el" href="namespacem__hashkeys.html#a3347b21962255779e27534039324e5d6">maj()</a>, <a class="el" href="namespacem__hashkeys.html#aebeb776948d57c7689abd27bc0e466dd">ms0()</a>, and <a class="el" href="namespacem__hashkeys.html#a51b646d1cc026d38998b44cf99b53c2b">ms1()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1789,7 +1772,7 @@ Here is the call graph for this function:</div>
 <map name="namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_cgraph" id="namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_cgraph">
 <area shape="rect" title=" " alt="" coords="5,173,172,200"/>
 <area shape="rect" href="namespacem__hashkeys.html#a662a154173922cb178bded0029cdbb48" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="242,5,369,32"/>
-<area shape="rect" href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="220,57,391,98"/>
+<area shape="rect" href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="220,57,391,98"/>
 <area shape="rect" href="namespacem__hashkeys.html#a91b1f13f5021f577620ae8a83299db79" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="239,123,372,149"/>
 <area shape="rect" href="namespacem__hashkeys.html#ae99d2c939adfd9953d4b75c8483594af" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="239,173,372,200"/>
 <area shape="rect" href="namespacem__hashkeys.html#a3347b21962255779e27534039324e5d6" title=" " alt="" coords="237,224,373,251"/>
@@ -1804,16 +1787,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_icgraph.png" border="0" usemap="#namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_icgraph" id="namespacem__hashkeys_a6a4a57d4426faee1a340b21bbf7feec4_icgraph">
-<area shape="rect" title=" " alt="" coords="643,81,809,108"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,56,595,83"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,107,577,133"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,5,347,32"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,56,348,83"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,125,180,166"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,157,348,184"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,208,352,235"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,107,348,133"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,259,336,285"/>
+<area shape="rect" title=" " alt="" coords="643,31,809,57"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,5,595,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,56,577,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,5,348,32"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,74,180,115"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,56,348,83"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,107,352,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,157,348,184"/>
 </map>
 </div>
 
@@ -1856,21 +1837,19 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf_icgraph.png" border="0" usemap="#namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf_icgraph" id="namespacem__hashkeys_a5fb3c1d0d31442f917df4db0210cfebf_icgraph">
-<area shape="rect" title="Swap the byte order on a 32bit integer." alt="" coords="1076,45,1237,72"/>
-<area shape="rect" href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="857,67,1028,109"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a8879d1f5543ef3cdc11c101fb59256e5" title=" " alt="" coords="891,5,995,32"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="437,96,557,123"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="666,45,786,72"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,273,809,300"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,139,180,181"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,349,595,376"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,273,577,300"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,349,347,376"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,400,348,427"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,147,348,173"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,197,352,224"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,299,348,325"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,248,336,275"/>
+<area shape="rect" title="Swap the byte order on a 32bit integer." alt="" coords="1076,183,1237,209"/>
+<area shape="rect" href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="857,74,1028,115"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a8879d1f5543ef3cdc11c101fb59256e5" title=" " alt="" coords="891,212,995,239"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="437,5,557,32"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="666,56,786,83"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,107,809,133"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,150,180,191"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,107,595,133"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,157,577,184"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,107,348,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,157,348,184"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,208,352,235"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,259,348,285"/>
 </map>
 </div>
 
@@ -1949,19 +1928,17 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055_icgraph.png" border="0" usemap="#namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055_icgraph" alt=""/></div>
 <map name="namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055_icgraph" id="namespacem__hashkeys_ad95227305d17d8d8162e6ff787830055_icgraph">
 <area shape="rect" title="Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap." alt="" coords="1076,56,1245,83"/>
-<area shape="rect" href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="857,49,1028,90"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="437,56,557,83"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="666,6,786,32"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,132,809,159"/>
-<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,176,180,217"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,132,595,159"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,208,577,235"/>
-<area shape="rect" href="sha256_8f90.html#a6384ed8f47d53e0d55befd222f98ecf2" title=" " alt="" coords="233,107,347,134"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,158,348,184"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,360,348,387"/>
+<area shape="rect" href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="857,49,1028,90"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="437,5,557,32"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="666,56,786,83"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,107,809,133"/>
+<area shape="rect" href="namespacem__hashkeys.html#aec5dcca50d5d862955abdc4f3db6052f" title=" " alt="" coords="5,125,180,166"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,107,595,133"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,157,577,184"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,107,348,133"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,157,348,184"/>
 <area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,208,352,235"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,259,348,286"/>
-<area shape="rect" href="sha256_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="244,310,336,336"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,259,348,285"/>
 </map>
 </div>
 
@@ -1979,27 +1956,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="M__hashkeys_8f90.html#a687fd4f04a046f9f03b0706d47b114cc">checkem()</a>, and <a class="el" href="bitsy_8f90.html#a128f2df8273bfa28a11a461efc67d70c">unit_check()</a>.</p>
+<p class="reference">References <a class="el" href="M__hashkeys_8f90.html#a687fd4f04a046f9f03b0706d47b114cc">checkem()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc_cgraph.png" border="0" usemap="#namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc_cgraph" alt=""/></div>
 <map name="namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc_cgraph" id="namespacem__hashkeys_aac6abcc45620bff2bc9fc9ba485fbafc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,125,176,166"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a687fd4f04a046f9f03b0706d47b114cc" title=" " alt="" coords="224,107,304,133"/>
-<area shape="rect" href="bitsy_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="412,157,504,184"/>
-<area shape="rect" href="namespacem__hashkeys.html#a852eddaaa71287688e762ab4f9f13977" title=" " alt="" coords="352,107,564,133"/>
-<area shape="rect" href="namespacebitsy.html#a82757602ad5e9ffcce877594d6f76780" title="SHA&#45;256 interface function." alt="" coords="612,157,720,184"/>
-<area shape="rect" href="namespacebitsy.html#a7cdb7b8e64dcc1a546d792b22463e591" title="Calculate the SHA&#45;256 hash of the incomming string." alt="" coords="768,157,884,184"/>
-<area shape="rect" href="namespacebitsy.html#a363f6184f9287a11e8d956e698e2c865" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="977,5,1053,32"/>
-<area shape="rect" href="namespacebitsy.html#afae447c01a57a97c53ecc85664d48c0b" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded a requiered by the SHA&#45;25..." alt="" coords="932,56,1099,83"/>
-<area shape="rect" href="namespacebitsy.html#a3073015c8db000bba83d3b23c578bcc0" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="974,107,1057,133"/>
-<area shape="rect" href="namespacebitsy.html#a5d0109a340d8e5ab0a0e81317e772349" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="974,157,1057,184"/>
-<area shape="rect" href="namespacebitsy.html#a169ac64ed6b6ef290e722836ed6c8159" title="The &#39;maj&#39; function in SHA&#45;2." alt="" coords="972,208,1059,235"/>
-<area shape="rect" href="namespacebitsy.html#a70344b8f31dee0b873d45a893b6c1eb7" title="The &#39;\sigma_0&#39; function in SHA&#45;2." alt="" coords="971,259,1060,285"/>
-<area shape="rect" href="namespacebitsy.html#a780da5e7d39931b18c30c7d7dfacd5fd" title="The &#39;\sigma_1&#39; function in SHA&#45;2." alt="" coords="971,309,1060,336"/>
-<area shape="rect" href="namespacebitsy.html#a45ebc61514adf5421545c02d5236036f" title="Swap the byte order on a 32bit integer." alt="" coords="1151,31,1261,57"/>
-<area shape="rect" href="namespacebitsy.html#af788aa0121c647a09f6bd9706972462e" title="Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap." alt="" coords="1147,81,1265,108"/>
+<area shape="rect" title=" " alt="" coords="5,5,176,47"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a687fd4f04a046f9f03b0706d47b114cc" title=" " alt="" coords="224,13,304,39"/>
+<area shape="rect" href="namespacem__hashkeys.html#a852eddaaa71287688e762ab4f9f13977" title=" " alt="" coords="352,13,564,39"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2032,22 +1997,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb_cgraph.png" border="0" usemap="#namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb_cgraph" alt=""/></div>
 <map name="namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb_cgraph" id="namespacem__hashkeys_a7d3d75818ba3a23a33128125fa9e49cb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,125,180,166"/>
-<area shape="rect" href="namespacem__hashkeys.html#aac6abcc45620bff2bc9fc9ba485fbafc" title=" " alt="" coords="228,125,399,166"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a687fd4f04a046f9f03b0706d47b114cc" title=" " alt="" coords="447,107,527,133"/>
-<area shape="rect" href="bitsy_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="635,157,727,184"/>
-<area shape="rect" href="namespacem__hashkeys.html#a852eddaaa71287688e762ab4f9f13977" title=" " alt="" coords="575,107,787,133"/>
-<area shape="rect" href="namespacebitsy.html#a82757602ad5e9ffcce877594d6f76780" title="SHA&#45;256 interface function." alt="" coords="835,157,943,184"/>
-<area shape="rect" href="namespacebitsy.html#a7cdb7b8e64dcc1a546d792b22463e591" title="Calculate the SHA&#45;256 hash of the incomming string." alt="" coords="991,157,1107,184"/>
-<area shape="rect" href="namespacebitsy.html#a363f6184f9287a11e8d956e698e2c865" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="1200,5,1276,32"/>
-<area shape="rect" href="namespacebitsy.html#afae447c01a57a97c53ecc85664d48c0b" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded a requiered by the SHA&#45;25..." alt="" coords="1155,56,1321,83"/>
-<area shape="rect" href="namespacebitsy.html#a3073015c8db000bba83d3b23c578bcc0" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="1197,107,1279,133"/>
-<area shape="rect" href="namespacebitsy.html#a5d0109a340d8e5ab0a0e81317e772349" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="1197,157,1279,184"/>
-<area shape="rect" href="namespacebitsy.html#a169ac64ed6b6ef290e722836ed6c8159" title="The &#39;maj&#39; function in SHA&#45;2." alt="" coords="1195,208,1281,235"/>
-<area shape="rect" href="namespacebitsy.html#a70344b8f31dee0b873d45a893b6c1eb7" title="The &#39;\sigma_0&#39; function in SHA&#45;2." alt="" coords="1193,259,1283,285"/>
-<area shape="rect" href="namespacebitsy.html#a780da5e7d39931b18c30c7d7dfacd5fd" title="The &#39;\sigma_1&#39; function in SHA&#45;2." alt="" coords="1193,309,1283,336"/>
-<area shape="rect" href="namespacebitsy.html#a45ebc61514adf5421545c02d5236036f" title="Swap the byte order on a 32bit integer." alt="" coords="1373,31,1484,57"/>
-<area shape="rect" href="namespacebitsy.html#af788aa0121c647a09f6bd9706972462e" title="Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap." alt="" coords="1369,81,1488,108"/>
+<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" href="namespacem__hashkeys.html#aac6abcc45620bff2bc9fc9ba485fbafc" title=" " alt="" coords="228,5,399,47"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a687fd4f04a046f9f03b0706d47b114cc" title=" " alt="" coords="447,13,527,39"/>
+<area shape="rect" href="namespacem__hashkeys.html#a852eddaaa71287688e762ab4f9f13977" title=" " alt="" coords="575,13,787,39"/>
 </map>
 </div>
 
@@ -2217,52 +2170,40 @@ Here is the call graph for this function:</div>
 </blockquote>
 </blockquote>
 
-<p class="reference">References <a class="el" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272">pad_message1()</a>, <a class="el" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5">pad_message2()</a>, <a class="el" href="M__hashkeys_8f90.html#aaed7cc35f62554cc2813d9d271eb6220">test_ch()</a>, <a class="el" href="M__hashkeys_8f90.html#a869c0a36043450961af43f854041dfeb">test_cs0()</a>, <a class="el" href="M__hashkeys_8f90.html#a73e11c18f43f8bd79b0f60629edea01a">test_cs1()</a>, <a class="el" href="M__hashkeys_8f90.html#a139603fa9716a5a8cc5eb80fd0eb67f7">test_ishft()</a>, <a class="el" href="M__hashkeys_8f90.html#a02ca21bdab05a704c20c4dc16920eba5">test_ishftc()</a>, <a class="el" href="M__hashkeys_8f90.html#a55878c803a87c9951669af9066724bcc">test_maj()</a>, <a class="el" href="M__hashkeys_8f90.html#a3e44d55e1ec41faab8606e01adcc1288">test_ms0()</a>, <a class="el" href="M__hashkeys_8f90.html#a4c526a4b187c90fa1bdd484b087e683c">test_ms1()</a>, <a class="el" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf">test_sha256_1()</a>, <a class="el" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7">test_sha256_11()</a>, <a class="el" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414">test_sha256_5()</a>, <a class="el" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a">test_sha256_6()</a>, <a class="el" href="M__hashkeys_8f90.html#a8879d1f5543ef3cdc11c101fb59256e5">test_swap32()</a>, and <a class="el" href="bitsy_8f90.html#a128f2df8273bfa28a11a461efc67d70c">unit_check()</a>.</p>
+<p class="reference">References <a class="el" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272">pad_message1()</a>, <a class="el" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5">pad_message2()</a>, <a class="el" href="M__hashkeys_8f90.html#aaed7cc35f62554cc2813d9d271eb6220">test_ch()</a>, <a class="el" href="M__hashkeys_8f90.html#a869c0a36043450961af43f854041dfeb">test_cs0()</a>, <a class="el" href="M__hashkeys_8f90.html#a73e11c18f43f8bd79b0f60629edea01a">test_cs1()</a>, <a class="el" href="M__hashkeys_8f90.html#a139603fa9716a5a8cc5eb80fd0eb67f7">test_ishft()</a>, <a class="el" href="M__hashkeys_8f90.html#a02ca21bdab05a704c20c4dc16920eba5">test_ishftc()</a>, <a class="el" href="M__hashkeys_8f90.html#a55878c803a87c9951669af9066724bcc">test_maj()</a>, <a class="el" href="M__hashkeys_8f90.html#a3e44d55e1ec41faab8606e01adcc1288">test_ms0()</a>, <a class="el" href="M__hashkeys_8f90.html#a4c526a4b187c90fa1bdd484b087e683c">test_ms1()</a>, <a class="el" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf">test_sha256_1()</a>, <a class="el" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7">test_sha256_11()</a>, <a class="el" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414">test_sha256_5()</a>, <a class="el" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a">test_sha256_6()</a>, and <a class="el" href="M__hashkeys_8f90.html#a8879d1f5543ef3cdc11c101fb59256e5">test_swap32()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f_cgraph.png" border="0" usemap="#namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f_cgraph" alt=""/></div>
 <map name="namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f_cgraph" id="namespacem__hashkeys_aec5dcca50d5d862955abdc4f3db6052f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,378,180,419"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="230,56,350,83"/>
-<area shape="rect" href="bitsy_8f90.html#a128f2df8273bfa28a11a461efc67d70c" title=" " alt="" coords="451,385,543,412"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="230,5,350,32"/>
-<area shape="rect" href="M__hashkeys_8f90.html#aaed7cc35f62554cc2813d9d271eb6220" title=" " alt="" coords="255,208,325,235"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a869c0a36043450961af43f854041dfeb" title=" " alt="" coords="252,411,328,437"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a73e11c18f43f8bd79b0f60629edea01a" title=" " alt="" coords="252,664,328,691"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a139603fa9716a5a8cc5eb80fd0eb67f7" title=" " alt="" coords="249,309,331,336"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a02ca21bdab05a704c20c4dc16920eba5" title=" " alt="" coords="245,360,335,387"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a55878c803a87c9951669af9066724bcc" title=" " alt="" coords="251,157,329,184"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a3e44d55e1ec41faab8606e01adcc1288" title=" " alt="" coords="249,715,331,741"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4c526a4b187c90fa1bdd484b087e683c" title=" " alt="" coords="249,765,331,792"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,461,348,488"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,512,352,539"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,613,348,640"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,563,348,589"/>
-<area shape="rect" href="M__hashkeys_8f90.html#a8879d1f5543ef3cdc11c101fb59256e5" title=" " alt="" coords="238,107,342,133"/>
-<area shape="rect" href="namespacem__hashkeys.html#af8c86c5ecf9b3482e9f35016987c7575" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="857,41,1028,82"/>
-<area shape="rect" href="namespacem__hashkeys.html#a5fb3c1d0d31442f917df4db0210cfebf" title="Swap the byte order on a 32bit integer." alt="" coords="1080,103,1241,129"/>
-<area shape="rect" href="namespacem__hashkeys.html#ad95227305d17d8d8162e6ff787830055" title="Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap." alt="" coords="1076,48,1245,75"/>
-<area shape="rect" href="namespacebitsy.html#a82757602ad5e9ffcce877594d6f76780" title="SHA&#45;256 interface function." alt="" coords="672,385,780,412"/>
-<area shape="rect" href="namespacebitsy.html#a7cdb7b8e64dcc1a546d792b22463e591" title="Calculate the SHA&#45;256 hash of the incomming string." alt="" coords="885,385,1001,412"/>
-<area shape="rect" href="namespacebitsy.html#a363f6184f9287a11e8d956e698e2c865" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="1123,537,1199,564"/>
-<area shape="rect" href="namespacebitsy.html#afae447c01a57a97c53ecc85664d48c0b" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded a requiered by the SHA&#45;25..." alt="" coords="1077,233,1244,260"/>
-<area shape="rect" href="namespacebitsy.html#a3073015c8db000bba83d3b23c578bcc0" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="1119,284,1202,311"/>
-<area shape="rect" href="namespacebitsy.html#a5d0109a340d8e5ab0a0e81317e772349" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="1119,335,1202,361"/>
-<area shape="rect" href="namespacebitsy.html#a169ac64ed6b6ef290e722836ed6c8159" title="The &#39;maj&#39; function in SHA&#45;2." alt="" coords="1117,385,1204,412"/>
-<area shape="rect" href="namespacebitsy.html#a70344b8f31dee0b873d45a893b6c1eb7" title="The &#39;\sigma_0&#39; function in SHA&#45;2." alt="" coords="1116,436,1205,463"/>
-<area shape="rect" href="namespacebitsy.html#a780da5e7d39931b18c30c7d7dfacd5fd" title="The &#39;\sigma_1&#39; function in SHA&#45;2." alt="" coords="1116,487,1205,513"/>
-<area shape="rect" href="namespacebitsy.html#a45ebc61514adf5421545c02d5236036f" title="Swap the byte order on a 32bit integer." alt="" coords="1297,208,1408,235"/>
-<area shape="rect" href="namespacebitsy.html#af788aa0121c647a09f6bd9706972462e" title="Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap." alt="" coords="1293,259,1412,285"/>
-<area shape="rect" href="namespacem__hashkeys.html#a3347b21962255779e27534039324e5d6" title=" " alt="" coords="875,208,1011,235"/>
-<area shape="rect" href="namespacem__hashkeys.html#a91b1f13f5021f577620ae8a83299db79" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="876,487,1009,513"/>
-<area shape="rect" href="namespacem__hashkeys.html#ae99d2c939adfd9953d4b75c8483594af" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="876,639,1009,665"/>
-<area shape="rect" href="namespacem__hashkeys.html#aebeb776948d57c7689abd27bc0e466dd" title="The &#39;\sigma_0&#39; function in SHA&#45;2." alt="" coords="873,689,1012,716"/>
-<area shape="rect" href="namespacem__hashkeys.html#a51b646d1cc026d38998b44cf99b53c2b" title="The &#39;\sigma_1&#39; function in SHA&#45;2." alt="" coords="873,740,1012,767"/>
-<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,563,577,589"/>
-<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,588,809,615"/>
-<area shape="rect" href="namespacem__hashkeys.html#a662a154173922cb178bded0029cdbb48" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="879,588,1006,615"/>
-<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,613,595,640"/>
+<area shape="rect" title=" " alt="" coords="5,366,180,407"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a7c035adc35f1ccc7434bad1933c23272" title=" " alt="" coords="666,19,786,45"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4185f9c51efcf5eec80fc708428c07c5" title=" " alt="" coords="666,69,786,96"/>
+<area shape="rect" href="M__hashkeys_8f90.html#aaed7cc35f62554cc2813d9d271eb6220" title=" " alt="" coords="463,120,532,147"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a869c0a36043450961af43f854041dfeb" title=" " alt="" coords="459,221,535,248"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a73e11c18f43f8bd79b0f60629edea01a" title=" " alt="" coords="688,468,764,495"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a139603fa9716a5a8cc5eb80fd0eb67f7" title=" " alt="" coords="249,272,331,299"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a02ca21bdab05a704c20c4dc16920eba5" title=" " alt="" coords="245,323,335,349"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a55878c803a87c9951669af9066724bcc" title=" " alt="" coords="687,171,765,197"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a3e44d55e1ec41faab8606e01adcc1288" title=" " alt="" coords="456,627,539,653"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4c526a4b187c90fa1bdd484b087e683c" title=" " alt="" coords="685,613,767,640"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a5549e0459822c0f28961bb9ab89ebadf" title=" " alt="" coords="232,475,348,501"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a4673967deb9108bb9bda47c9776c27f7" title=" " alt="" coords="228,525,352,552"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a6bb327c146e9218f07cdd8462382b414" title=" " alt="" coords="232,373,348,400"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a0c4c60319b2584361587213c9c88295a" title=" " alt="" coords="232,424,348,451"/>
+<area shape="rect" href="M__hashkeys_8f90.html#a8879d1f5543ef3cdc11c101fb59256e5" title=" " alt="" coords="445,728,549,755"/>
+<area shape="rect" href="namespacem__hashkeys.html#aafe7c21bee5c8fd920adc3e1d00bb834" title="Copy 16 32bit words of data from str(pos0) to inp(1:16). The data is padded as required by the SHA&#45;25..." alt="" coords="857,83,1028,125"/>
+<area shape="rect" href="namespacem__hashkeys.html#a5fb3c1d0d31442f917df4db0210cfebf" title="Swap the byte order on a 32bit integer." alt="" coords="1080,373,1241,400"/>
+<area shape="rect" href="namespacem__hashkeys.html#ad95227305d17d8d8162e6ff787830055" title="Swap the byte order on a 64bit integer as if each half was a 32bit integer to swap." alt="" coords="1076,91,1245,117"/>
+<area shape="rect" href="namespacem__hashkeys.html#a3347b21962255779e27534039324e5d6" title=" " alt="" coords="875,171,1011,197"/>
+<area shape="rect" href="namespacem__hashkeys.html#a91b1f13f5021f577620ae8a83299db79" title="The &#39;\Sigma_0&#39; function in SHA&#45;2." alt="" coords="876,297,1009,324"/>
+<area shape="rect" href="namespacem__hashkeys.html#ae99d2c939adfd9953d4b75c8483594af" title="The &#39;\Sigma_1&#39; function in SHA&#45;2." alt="" coords="876,449,1009,476"/>
+<area shape="rect" href="namespacem__hashkeys.html#aebeb776948d57c7689abd27bc0e466dd" title="The &#39;\sigma_0&#39; function in SHA&#45;2." alt="" coords="873,512,1012,539"/>
+<area shape="rect" href="namespacem__hashkeys.html#a51b646d1cc026d38998b44cf99b53c2b" title="The &#39;\sigma_1&#39; function in SHA&#45;2." alt="" coords="873,588,1012,615"/>
+<area shape="rect" href="namespacem__hashkeys.html#a951b5d07e1369182625571eeb65c4eaa" title=" " alt="" coords="418,424,577,451"/>
+<area shape="rect" href="namespacem__hashkeys.html#a6a4a57d4426faee1a340b21bbf7feec4" title=" " alt="" coords="643,399,809,425"/>
+<area shape="rect" href="namespacem__hashkeys.html#a662a154173922cb178bded0029cdbb48" title="The &#39;ch&#39; function in SHA&#45;2." alt="" coords="879,399,1006,425"/>
+<area shape="rect" href="namespacem__hashkeys.html#a2e9a37f0a344f358f1da613de93db35c" title=" " alt="" coords="400,373,595,400"/>
 </map>
 </div>
 

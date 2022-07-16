@@ -10,7 +10,7 @@
     <meta name="author" content="John S. Urban" >
     <link rel="icon" href="../favicon.png">
 
-    <title>checkem &ndash; M_attr</title>
+    <title>checkem &ndash; M_hashkeys</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">M_attr </a>
+          <a class="navbar-brand" href="../index.html">M_hashkeys </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for procedures.">9 statements</a>
+    title=" 1.0% of total for procedures.">9 statements</a>
      </li> 
      
      
@@ -286,17 +286,18 @@ subroutine checkem()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>          <span class="k">subroutine </span><span class="n">checkem</span>
-             <span class="c">! validate these numbers</span>
-             <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">ccards</span><span class="p">)</span>
-                <span class="n">j</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">ccards</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
-                <span class="n">string</span><span class="o">=</span><span class="n">luhn_checksum</span><span class="p">(</span><span class="n">ccards</span><span class="p">(</span><span class="n">i</span><span class="p">)(:</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-                <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a,1x,a,1x,l1)&#39;</span><span class="p">)</span><span class="n">ccards</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">string</span><span class="p">,</span><span class="n">ccards</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="n">string</span>
-             <span class="k">enddo</span>
+    <div class="highlight"><pre><span></span>       <span class="k">subroutine </span><span class="n">checkem</span>
+          <span class="c">! validate these numbers</span>
+          <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">ccards</span><span class="p">)</span>
+             <span class="n">j</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">ccards</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+             <span class="n">string</span><span class="o">=</span><span class="n">luhn_checksum</span><span class="p">(</span><span class="n">ccards</span><span class="p">(</span><span class="n">i</span><span class="p">)(:</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+             <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a,1x,a,1x,l1)&#39;</span><span class="p">)</span><span class="n">ccards</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">string</span><span class="p">,</span><span class="n">ccards</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="n">string</span>
+          <span class="k">enddo</span>
 
-<span class="k">             </span><span class="n">string</span><span class="o">=</span><span class="s1">&#39;123456 781-234-567&#39;</span>
-             <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;from &#39;</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; got &#39;</span><span class="p">,</span><span class="n">luhn_checksum</span><span class="p">(</span><span class="n">string</span><span class="p">),</span><span class="s1">&#39; which should be 1234567812345670&#39;</span>
-          <span class="k">end subroutine </span><span class="n">checkem</span>
+<span class="k">          </span><span class="n">string</span><span class="o">=</span><span class="s1">&#39;123456 781-234-567&#39;</span>
+          <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;from &#39;</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; got &#39;</span><span class="p">,</span><span class="n">luhn_checksum</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="p">&amp;</span>
+          <span class="p">&amp;</span> <span class="s1">&#39; which should be 1234567812345670&#39;</span>
+       <span class="k">end subroutine </span><span class="n">checkem</span>
 </pre></div>
 
     </section>
@@ -312,16 +313,16 @@ subroutine checkem()
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2022 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-09-26 10:14  
+             on 2022-07-15 22:20  
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_attr was developed by John S. Urban</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_hashkeys was developed by John S. Urban</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

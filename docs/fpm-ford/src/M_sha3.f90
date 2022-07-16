@@ -4,16 +4,18 @@
 module M_sha3
 !>
 !!##NAME
-!!    M_sha3(3fm) - [M_sha3] a module implementing the SHA-3 hash function
+!!    M_sha3(3fm) - [M_sha3::INTRO] a module implementing the SHA-3 hash function
 !!##SYNOPSIS
 !!
-!!    use M_sha3, only : sha3
-!!    use M_sha3, only : sha3_update
-!!    use M_sha3, only : sha3_state
-!!    use M_sha3, only : sha3_digest
-!!    use M_sha3, only : sha3_hexdigest
-!!    use M_sha3, only : sha3_file
-!!    use M_sha3, only : sha3_auto_test
+!!   Procedures:
+!!
+!!     use M_sha3, only : sha3
+!!     use M_sha3, only : sha3_update
+!!     use M_sha3, only : sha3_state
+!!     use M_sha3, only : sha3_digest
+!!     use M_sha3, only : sha3_hexdigest
+!!     use M_sha3, only : sha3_file
+!!     use M_sha3, only : sha3_auto_test
 !!##DESCRIPTION
 !!    This module implements the SHA-3 hash function, according to FIPS
 !!    PUB 202, SHA-3 Standard: Permutation-Based Hash and Extendable-Output

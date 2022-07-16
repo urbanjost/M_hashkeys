@@ -10,7 +10,7 @@
     <meta name="author" content="John S. Urban" >
     <link rel="icon" href="./favicon.png">
 
-    <title> M_attr </title>
+    <title> M_hashkeys </title>
 
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./index.html">M_attr </a>
+          <a class="navbar-brand" href="./index.html">M_hashkeys </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -121,7 +121,7 @@
 	<p> Find us on&hellip;</p>
         <p>
         	 
-          <a class="btn btn-lg btn-primary" href="https://github.com/urbanjost/M_attr" role="button">GitHub</a>
+          <a class="btn btn-lg btn-primary" href="https://github.com/urbanjost/M_hashkeys" role="button">GitHub</a>
 			 
 			 
 			 
@@ -135,12 +135,80 @@
 		  
         <div class="col-md-8">
 		  
-          <h1>M_attr</h1>
+          <h1>M_hashkeys</h1>
           <!--
 author_pic:
 twitter:
 website:
 -->
+<!--
+![sample](docs/images/snap2b.gif)
+-->
+
+<p>NOTE: This repository requires being built with fpm ( <a href="https://github.com/fortran-lang/fpm">Fortran Package Manager</a> )
+      Alternatively, it may be found as a part of the GPF( <a href="https://github.com/urbanjost/general-purpose-fortran">General Purpose Fortran</a> )</p>
+<h2 id="name">NAME</h2>
+<h3 id="m_hashkeys-a-collection-of-hash-key-generator-modules">M_hashkeys - a collection of hash key generator modules</h3>
+<h2 id="description">DESCRIPTION</h2>
+<p>M_hashkeys(3f) is a Fortran repository that contains several modules 
+   of hash generators.</p>
+<h2 id="documentation">DOCUMENTATION   <img alt="docs" src="docs/images/docs.gif"></h2>
+<h3 id="user">USER</h3>
+<p>All documents are contained in the docs/ directory including
+archive files of man(1) pages that can be installed on ULS
+(Unix-Like Systems).</p>
+<h4 id="individual-man-pages-as-html">Individual man-pages as HTML</h4>
+<p>HTML versions of the man-pages describe all the routines:
+   - An <a href="https://urbanjost.github.io/M_hashkeys/man3.html">index</a> to M_hashkeys.f90 and M_sha3.f90 </p>
+<h4 id="all-man-pages-amalgamated-as-html">All man-pages amalgamated as HTML</h4>
+<p>Another view of these documents (that uses javascript to combine all
+   the HTML descriptions of the man-pages) is in a form that can easily be printed as a single document.
+   - <a href="https://urbanjost.github.io/M_hashkeys/BOOK_M_hashkeys.html"><em>BOOK_M_hashkeys</em></a> 
+   - <a href="https://urbanjost.github.io/M_hashkeys/BOOK_M_sha3.html"><em>BOOK_M_sha3</em></a> </p>
+<h3 id="real-man-pages">real man-pages <img alt="gmake" src="docs/images/manpages.gif"></h3>
+<ul>
+<li><a href="https://urbanjost.github.io/M_hashkeys/manpages.zip">manpages.zip</a></li>
+<li>
+<p><a href="https://urbanjost.github.io/M_hashkeys/manpages.tgz">manpages.tgz</a></p>
+</li>
+<li>
+<p><a href="docs/CHANGELOG.md">CHANGELOG</a> provides a history of significant changes</p>
+</li>
+</ul>
+<h3 id="developer">DEVELOPER</h3>
+<ul>
+<li><a href="https://urbanjost.github.io/M_hashkeys/doxygen_out/html/index.html">doxygen(1) output</a>.</li>
+<li><a href="https://urbanjost.github.io/M_hashkeys/fpm-ford/index.html">ford(1) output</a>.</li>
+<li><a href="docs/STATUS.md">github action status</a> </li>
+</ul>
+<h2 id="download-and-build">DOWNLOAD AND BUILD</h2>
+<!--
+### gmake ![gmake](docs/images/gnu.gif)
+
+   ```bash
+       git clone https://github.com/urbanjost/M_hashkeys.git
+       cd M_hashkeys/src
+       # change Makefile if not using one of the listed compilers
+       make clean; make gfortran    # for gfortran
+       make clean; make ifort       # for ifort
+       make clean; make nvfortran   # for nvfortran
+   ```
+   This will compile the M_hashkeys module and example programs.
+-->
+
+<h3 id="fpm">fpm <img alt="fpm" src="docs/images/fpm_logo.gif"></h3>
+<p>Download the github repository and build it with
+   fpm ( as described at <a href="https://github.com/fortran-lang/fpm">Fortran Package Manager</a> )</p>
+<p><code>bash
+        git clone https://github.com/urbanjost/M_hashkeys.git
+        cd M_hashkeys
+        fpm test</code></p>
+<p>or just list it as a dependency in your fpm.toml project file.</p>
+<div class="codehilite"><pre><span></span><code>        <span class="k">[dependencies]</span>
+        <span class="n">M_hashkeys</span>        <span class="o">=</span> <span class="p">{</span> <span class="n">git</span> <span class="o">=</span> <span class="s">&quot;https://github.com/urbanjost/M_hashkeys.git&quot;</span> <span class="p">}</span>
+</code></pre></div>
+
+<h2 id="-">&mdash;</h2>
         </div>
 		  
         <div class="col-md-4">
@@ -154,7 +222,7 @@ website:
               
               
               
-              <a class="btn btn-lg btn-primary" href="https://github.com/urbanjost/M_attr"><i class="fa fa-github fa-lg"></i></a>
+              <a class="btn btn-lg btn-primary" href="https://github.com/urbanjost/M_hashkeys"><i class="fa fa-github fa-lg"></i></a>
 				  
 				  
               
@@ -176,14 +244,6 @@ website:
         <div class="col-xs-6 col-sm-3">
               <h3>Source Files</h3>
               <ul>
-                
-                  
-                    <li><a href='./sourcefile/bitsy.f90.html'>bitsy.f90</a></li>
-                  
-                
-                  
-                    <li><a href='./sourcefile/bitsy_good.f90.html'>bitsy_good.f90</a></li>
-                  
                 
                   
                     <li><a href='./sourcefile/demo_crc32_hash.f90.html'>demo_crc32_hash.f90</a></li>
@@ -214,19 +274,19 @@ website:
                   
                 
                   
-                    <li><a href='./sourcefile/m_hashkeys.f90.html'>M_hashkeys.f90</a></li>
+                    <li><a href='./sourcefile/m_hashkeys.f90.html'>M_hashkeys.F90</a></li>
+                  
+                
+                  
+                    <li><a href='./sourcefile/m_sha3.f90.html'>M_sha3.f90</a></li>
+                  
+                
+                  
+                    <li><a href='./sourcefile/main.f90.html'>main.f90</a></li>
                   
                 
                   
                     <li><a href="./lists/files.html"><em>All source files&hellip;</em></a></li>
-                  
-                
-                  
-                
-                  
-                
-                  
-                
                   
                 
                   
@@ -241,23 +301,7 @@ website:
               <ul>
                 
                   
-                    <li><a href='./module/bitsy.html'>bitsy</a></li>
-                  
-                
-                  
-                    <li><a href='./module/bitsy~2.html'>bitsy</a></li>
-                  
-                
-                  
-                    <li><a href='./module/m_hashkeys~2.html'>M_hashkeys</a></li>
-                  
-                
-                  
                     <li><a href='./module/m_hashkeys.html'>M_hashkeys</a></li>
-                  
-                
-                  
-                    <li><a href='./module/m_hashkeys~3.html'>M_hashkeys</a></li>
                   
                 
                   
@@ -277,31 +321,7 @@ website:
                   
                 
                   
-                    <li><a href='./proc/ch.html'>ch</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/ch~2.html'>ch</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/ch~3.html'>ch</a></li>
-                  
-                
-                  
                     <li><a href='./proc/checkem.html'>checkem</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/consume_chunk.html'>consume_chunk</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/consume_chunk~2.html'>consume_chunk</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/consume_chunk~3.html'>consume_chunk</a></li>
                   
                 
                   
@@ -309,101 +329,35 @@ website:
                   
                 
                   
-                    <li><a href='./proc/cs0.html'>cs0</a></li>
+                    <li><a href='./proc/dirty_sha256.html'>dirty_sha256</a></li>
+                  
+                
+                  
+                    <li><a href='./proc/djb2.html'>djb2</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/djb2_hash.html'>djb2_hash</a></li>
+                  
+                
+                  
+                    <li><a href='./proc/help_usage.html'>help_usage</a></li>
+                  
+                
+                  
+                    <li><a href='./proc/help_version.html'>help_version</a></li>
+                  
+                
+                  
+                    <li><a href='./proc/luhn_checksum.html'>luhn_checksum</a></li>
+                  
+                
+                  
+                    <li><a href='./interface/sdbm_hash.html'>sdbm_hash</a></li>
                   
                 
                   
                     <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
                   
                 
                   
@@ -446,16 +400,16 @@ website:
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2022 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-09-26 10:14  
+             on 2022-07-15 22:20  
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_attr was developed by John S. Urban</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_hashkeys was developed by John S. Urban</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

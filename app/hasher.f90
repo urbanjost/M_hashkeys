@@ -20,12 +20,6 @@ help_text=[ CHARACTER(LEN=128) :: &
 '   using the procedures available in the M_hashkey(3fm) module. It is up                                                        ',&
 '   to the user to determine if the method is suitable for a specific use.                                                       ',&
 '                                                                                                                                ',&
-'   When the I/O was not tuned at all and a simple byte-by-byte read                                                             ',&
-'   was used the program was sixty times slower; in addition the                                                                 ',&
-'   anything_to_bytes(3f) function was slower than expected processing                                                           ',&
-'   one character at a time, so if you are going to do anything similar                                                          ',&
-'   it is at least worth a look to look at the sample code.                                                                      ',&
-'                                                                                                                                ',&
 'OPTIONS                                                                                                                         ',&
 '   input_files  files to generate a hash for                                                                                    ',&
 '   hash         name of hash algorithm. Currently allowed                                                                       ',&
@@ -65,7 +59,7 @@ help_text=[ CHARACTER(LEN=128) :: &
 '@(#)                change and redistribute it.  There is NO WARRANTY;>',&
 '@(#)                without even the implied warranty of MERCHANTABILITY or>',&
 '@(#)                FITNESS FOR A PARTICULAR PURPOSE.>',&
-'@(#)COMPILED:       2022-01-03 20:18:33 UTC-300>',&
+'@(#)COMPILED:       2022-07-15 22:15:47 UTC-240>',&
 '']
    WRITE(*,'(a)')(trim(help_text(i)(5:len_trim(help_text(i))-1)),i=1,size(help_text))
    stop ! if --version was specified, stop
