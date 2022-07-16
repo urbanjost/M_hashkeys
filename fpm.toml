@@ -27,6 +27,5 @@ M_msg          = { git = "https://github.com/urbanjost/M_msg.git" }
 
 [dependencies]
 M_io       = { git = "https://github.com/urbanjost/M_io.git"      }
-M_kracken  = { git = "https://github.com/urbanjost/M_kracken.git" }
 M_strings  = { git = "https://github.com/urbanjost/M_strings.git" }
 M_system   = { git = "https://github.com/urbanjost/M_system.git"  }

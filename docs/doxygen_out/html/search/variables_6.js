@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['r_201',['r',['../structm__sha3_1_1sha3__state.html#a653446f8d71982c2431641110a61d410',1,'m_sha3::sha3_state']]],
-  ['rc_5fc_202',['rc_c',['../namespacem__sha3.html#a4e09c0913cf8b6501715d1e72acca977',1,'m_sha3']]]
+  ['s_97',['s',['../structm__sha3_1_1sha3__state.html#a76d89d89966a88911fa0151492f6555d',1,'m_sha3::sha3_state']]],
+  ['sbuf_98',['sbuf',['../namespacem__sha3.html#ab23786567d049bd9bf1bcb896769b007',1,'m_sha3']]]
 ];

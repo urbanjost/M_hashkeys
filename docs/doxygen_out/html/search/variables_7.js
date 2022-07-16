@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['s_203',['s',['../structm__sha3_1_1sha3__state.html#a76d89d89966a88911fa0151492f6555d',1,'m_sha3::sha3_state']]],
-  ['sbuf_204',['sbuf',['../namespacem__sha3.html#ab23786567d049bd9bf1bcb896769b007',1,'m_sha3']]]
+  ['w_99',['w',['../namespacem__sha3.html#aa3c7bc43bbe7170269dc8ac67e341640',1,'m_sha3']]]
 ];
