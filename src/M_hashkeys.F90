@@ -235,7 +235,7 @@ contains
 function sha256(str)
 implicit none
 
-! ident_1="@(#)M_hashkeys::sha256(3f): SHA-256 interface function"
+! ident_1="@(#) M_hashkeys sha256(3f) SHA-256 interface function"
 
 ! Define the interface.
 character(len=64) :: sha256           ! The SHA-256 digest as a string of length 64.
@@ -324,7 +324,7 @@ end function sha256
 function dirty_sha256(str)
 implicit none
 
-! ident_2="@(#)M_hashkeys::dirty_sha256(3f): Quick and dirty SHA-256 interface function (no bit-swapping)."
+! ident_2="@(#) M_hashkeys dirty_sha256(3f) Quick and dirty SHA-256 interface function (no bit-swapping)."
 
 ! Define the interface.
 character(len=64) :: dirty_sha256   ! The SHA-256 digest as a string of length 64.
@@ -1221,8 +1221,9 @@ contains
       !& 'sha256 11 GOT',sha256(str),'expected 6BC568C54C0BB123FBCA27DAD40067345DD9FBE61E1376FE3C27902943FCF6A5')
 
 
+      ! add //'' to avoid gfortran-11 bug
       call unit_check('test_sha256_11',sha256(str)=="711CC2AB7E0A98D1EDBDA435A7B219E8AAA12661F347339A14041208751373C6", &
-      & 'sha256 11 GOT',sha256(str),'expected 711CC2AB7E0A98D1EDBDA435A7B219E8AAA12661F347339A14041208751373C6')
+      & 'sha256 11 GOT',sha256(str)//'','expected 711CC2AB7E0A98D1EDBDA435A7B219E8AAA12661F347339A14041208751373C6')
 
 
 
@@ -1415,7 +1416,7 @@ end subroutine test_suite_sha256
 function luhn_checksum(string)
 use M_strings, only : transliterate
 
-! ident_3="@(#)LUHN_CHECKSUM determines the Luhn checksum of a string composed of digits"
+! ident_3="@(#) LUHN_CHECKSUM determines the Luhn checksum of a string composed of digits"
 
 character(len=*),intent(in)  :: string
 character(len=:),allocatable :: luhn_checksum, string_local
@@ -1451,7 +1452,7 @@ use M_verify, only : unit_check_start,unit_check,unit_check_done,unit_check_good
 use M_verify, only : unit_check_level
 use M_msg,   only : str
 implicit none
-   character(len=:),allocatable :: ccards(:), string
+   character(len=:),allocatable :: ccards(:), string, buff
    call unit_check_start('luhn_checksum',msg='')
    ! good values
    ccards=[ character(len=20) :: '79927398713', '49927398716', '123456-781234567-0', '4578 4230 1376 9219' ]
@@ -1471,9 +1472,10 @@ implicit none
       do i=1,size(ccards)
          j=len(trim(ccards(i)))
          string=luhn_checksum(ccards(i)(:j-1))
+         buff=str(ccards(i)(:j-1))
          call unit_check('luhn_checksum', &
-           (transliterate(ccards(i),' -','').eq.string).eqv.goodbad, &
-           msg=str('input',ccards(i)(:j-1),'output',string))
+           & (transliterate(ccards(i),' -','').eq.string).eqv.goodbad, &
+           & 'input',buff,'output',string)
       enddo
    end subroutine checkem
 end subroutine test_luhn_checksum
@@ -1566,7 +1568,7 @@ end subroutine test_luhn_checksum
 function djb2_hash_arr(anything,continue) result(hash_128)
 implicit none
 
-! ident_4="@(#)djb2_hash(3fp): DJB2 hash of array (algorithm by Daniel J. Bernstein )"
+! ident_4="@(#) djb2_hash(3fp) DJB2 hash of array (algorithm by Daniel J. Bernstein )"
 
 class(*),intent(in)          :: anything(:)
 logical,intent(in),optional  :: continue
@@ -1602,7 +1604,7 @@ end function djb2_hash_arr
 function djb2_hash_scalar(anything,continue) result(hash_128)
 implicit none
 
-! ident_5="@(#)djb2_hash(3fp): djb2 hash of scalar"
+! ident_5="@(#) djb2_hash(3fp) djb2 hash of scalar"
 
 class(*),intent(in)          :: anything
 logical,intent(in),optional  :: continue
@@ -1706,7 +1708,7 @@ function crc32_hash_arr(anything,continue) result (crc_64)
 use,intrinsic :: ISO_FORTRAN_ENV, only : int8,int16,int32,int64,real32,real64,real128
 implicit none
 
-! ident_6="@(#)M_hashkeys::crc32_hash_arr: CRC (Cyclic Redundancy Check) calculation"
+! ident_6="@(#) M_hashkeys crc32_hash_arr CRC (Cyclic Redundancy Check) calculation"
 
 class(*),intent(in)          :: anything(:)
 logical,intent(in),optional  :: continue
@@ -1765,7 +1767,7 @@ end function crc32_hash_arr
 function crc32_hash_scalar(anything,continue) result(hash_64)
 implicit none
 
-! ident_7="@(#)crc32_hash_scalar(3fp): crc32 hash of scalar"
+! ident_7="@(#) crc32_hash_scalar(3fp) crc32 hash of scalar"
 
 class(*),intent(in)          :: anything
 logical,intent(in),optional  :: continue
@@ -1881,7 +1883,7 @@ function sdbm_hash_arr(anything,continue) result(hash_128)
 use,intrinsic :: ISO_FORTRAN_ENV, only : int8,int16,int32,int64,real32,real64,real128
 implicit none
 
-! ident_8="@(#)sdbm_hash_arr(3fp): sdbm hash of array"
+! ident_8="@(#) sdbm_hash_arr(3fp) sdbm hash of array"
 
 class(*),intent(in)          :: anything(:)
 logical,intent(in),optional  :: continue
@@ -1917,7 +1919,7 @@ end function sdbm_hash_arr
 function sdbm_hash_scalar(anything,continue) result(hash_128)
 implicit none
 
-! ident_9="@(#)sdbm_hash_scalar(3fp): sdbm hash of scalar"
+! ident_9="@(#) sdbm_hash_scalar(3fp) sdbm hash of scalar"
 
 class(*),intent(in)          :: anything
 logical,intent(in),optional  :: continue
@@ -1949,7 +1951,7 @@ end function sdbm_hash_scalar
 function djb2(anything)
 implicit none
 
-! ident_10="@(#)djb2(3f): call C routine djb2(3c) with a Fortran CHARACTER variable"
+! ident_10="@(#) djb2(3f) call C routine djb2(3c) with a Fortran CHARACTER variable"
 
 ! extern int djb2(char *s);
 interface
@@ -2148,7 +2150,7 @@ end subroutine test_suite_M_hashkeys
 function anything_to_bytes_arr(anything) result(chars)
 implicit none
 
-! ident_11="@(#)M_anything::anything_to_bytes_arr(3fp): any vector of intrinsics to bytes (an array of CHARACTER(LEN=1) variables)"
+! ident_11="@(#) M_anything anything_to_bytes_arr(3fp) any vector of intrinsics to bytes (an array of CHARACTER(LEN=1) variables)"
 
 class(*),intent(in)          :: anything(:)
 character(len=1),allocatable :: chars(:)
@@ -2174,7 +2176,7 @@ end function anything_to_bytes_arr
 function  anything_to_bytes_scalar(anything) result(chars)
 implicit none
 
-! ident_12="@(#)M_anything::anything_to_bytes_scalar(3fp): anything to bytes (an array of CHARACTER(LEN=1) variables)"
+! ident_12="@(#) M_anything anything_to_bytes_scalar(3fp) anything to bytes (an array of CHARACTER(LEN=1) variables)"
 
 class(*),intent(in)          :: anything
 character(len=1),allocatable :: chars(:)

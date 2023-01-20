@@ -5,17 +5,17 @@
 NOTE: This repository requires being built with fpm ( [Fortran Package Manager](https://github.com/fortran-lang/fpm) )
       Alternatively, it may be found as a part of the GPF( [General Purpose Fortran](https://github.com/urbanjost/general-purpose-fortran) )
 
-## NAME
+## Name
 
 ### M_hashkeys - a collection of hash key generator modules
 
-## DESCRIPTION
+## Description
 
    M_hashkeys(3f) is a Fortran repository that contains several modules 
    of hash generators.
 
-## DOCUMENTATION   ![docs](docs/images/docs.gif)
-### USER
+## Documentation   ![docs](docs/images/docs.gif)
+### User
 
 All documents are contained in the docs/ directory including
 archive files of man(1) pages that can be installed on ULS
@@ -39,13 +39,13 @@ archive files of man(1) pages that can be installed on ULS
    + [manpages.tgz](https://urbanjost.github.io/M_hashkeys/manpages.tgz)
 
    - [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes
-### DEVELOPER 
+### Developer 
 
    - [doxygen(1) output](https://urbanjost.github.io/M_hashkeys/doxygen_out/html/index.html).
    - [ford(1) output](https://urbanjost.github.io/M_hashkeys/fpm-ford/index.html).
    - [github action status](docs/STATUS.md) 
 
-## DOWNLOAD AND BUILD
+## Download and Build
 
 <!--
 ### gmake ![gmake](docs/images/gnu.gif)
