@@ -1,5 +1,5 @@
      program demo_M_sha3
-     use M_sha3
+     use M_hashkeys__sha3
      implicit none
      character(len=128) :: fname, arg
         call get_command_argument( 1, arg )

@@ -10,7 +10,7 @@ $(NULL)
 
 TESTFILES = \
  ../test/test_suite_M_hashkeys.f90 \
- ../test/M_sha3.f90 \
+ ../test/M_hashkeys__sha3.f90 \
 $(NULL)
 TPROG = ${TESTFILES:.f90=}
 
@@ -20,9 +20,9 @@ PROG = ${PROGFILES:.f90=}
 
 CPROG = ${CPROGFILES:.c=}
 
-SRCS =  M_hashkeys.f90 M_sha3.f90 
+SRCS =  M_hashkeys.f90 M_hashekeys__sha3.f90 
 
-OBJS =  M_hashkeys.o M_sha3.o 
+OBJS =  M_hashkeys.o M_hashekeys__sha3.o 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # platform-specific values you will probably change
 # 

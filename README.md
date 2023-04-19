@@ -24,14 +24,14 @@ archive files of man(1) pages that can be installed on ULS
 #### Individual man-pages as HTML
 
    HTML versions of the man-pages describe all the routines:
-   - An [index](https://urbanjost.github.io/M_hashkeys/man3.html) to M_hashkeys.f90 and M_sha3.f90 
+   - An [index](https://urbanjost.github.io/M_hashkeys/man3.html) to M_hashkeys.f90 and M_hashkeys__sha3.f90 
 
 #### All man-pages amalgamated as HTML
 
    Another view of these documents (that uses javascript to combine all
    the HTML descriptions of the man-pages) is in a form that can easily be printed as a single document.
    - [*BOOK_M_hashkeys*](https://urbanjost.github.io/M_hashkeys/BOOK_M_hashkeys.html) 
-   - [*BOOK_M_sha3*](https://urbanjost.github.io/M_hashkeys/BOOK_M_sha3.html) 
+   - [*BOOK_M_hashkeys__sha3*](https://urbanjost.github.io/M_hashkeys/BOOK_M_hashkeys__sha3.html) 
 
 ### real man-pages ![gmake](docs/images/manpages.gif)
 

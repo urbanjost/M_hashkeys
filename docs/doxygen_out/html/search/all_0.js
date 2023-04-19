@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['buffer_0',['buffer',['../structm__sha3_1_1sha3__state.html#a626bab8376ccfeb04ff82940eb6d6a3f',1,'m_sha3::sha3_state']]],
-  ['bufsize_1',['bufsize',['../structm__sha3_1_1sha3__state.html#a36041f03e21a92525bfe38bdee925c4a',1,'m_sha3::sha3_state']]]
+  ['buffer_0',['buffer',['../structm__hashkeys____sha3_1_1sha3__state.html#a458fe4f7506a0fc46d4a6e13a26a607f',1,'m_hashkeys__sha3::sha3_state']]],
+  ['bufsize_1',['bufsize',['../structm__hashkeys____sha3_1_1sha3__state.html#af9da1092f2fcc67e6882d653deb388ba',1,'m_hashkeys__sha3::sha3_state']]]
 ];
