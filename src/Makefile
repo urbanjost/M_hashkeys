@@ -75,7 +75,7 @@ clean:
 .PHONY: help
 
 help:
-	: make    '-- build M_hashkeys M_sha3 module'
+	: make    '-- build M_hashkeys M_hashkeys__sha3 module'
 	: run     '-- run manpage demo programs and test program'
 #	: test    '-- run test program (requires additional modules)'
 	: man     '-- show all manpages as text'
@@ -125,4 +125,4 @@ man:
 .F90.o:
 	$(F90) $(F90FLAGS) -c $<
 
-M_sha3.o: M_hashkeys.o
+M_haskeys__sha3.o: M_hashkeys.o
