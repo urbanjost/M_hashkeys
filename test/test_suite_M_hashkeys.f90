@@ -1,10 +1,7 @@
 program runtest
 use M_hashkeys, only : test_suite_M_hashkeys
 use M_hashkeys, only : test_suite_sha256
-use M_framework__verify
-unit_check_command=''
-unit_check_keep_going=.true.
-unit_check_level=0
+use M_framework__verify, only : unit_check_stop
    write(*,*)'STARTED test_suite_M_hashkeys'
    call test_suite_M_hashkeys()
    call test_suite_sha256()
