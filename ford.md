@@ -7,7 +7,7 @@ output_dir: docs/fpm-ford
 project: M_hashkeys
 summary: hash algorithms
 project_github: https://github.com/urbanjost/M_hashkeys
-project_download:
+project_download: https://github.com/urbanjost/M_hashkeys/archive/refs/heads/master.zip
 author: John S. Urban
 author_email: urbanjost@comcast.net
 github: https://github.com/urbanjost/M_hashkeys
