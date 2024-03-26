@@ -24,9 +24,9 @@ name="test_suite"
 source-dir="test"
 main="test_suite_M_hashkeys.f90"
 [test.dependencies]
-M_framework          = { git = "https://github.com/urbanjost/M_framework.git" }
+M_framework = {namespace = "GPF"}
 
 [dependencies]
-M_io       = { git = "https://github.com/urbanjost/M_io.git"      }
-M_strings  = { git = "https://github.com/urbanjost/M_strings.git" }
-M_system   = { git = "https://github.com/urbanjost/M_system.git"  }
+M_io       = { namespace = "GPF" }
+M_strings  = { namespace = "GPF" }
+M_system   = { namespace = "GPF" }
