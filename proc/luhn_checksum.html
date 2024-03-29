@@ -1,0 +1,472 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="hash algorithms">
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>luhn_checksum &ndash; M_hashkeys</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">M_hashkeys </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>luhn_checksum
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title=" 3.3% of total for procedures.">29 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/M_hashkeys.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/m_hashkeys.f90.html'>M_hashkeys.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/m_hashkeys.html'>M_hashkeys</a></li>
+            <li class="breadcrumb-item active" aria-current="page">luhn_checksum</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/luhn_checksum.html#src">luhn_checksum</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  function luhn_checksum(string)  
+</h2>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item">M_strings</li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <h2 id="name">NAME</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">luhn_checksum</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">M_hashkeys</span><span class="o">]</span><span class="w"> </span><span class="n">Luhn</span><span class="w"> </span><span class="nf">checksum</span><span class="w"> </span><span class="n">algorithm</span><span class="w"> </span><span class="n">applied</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">numeric</span><span class="w"> </span><span class="k">values</span>
+</code></pre></div>
+
+<h2 id="description">DESCRIPTION</h2>
+<div class="codehilite"><pre><span></span><code><span class="nx">The</span><span class="w"> </span><span class="nx">Luhn</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">Luhn</span><span class="w"> </span><span class="nx">formula</span><span class="p">,</span><span class="w"> </span><span class="nx">also</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="s">&quot;modulus 10&quot;</span><span class="w"> </span><span class="k">or</span>
+<span class="s">&quot;mod 10&quot;</span><span class="w"> </span><span class="nx">algorithm</span><span class="p">,</span><span class="w"> </span><span class="nx">named</span><span class="w"> </span><span class="nx">after</span><span class="w"> </span><span class="nx">IBM</span><span class="w"> </span><span class="nx">scientist</span><span class="w"> </span><span class="nx">Hans</span><span class="w"> </span><span class="nx">Peter</span><span class="w"> </span><span class="nx">Luhn</span><span class="p">,</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">simple</span>
+<span class="nx">checksum</span><span class="w"> </span><span class="nx">formula</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">validate</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">variety</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">identification</span><span class="w"> </span><span class="nx">numbers</span>
+<span class="nx">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">credit</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="nx">numbers</span><span class="p">,</span><span class="w"> </span><span class="nx">IMEI</span><span class="w"> </span><span class="nx">numbers</span><span class="p">,</span><span class="w"> </span><span class="nx">National</span><span class="w"> </span><span class="nx">Provider</span><span class="w"> </span><span class="nx">Identifier</span>
+<span class="nx">numbers</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">United</span><span class="w"> </span><span class="nx">States</span><span class="p">,</span><span class="w"> </span><span class="nx">Canadian</span><span class="w"> </span><span class="nx">Social</span><span class="w"> </span><span class="nx">Insurance</span><span class="w"> </span><span class="nx">Numbers</span><span class="p">,</span><span class="w"> </span><span class="nx">Israel</span>
+<span class="nx">ID</span><span class="w"> </span><span class="nx">Numbers</span><span class="p">,</span><span class="w"> </span><span class="nx">Greek</span><span class="w"> </span><span class="nx">Social</span><span class="w"> </span><span class="nx">Security</span><span class="w"> </span><span class="nx">Numbers</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">survey</span><span class="w"> </span><span class="nx">codes</span><span class="w"> </span><span class="nx">appearing</span><span class="w"> </span><span class="nx">on</span>
+<span class="nx">McDonald</span><span class="err">&#39;</span><span class="nx">s</span><span class="p">,</span><span class="w"> </span><span class="nx">Taco</span><span class="w"> </span><span class="nx">Bell</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">Tractor</span><span class="w"> </span><span class="nx">Supply</span><span class="w"> </span><span class="nx">Co</span><span class="p">.</span><span class="w"> </span><span class="nx">receipts</span><span class="p">.</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="nx">was</span><span class="w"> </span><span class="nx">created</span><span class="w"> </span><span class="nx">by</span>
+<span class="nx">IBM</span><span class="w"> </span><span class="nx">scientist</span><span class="w"> </span><span class="nx">Hans</span><span class="w"> </span><span class="nx">Peter</span><span class="w"> </span><span class="nx">Luhn</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">described</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">U</span><span class="p">.</span><span class="nx">S</span><span class="p">.</span><span class="w"> </span><span class="nx">Patent</span><span class="w"> </span><span class="nx">No</span><span class="p">.</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="mi">950</span><span class="p">,</span><span class="mi">048</span><span class="p">,</span>
+<span class="nx">filed</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">January</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">1954</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">granted</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">August</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">1960</span><span class="p">.</span>
+
+<span class="nx">The</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">public</span><span class="w"> </span><span class="nx">domain</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">wide</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">today</span><span class="p">.</span><span class="w"> </span><span class="nx">It</span>
+<span class="k">is</span><span class="w"> </span><span class="nx">specified</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">ISO</span><span class="o">/</span><span class="nx">IEC</span><span class="w"> </span><span class="mi">7812</span><span class="o">-</span><span class="mi">1</span><span class="p">.[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">intended</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">a</span>
+<span class="nx">cryptographically</span><span class="w"> </span><span class="nx">secure</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="nx">function</span><span class="p">;</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">was</span><span class="w"> </span><span class="nx">designed</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">protect</span><span class="w"> </span><span class="nx">against</span>
+<span class="nx">accidental</span><span class="w"> </span><span class="nx">errors</span><span class="p">,</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">malicious</span><span class="w"> </span><span class="nx">attacks</span><span class="p">.</span><span class="w"> </span><span class="nx">Most</span><span class="w"> </span><span class="nx">credit</span><span class="w"> </span><span class="nx">cards</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">many</span>
+<span class="nx">government</span><span class="w"> </span><span class="nx">identification</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">method</span><span class="w"> </span><span class="nx">of</span>
+<span class="nx">distinguishing</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">mistyped</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">otherwise</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span>
+
+<span class="nx">The</span><span class="w"> </span><span class="nx">formula</span><span class="w"> </span><span class="nx">verifies</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">against</span><span class="w"> </span><span class="nx">its</span><span class="w"> </span><span class="nx">included</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="p">,</span><span class="w"> </span><span class="nx">which</span>
+<span class="k">is</span><span class="w"> </span><span class="nx">usually</span><span class="w"> </span><span class="nx">appended</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">generate</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">full</span>
+<span class="nx">account</span><span class="w"> </span><span class="nx">number</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">must</span><span class="w"> </span><span class="nx">pass</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">test</span><span class="p">:</span>
+
+<span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="nx">From</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">rightmost</span><span class="w"> </span><span class="nx">digit</span><span class="p">,</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">moving</span><span class="w"> </span><span class="nx">left</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">double</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">every</span><span class="w"> </span><span class="nx">second</span><span class="w"> </span><span class="nx">digit</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">doubled</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">the</span><span class="w"> </span><span class="nx">first</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="nx">doubled</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">immediately</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">left</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="p">.</span><span class="w"> </span><span class="nx">If</span>
+<span class="w">   </span><span class="nx">the</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">doubling</span><span class="w"> </span><span class="nx">operation</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">greater</span><span class="w"> </span><span class="nx">than</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">g</span><span class="p">.,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="err">×</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">=</span>
+<span class="w">   </span><span class="mi">16</span><span class="p">),</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">g</span><span class="p">.,</span><span class="w"> </span><span class="mi">16</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">=</span>
+<span class="w">   </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">or</span><span class="p">,</span><span class="w"> </span><span class="nx">alternatively</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">found</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">subtracting</span>
+<span class="w">   </span><span class="mi">9</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">g</span><span class="p">.,</span><span class="w"> </span><span class="mi">16</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="err">−</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="err">−</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">9</span><span class="p">).</span>
+
+<span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="nx">Take</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">digits</span><span class="p">.</span>
+
+<span class="mi">3</span><span class="p">.</span><span class="w"> </span><span class="nx">If</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="nx">modulo</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">equal</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="nx">ends</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">zero</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">   </span><span class="nx">the</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="nx">according</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">Luhn</span><span class="w"> </span><span class="nx">formula</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">valid</span><span class="p">.</span>
+
+<span class="nx">Assume</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">example</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="s">&quot;7992739871&quot;</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">a</span>
+<span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="nx">added</span><span class="p">,</span><span class="w"> </span><span class="nx">making</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="mi">7992739871</span><span class="nx">x</span><span class="p">:</span>
+
+<span class="nx">Account</span><span class="w"> </span><span class="nx">number</span>
+
+<span class="w">    </span><span class="mi">7</span><span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="mi">7</span><span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="mi">8</span><span class="w">  </span><span class="mi">7</span><span class="w">  </span><span class="mi">1</span><span class="w">  </span><span class="nx">x</span>
+
+<span class="nx">Double</span><span class="w"> </span><span class="nx">every</span><span class="w"> </span><span class="nx">other</span>
+
+<span class="w">    </span><span class="mi">7</span><span class="w">  </span><span class="mi">18</span><span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="mi">4</span><span class="w">  </span><span class="mi">7</span><span class="w">  </span><span class="mi">6</span><span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="mi">16</span><span class="w">  </span><span class="mi">7</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="nx">x</span>
+
+<span class="nx">Sum</span><span class="w"> </span><span class="nx">digits</span>
+
+<span class="w">    </span><span class="mi">7</span><span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="mi">4</span><span class="w">  </span><span class="mi">7</span><span class="w">  </span><span class="mi">6</span><span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="mi">7</span><span class="w">  </span><span class="mi">7</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="nx">x</span>
+
+<span class="nx">The</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">third</span><span class="w"> </span><span class="nx">row</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">67</span><span class="o">+</span><span class="nx">x</span><span class="p">.</span>
+
+<span class="nx">The</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">obtained</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">computing</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">non</span><span class="o">-</span><span class="nx">check</span>
+<span class="nx">digits</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nx">computing</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="nx">times</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">modulo</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">(</span><span class="k">in</span><span class="w"> </span><span class="nx">equation</span><span class="w"> </span><span class="nx">form</span><span class="p">,</span>
+<span class="p">((</span><span class="mi">67</span><span class="w"> </span><span class="err">×</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="nx">mod</span><span class="w"> </span><span class="mi">10</span><span class="p">)).</span><span class="w"> </span><span class="nx">In</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="nx">form</span><span class="p">:</span>
+
+<span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="nx">Compute</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">non</span><span class="o">-</span><span class="nx">check</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="p">(</span><span class="mi">67</span><span class="p">).</span>
+<span class="w"> </span><span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="nx">Multiply</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">(</span><span class="mi">603</span><span class="p">).</span>
+<span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="p">.</span><span class="w"> </span><span class="nx">Thus</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">=</span><span class="mi">3</span><span class="p">.</span>
+
+<span class="p">(</span><span class="nx">Alternative</span><span class="w"> </span><span class="nx">method</span><span class="p">)</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">obtained</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">computing</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">sum</span>
+<span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">other</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="p">(</span><span class="nx">third</span><span class="w"> </span><span class="nx">row</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nx">subtracting</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">(</span><span class="mi">67</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">Units</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="err">−</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="mi">3</span><span class="p">).</span><span class="w"> </span><span class="nx">In</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="nx">form</span><span class="p">:</span>
+
+<span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="nx">Compute</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">non</span><span class="o">-</span><span class="nx">check</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="p">(</span><span class="mi">67</span><span class="p">).</span>
+<span class="w"> </span><span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="nx">Take</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="p">).</span>
+<span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="w"> </span><span class="nx">Subtract</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span>
+<span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="p">.</span><span class="w"> </span><span class="nx">In</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="nx">ends</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="p">.</span>
+
+<span class="nx">This</span><span class="w"> </span><span class="nx">makes</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">full</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">read</span><span class="w"> </span><span class="mi">79927398713</span><span class="p">.</span>
+
+<span class="nx">Each</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="mi">79927398710</span><span class="p">,</span><span class="w"> </span><span class="mi">79927398711</span><span class="p">,</span><span class="w"> </span><span class="mi">79927398712</span><span class="p">,</span><span class="w"> </span><span class="mi">79927398713</span><span class="p">,</span>
+<span class="mi">79927398714</span><span class="p">,</span><span class="w"> </span><span class="mi">79927398715</span><span class="p">,</span><span class="w"> </span><span class="mi">79927398716</span><span class="p">,</span><span class="w"> </span><span class="mi">79927398717</span><span class="p">,</span><span class="w"> </span><span class="mi">79927398718</span><span class="p">,</span>
+<span class="mi">79927398719</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">validated</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">follows</span><span class="p">.</span>
+
+<span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="nx">Double</span><span class="w"> </span><span class="nx">every</span><span class="w"> </span><span class="nx">second</span><span class="w"> </span><span class="nx">digit</span><span class="p">,</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">rightmost</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="err">×</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="err">×</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="mi">3</span><span class="err">×</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="err">×</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">9</span><span class="err">×</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">18</span>
+<span class="w"> </span><span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="nx">Sum</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">individual</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="p">(</span><span class="nx">digits</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">parentheses</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">products</span>
+<span class="w">    </span><span class="nx">from</span><span class="w"> </span><span class="nx">Step</span><span class="w"> </span><span class="mi">1</span><span class="p">):</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">(</span><span class="nx">the</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">67</span><span class="p">.</span>
+<span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="w"> </span><span class="nx">If</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">multiple</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">possibly</span>
+<span class="w">    </span><span class="nx">valid</span><span class="p">.</span><span class="w"> </span><span class="nx">Note</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">only</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="nx">digit</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">produces</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="p">(</span><span class="mi">70</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">that</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">multiple</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span>
+<span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="w"> </span><span class="nx">Thus</span><span class="w"> </span><span class="nx">these</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="nx">invalid</span><span class="w"> </span><span class="nx">except</span><span class="w"> </span><span class="nx">possibly</span><span class="w"> </span><span class="mi">79927398713</span>
+<span class="w">    </span><span class="nx">which</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">correct</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">digit</span><span class="p">.</span>
+
+<span class="nx">Alternately</span><span class="p">,</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">checksum</span><span class="w"> </span><span class="nx">creation</span><span class="w"> </span><span class="nx">algorithm</span><span class="p">,</span><span class="w"> </span><span class="nx">ignoring</span>
+<span class="nx">the</span><span class="w"> </span><span class="nx">checksum</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">place</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">had</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">yet</span><span class="w"> </span><span class="nx">been</span><span class="w"> </span><span class="nx">calculated</span><span class="p">.</span><span class="w"> </span><span class="nx">Then</span>
+<span class="nx">calculate</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">checksum</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">compare</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">calculated</span><span class="w"> </span><span class="nx">checksum</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span>
+<span class="nx">original</span><span class="w"> </span><span class="nx">checksum</span><span class="w"> </span><span class="nx">included</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">credit</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="nx">number</span><span class="p">.</span><span class="w"> </span><span class="nx">If</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">included</span>
+<span class="nx">checksum</span><span class="w"> </span><span class="nx">matches</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">calculated</span><span class="w"> </span><span class="nx">checksum</span><span class="p">,</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">valid</span><span class="p">.</span>
+</code></pre></div>
+
+<h2 id="strengths-and-weaknesses">STRENGTHS AND WEAKNESSES</h2>
+<div class="codehilite"><pre><span></span><code><span class="nx">The</span><span class="w"> </span><span class="nx">Luhn</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">detect</span><span class="w"> </span><span class="nx">any</span><span class="w"> </span><span class="nx">single</span><span class="o">-</span><span class="nx">digit</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">well</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">almost</span>
+<span class="nx">all</span><span class="w"> </span><span class="nx">transpositions</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">adjacent</span><span class="w"> </span><span class="nx">digits</span><span class="p">.</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="k">not</span><span class="p">,</span><span class="w"> </span><span class="nx">however</span><span class="p">,</span><span class="w"> </span><span class="nx">detect</span>
+<span class="nx">transposition</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">two</span><span class="o">-</span><span class="nx">digit</span><span class="w"> </span><span class="nx">sequence</span><span class="w"> </span><span class="mi">09</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="mi">90</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="nx">vice</span><span class="w"> </span><span class="nx">versa</span><span class="p">).</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="nx">will</span>
+<span class="nx">detect</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nx">possible</span><span class="w"> </span><span class="nx">twin</span><span class="w"> </span><span class="nx">errors</span><span class="w"> </span><span class="p">(</span><span class="nx">it</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">detect</span><span class="w"> </span><span class="mi">22</span><span class="w"> </span><span class="err">↔</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span>
+<span class="mi">33</span><span class="w"> </span><span class="err">↔</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="mi">44</span><span class="w"> </span><span class="err">↔</span><span class="w"> </span><span class="mi">77</span><span class="p">).</span>
+
+<span class="nx">Other</span><span class="p">,</span><span class="w"> </span><span class="nx">more</span><span class="w"> </span><span class="nx">complex</span><span class="w"> </span><span class="nx">check</span><span class="o">-</span><span class="nx">digit</span><span class="w"> </span><span class="nx">algorithms</span><span class="w"> </span><span class="p">(</span><span class="nx">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">Verhoeff</span><span class="w"> </span><span class="nx">algorithm</span>
+<span class="k">and</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">Damm</span><span class="w"> </span><span class="nx">algorithm</span><span class="p">)</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">detect</span><span class="w"> </span><span class="nx">more</span><span class="w"> </span><span class="nx">transcription</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">Luhn</span>
+<span class="nx">mod</span><span class="w"> </span><span class="nx">N</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">extension</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">supports</span><span class="w"> </span><span class="nx">non</span><span class="o">-</span><span class="nx">numerical</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span>
+
+<span class="nx">Because</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="nx">operates</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">right</span><span class="o">-</span><span class="nx">to</span><span class="o">-</span><span class="nx">left</span><span class="w"> </span><span class="nx">manner</span>
+<span class="k">and</span><span class="w"> </span><span class="nx">zero</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="nx">affect</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="nx">only</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">they</span><span class="w"> </span><span class="nx">cause</span><span class="w"> </span><span class="nx">shift</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">position</span><span class="p">,</span>
+<span class="nx">zero</span><span class="o">-</span><span class="nx">padding</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">beginning</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="nx">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">affect</span><span class="w"> </span><span class="nx">the</span>
+<span class="nx">calculation</span><span class="p">.</span><span class="w"> </span><span class="nx">Therefore</span><span class="p">,</span><span class="w"> </span><span class="nx">systems</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">pad</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">specific</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">digits</span>
+<span class="p">(</span><span class="nx">by</span><span class="w"> </span><span class="nx">converting</span><span class="w"> </span><span class="mi">1234</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="mi">0001234</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">instance</span><span class="p">)</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">perform</span><span class="w"> </span><span class="nx">Luhn</span><span class="w"> </span><span class="nx">validation</span>
+<span class="nx">before</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">after</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">padding</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">achieve</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span>
+
+<span class="nx">Prepending</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">odd</span><span class="o">-</span><span class="nx">length</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="nx">makes</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">possible</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">process</span>
+<span class="nx">the</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">left</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">right</span><span class="w"> </span><span class="nx">rather</span><span class="w"> </span><span class="nx">than</span><span class="w"> </span><span class="nx">right</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">left</span><span class="p">,</span><span class="w"> </span><span class="nx">doubling</span><span class="w"> </span><span class="nx">the</span>
+<span class="nx">odd</span><span class="o">-</span><span class="nx">place</span><span class="w"> </span><span class="nx">digits</span><span class="p">.</span>
+
+<span class="nx">The</span><span class="w"> </span><span class="nx">algorithm</span><span class="w"> </span><span class="nx">appeared</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">US</span><span class="w"> </span><span class="nx">Patent</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">hand</span><span class="o">-</span><span class="nx">held</span><span class="p">,</span><span class="w"> </span><span class="nx">mechanical</span>
+<span class="nx">device</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">computing</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">checksum</span><span class="p">.</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="nx">was</span><span class="w"> </span><span class="nx">therefore</span><span class="w"> </span><span class="nx">required</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">be</span>
+<span class="nx">rather</span><span class="w"> </span><span class="nx">simple</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">device</span><span class="w"> </span><span class="nx">took</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">mod</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">mechanical</span><span class="w"> </span><span class="nx">means</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span>
+<span class="nx">substitution</span><span class="w"> </span><span class="nx">digits</span><span class="p">,</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="k">is</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">double</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">reduce</span>
+<span class="nx">procedure</span><span class="p">,</span><span class="w"> </span><span class="nx">were</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">produced</span><span class="w"> </span><span class="nx">mechanically</span><span class="p">.</span><span class="w"> </span><span class="nx">Rather</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">digits</span><span class="w"> </span><span class="nx">were</span><span class="w"> </span><span class="nx">marked</span>
+<span class="k">in</span><span class="w"> </span><span class="nx">their</span><span class="w"> </span><span class="nx">permuted</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">machine</span><span class="p">.</span>
+</code></pre></div>
+
+<h2 id="options">OPTIONS</h2>
+<div class="codehilite"><pre><span></span><code>  S                 the string of digits to be checked. Spaces and dashes
+                    are ignored.
+</code></pre></div>
+
+<h2 id="result">RESULT</h2>
+<div class="codehilite"><pre><span></span><code>  LUHN_CHECKSUM     the Luhn checksum of the string; which is the digits in the
+                    input string with the checksum digit appended.
+</code></pre></div>
+
+<h2 id="references">REFERENCES</h2>
+<div class="codehilite"><pre><span></span><code>From Wikipedia, the free encyclopedia
+
+    (https://en.wikipedia.org/wiki/Luhn_algorithm)
+</code></pre></div>
+
+<h2 id="examples">EXAMPLES</h2>
+<p>Sample program</p>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nx">program</span><span class="w"> </span><span class="nx">demo_luhn_checksum</span>
+<span class="w">  </span><span class="nx">use</span><span class="w"> </span><span class="nx">M_hashkeys</span><span class="p">,</span><span class="w"> </span><span class="nx">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">luhn_checksum</span>
+<span class="w">  </span><span class="nx">implicit</span><span class="w"> </span><span class="nx">none</span>
+<span class="w">  </span><span class="nx">character</span><span class="p">(</span><span class="nx">len</span><span class="p">=:),</span><span class="nx">allocatable</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="nx">ccards</span><span class="p">(:),</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">integer</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span>
+<span class="w">  </span><span class="nx">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="err">&#39;</span><span class="nx">GOOD</span><span class="w"> </span><span class="nx">VALUES</span><span class="err">&#39;</span>
+<span class="w">  </span><span class="nx">ccards</span><span class="p">=[</span><span class="w"> </span><span class="nx">character</span><span class="p">(</span><span class="nx">len</span><span class="p">=</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398713</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span>
+<span class="w">                              </span><span class="o">&amp;</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">49927398716</span><span class="err">&#39;</span><span class="p">,</span><span class="o">&amp;</span>
+<span class="w">                              </span><span class="o">&amp;</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">1234567812345670</span><span class="err">&#39;</span><span class="w"> </span><span class="p">]</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">checkem</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="err">&#39;</span><span class="nx">BAD</span><span class="w"> </span><span class="nx">VALUES</span><span class="err">&#39;</span>
+<span class="w">  </span><span class="nx">ccards</span><span class="p">=[</span><span class="w"> </span><span class="nx">character</span><span class="p">(</span><span class="nx">len</span><span class="p">=</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="o">&amp;</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398710</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398711</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398712</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398714</span><span class="err">&#39;</span><span class="p">,</span><span class="w">  </span><span class="o">&amp;</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398715</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398716</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398717</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398718</span><span class="err">&#39;</span><span class="p">,</span><span class="w">  </span><span class="o">&amp;</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">79927398719</span><span class="err">&#39;</span><span class="p">,</span><span class="w">  </span><span class="o">&amp;</span>
+<span class="w">     </span><span class="err">&#39;</span><span class="mi">49927398717</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">1234567812345678</span><span class="err">&#39;</span><span class="w"> </span><span class="p">]</span>
+<span class="w">  </span><span class="nx">call</span><span class="w"> </span><span class="nx">checkem</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">contains</span>
+<span class="w">  </span><span class="nx">subroutine</span><span class="w"> </span><span class="nx">checkem</span>
+<span class="w">     </span><span class="p">!</span><span class="w"> </span><span class="nx">validate</span><span class="w"> </span><span class="nx">these</span><span class="w"> </span><span class="nx">numbers</span>
+<span class="w">     </span><span class="nx">do</span><span class="w"> </span><span class="nx">i</span><span class="p">=</span><span class="mi">1</span><span class="p">,</span><span class="nx">size</span><span class="p">(</span><span class="nx">ccards</span><span class="p">)</span>
+<span class="w">        </span><span class="nx">j</span><span class="p">=</span><span class="nx">len</span><span class="p">(</span><span class="nx">trim</span><span class="p">(</span><span class="nx">ccards</span><span class="p">(</span><span class="nx">i</span><span class="p">)))</span>
+<span class="w">        </span><span class="kt">string</span><span class="p">=</span><span class="nx">luhn_checksum</span><span class="p">(</span><span class="nx">ccards</span><span class="p">(</span><span class="nx">i</span><span class="p">)(:</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">        </span><span class="nx">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="err">&#39;</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="mi">1</span><span class="nx">x</span><span class="p">,</span><span class="nx">a</span><span class="p">,</span><span class="mi">1</span><span class="nx">x</span><span class="p">,</span><span class="nx">l1</span><span class="p">)</span><span class="err">&#39;</span><span class="p">)</span><span class="nx">ccards</span><span class="p">(</span><span class="nx">i</span><span class="p">),</span><span class="kt">string</span><span class="p">,</span><span class="nx">ccards</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">eq</span><span class="p">.</span><span class="kt">string</span>
+<span class="w">     </span><span class="nx">enddo</span>
+
+<span class="w">     </span><span class="kt">string</span><span class="p">=</span><span class="err">&#39;</span><span class="mi">123456</span><span class="w"> </span><span class="mi">781</span><span class="o">-</span><span class="mi">234</span><span class="o">-</span><span class="mi">567</span><span class="err">&#39;</span>
+<span class="w">     </span><span class="nx">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="err">&#39;</span><span class="nx">from</span><span class="w"> </span><span class="err">&#39;</span><span class="p">,</span><span class="kt">string</span><span class="p">,</span><span class="err">&#39;</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="err">&#39;</span><span class="p">,</span><span class="nx">luhn_checksum</span><span class="p">(</span><span class="kt">string</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span>
+<span class="w">     </span><span class="o">&amp;</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="nx">should</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="mi">1234567812345670</span><span class="err">&#39;</span>
+<span class="w">  </span><span class="nx">end</span><span class="w"> </span><span class="nx">subroutine</span><span class="w"> </span><span class="nx">checkem</span>
+<span class="w">  </span><span class="nx">end</span><span class="w"> </span><span class="nx">program</span><span class="w"> </span><span class="nx">demo_luhn_checksum</span>
+</code></pre></div>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-luhn_checksum"></span>
+          character(len=:), allocatable
+        </small>
+      </h3>
+      
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">function </span><span class="n">luhn_checksum</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="k">use </span><span class="n">M_strings</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">transliterate</span>
+
+<span class="c">! ident_3=&quot;@(#) LUHN_CHECKSUM determines the Luhn checksum of a string composed of digits&quot;</span>
+
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">string</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">luhn_checksum</span><span class="p">,</span><span class="w"> </span><span class="n">string_local</span>
+<span class="kt">integer</span><span class="p">,</span><span class="k">allocatable</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">dgts</span><span class="p">(:)</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="k">value</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">d2</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">ios</span>
+<span class="w">  </span><span class="n">string_local</span><span class="o">=</span><span class="n">transliterate</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39; -&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w">     </span><span class="c">! delete spaces and dashes</span>
+<span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">string_local</span><span class="p">))</span><span class="w">                    </span><span class="c">! Count the digits in string_local assuming the string_local is all digits.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">dgts</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="w">  </span><span class="k">read</span><span class="p">(</span><span class="n">string_local</span><span class="p">,</span><span class="s1">&#39;(*(i1))&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)(</span><span class="n">dgts</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="c">! Extract the digits from S.</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">     stop</span><span class="w"> </span><span class="s1">&#39;*luhn_checksum* error reading digits&#39;</span>
+<span class="w">  </span><span class="k">endif</span>
+<span class="k">  value</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="w">            </span><span class="c">! starting from the right double every other value and subtract 9 if the value is .gt. 9 and sum them</span>
+<span class="w">    </span><span class="n">d2</span><span class="o">=</span><span class="n">dgts</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+<span class="w">    </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">merge</span><span class="p">(</span><span class="n">d2</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">d2</span><span class="p">.</span><span class="n">gt</span><span class="p">.</span><span class="mi">9</span><span class="p">)</span>
+<span class="w">  </span><span class="k">enddo</span>
+<span class="k">  do </span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="w">          </span><span class="c">! add in the other values</span>
+<span class="w">    </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dgts</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">  </span><span class="k">enddo</span>
+<span class="k">  value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">mod</span><span class="p">(</span><span class="k">value</span><span class="o">*</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">luhn_checksum</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">luhn_checksum</span><span class="p">,</span><span class="s1">&#39;(a,i1)&#39;</span><span class="p">)</span><span class="n">string_local</span><span class="p">(:</span><span class="n">n</span><span class="p">),</span><span class="k">value</span>
+<span class="k">end function </span><span class="n">luhn_checksum</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col"><p>M_hashkeys was developed by John S. Urban<br>&copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-03-29 03:50              </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,702 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="hash algorithms">
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_suite_sha256 &ndash; M_hashkeys</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">M_hashkeys </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>test_suite_sha256
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title="41.0% of total for procedures.">362 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/M_hashkeys.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/m_hashkeys.f90.html'>M_hashkeys.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/m_hashkeys.html'>M_hashkeys</a></li>
+            <li class="breadcrumb-item active" aria-current="page">test_suite_sha256</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/test_suite_sha256.html#src">test_suite_sha256</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine test_suite_sha256()  
+</h2>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item">M_framework__verify</li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+    <h3>Arguments</h3>
+    <em>None</em>
+    <br>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">test_suite_sha256</span><span class="p">()</span>
+<span class="k">use </span><span class="n">M_framework__verify</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">unit_check</span><span class="p">,</span><span class="w"> </span><span class="n">unit_check_start</span><span class="p">,</span><span class="w"> </span><span class="n">unit_check_done</span>
+<span class="k">use </span><span class="n">M_framework__verify</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">unit_check_level</span>
+
+<span class="k">implicit none</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ipad1</span><span class="w">              </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000000000000000000000000000011&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="c">!&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ipad2</span><span class="w">     </span><span class="o">=</span><span class="nb">ibset</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">ibclr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;11111111111111111111111111111111&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span><span class="mi">31</span><span class="p">),</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="mi">31</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ipad3</span><span class="w">     </span><span class="o">=</span><span class="nb">ibset</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">ibclr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;10010000101001110011001110010011&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span><span class="mi">31</span><span class="p">),</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="mi">31</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ipad4</span><span class="w">     </span><span class="o">=</span><span class="nb">ibset</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">ibclr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;11001001101001110011001110010011&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span><span class="mi">31</span><span class="p">),</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="mi">31</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ipad5</span><span class="w">     </span><span class="o">=</span><span class="nb">ibset</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">ibclr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;10000001101001010011000110100001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span><span class="mi">31</span><span class="p">),</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="mi">31</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ipad6</span><span class="w">     </span><span class="o">=</span><span class="nb">ibset</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">ibclr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;11000000000000000000000000000000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span><span class="mi">31</span><span class="p">),</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="mi">31</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">shftc4_r2</span><span class="w"> </span><span class="o">=</span><span class="nb">ibset</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">ibclr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;11110010011010011100110011100100&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span><span class="mi">31</span><span class="p">),</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="mi">31</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">empty_str_bin_flip</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="o">=</span><span class="nb">ibset</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">ibclr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;10000000000000000000000000000000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span><span class="mi">31</span><span class="p">),</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="mi">31</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">big_endian_464</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="o">=</span><span class="nb">ibset</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">ibclr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;11010000000000010000000000000000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span><span class="mi">31</span><span class="p">),</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="mi">31</span><span class="p">)</span>
+<span class="c">!&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">shftc4_l12</span><span class="w">         </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01110011001110010011110010011010&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">shft5_r8</span><span class="w">           </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000000100000011010010100110001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">shft5_l11</span><span class="w">          </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00101001100011010000100000000000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">abc_bin</span><span class="w">            </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000001011000110110001001100001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a_bin</span><span class="w">              </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000000000000000000000101100001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">empty_str_bin</span><span class="w">      </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000000000000000000000000000001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">empty_bin</span><span class="w">          </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000000000000000000000000000000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">abc_bin_flip</span><span class="w">       </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100001011000100110001110000000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a_bin_flip</span><span class="w">         </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100001100000000000000000000000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">abca_bin</span><span class="w">           </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100001011000110110001001100001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">bcab_bin</span><span class="w">           </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100010011000010110001101100010&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cabc_bin</span><span class="w">           </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100011011000100110000101100011&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ca_one_zero</span><span class="w">        </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000000000000010110000101100011&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">little_endian_464</span><span class="w">  </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000000000000000000000111010000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">abc_bin_ref</span><span class="w">        </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;00000001011000110110001001100001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">abc_bin_swap</span><span class="w">       </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100001011000100110001100000001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">abca_bin_flip</span><span class="w">      </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100001011000100110001101100001&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">bcab_bin_flip</span><span class="w">      </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100010011000110110000101100010&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cabc_bin_flip</span><span class="w">      </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100011011000010110001001100011&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ca_one_zero_flip</span><span class="w">   </span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="s1">&#39;01100011011000011000000000000000&#39;</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">test_swap32</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_ishftc</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_ishft</span>
+<span class="w">   </span><span class="k">call </span><span class="n">pad_message1</span>
+<span class="w">   </span><span class="k">call </span><span class="n">pad_message2</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_ch</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_maj</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_cs0</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_cs1</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_ms0</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_ms1</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_sha256_1</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_sha256_5</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_sha256_6</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_sha256_11</span>
+<span class="k">contains</span>
+<span class="c">! Test the swap function.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_swap32</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;swap32&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;swap32&#39;</span><span class="p">,</span><span class="n">swap32</span><span class="p">(</span><span class="n">abc_bin</span><span class="p">)</span><span class="o">==</span><span class="n">abc_bin_swap</span><span class="p">,</span><span class="s1">&#39;test swap32 function&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;swap32&#39;</span><span class="p">,</span><span class="n">abc_bin</span><span class="o">==</span><span class="n">abc_bin_ref</span><span class="p">,</span><span class="s1">&#39;test swap value&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;swap32&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_swap32</span>
+
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_ishftc</span>
+<span class="c">! Make sure the intrinsic ishftc function does what we think.</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;ishftc&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;ishftc&#39;</span><span class="p">,</span><span class="n">a</span><span class="o">==</span><span class="n">shftc4_r2</span><span class="p">,</span><span class="s1">&#39;verify ishftc A&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;ishftc&#39;</span><span class="p">,</span><span class="n">a</span><span class="o">==</span><span class="n">shftc4_l12</span><span class="p">,</span><span class="s1">&#39;verify ishftc B&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;ishftc&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_ishftc</span>
+
+<span class="c">! Make sure the intrinsic ishft function does what we think.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_ishft</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;ishft&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;ishft&#39;</span><span class="p">,</span><span class="n">a</span><span class="o">==</span><span class="n">shft5_r8</span><span class="p">,</span><span class="s1">&#39;verify ishft A&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;ishft&#39;</span><span class="p">,</span><span class="n">a</span><span class="o">==</span><span class="n">shft5_l11</span><span class="p">,</span><span class="s1">&#39;verify ishft B&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;ishft&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_ishft</span>
+
+<span class="c">! Test the message padding.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">pad_message1</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">inp</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">length</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pos0</span><span class="p">,</span><span class="w"> </span><span class="n">break</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">swap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;pad_message1&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="c">! Set the message to &quot;&quot;.</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="n">pos0</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">break</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">call </span><span class="n">consume_chunk</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">inp</span><span class="p">,</span><span class="w"> </span><span class="n">pos0</span><span class="p">,</span><span class="w"> </span><span class="n">break</span><span class="p">,</span><span class="w"> </span><span class="n">swap</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Check the first word.</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message1&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">empty_str_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding A&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Set the message to &quot;abc&quot;.</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;abc&quot;</span>
+<span class="w">      </span><span class="n">pos0</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">break</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">      </span><span class="k">call </span><span class="n">consume_chunk</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">inp</span><span class="p">,</span><span class="w"> </span><span class="n">pos0</span><span class="p">,</span><span class="w"> </span><span class="n">break</span><span class="p">,</span><span class="w"> </span><span class="n">swap</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Check the first word.</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message1&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">abc_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding B&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Set the message to &quot;a&quot;.</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;a&quot;</span>
+<span class="w">      </span><span class="n">pos0</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">break</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">     </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">call </span><span class="n">consume_chunk</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">inp</span><span class="p">,</span><span class="w"> </span><span class="n">pos0</span><span class="p">,</span><span class="w"> </span><span class="n">break</span><span class="p">,</span><span class="w"> </span><span class="n">swap</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Check the first word.</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message1&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">a_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding C&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;pad_message1&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">pad_message1</span>
+
+<span class="c">! Test the message padding.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">pad_message2</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">inp</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">length</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pos0</span><span class="p">,</span><span class="w"> </span><span class="n">break</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">swap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">      </span><span class="c">! Set the message.</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;abcabcabcabcabcaabcabcabcabcabcaabcabcabcabcabcaabcabcabca&quot;</span>
+
+<span class="w">      </span><span class="n">pos0</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">break</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">58</span>
+<span class="w">      </span><span class="k">call </span><span class="n">consume_chunk</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">inp</span><span class="p">,</span><span class="w"> </span><span class="n">pos0</span><span class="p">,</span><span class="w"> </span><span class="n">break</span><span class="p">,</span><span class="w"> </span><span class="n">swap</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Check the whole message.</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">abca_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">bcab_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">cabc_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">abca_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">abca_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">bcab_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">cabc_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">abca_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">abca_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">==</span><span class="n">bcab_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="o">==</span><span class="n">cabc_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">==</span><span class="n">abca_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span><span class="o">==</span><span class="n">abca_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span><span class="o">==</span><span class="n">bcab_bin_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">==</span><span class="n">ca_one_zero_flip</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">consume_chunk</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">inp</span><span class="p">,</span><span class="w"> </span><span class="n">pos0</span><span class="p">,</span><span class="w"> </span><span class="n">break</span><span class="p">,</span><span class="w"> </span><span class="n">swap</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">==</span><span class="w"> </span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">==</span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="o">==</span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">==</span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span><span class="o">==</span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span><span class="o">==</span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">==</span><span class="n">empty_bin</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="n">little_endian_464</span><span class="p">,</span><span class="s1">&#39;message padding 2&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;pad_message2&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">pad_message2</span>
+<span class="c">! Test the ch function.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_ch</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">g</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">aa</span><span class="p">,</span><span class="w"> </span><span class="n">bb</span>
+<span class="w">      </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad1</span>
+<span class="w">      </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad2</span>
+<span class="w">      </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad3</span>
+<span class="w">      </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="nb">not</span><span class="p">(</span><span class="n">e</span><span class="p">),</span><span class="n">g</span><span class="p">)</span>
+<span class="w">      </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_ch&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ch&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="n">bb</span><span class="p">)</span><span class="o">==</span><span class="n">maj</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="s1">&#39;test the ch function&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_ch&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_ch</span>
+
+<span class="c">! Test the maj function.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_maj</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">aa</span><span class="p">,</span><span class="w"> </span><span class="n">bb</span><span class="p">,</span><span class="w"> </span><span class="n">cc</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_maj&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad1</span>
+<span class="w">      </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad2</span>
+<span class="w">      </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad3</span>
+<span class="w">      </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="w">      </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="w">      </span><span class="n">cc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_maj&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">bb</span><span class="p">,</span><span class="n">cc</span><span class="p">))</span><span class="o">==</span><span class="n">maj</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">),</span><span class="s1">&#39;test the maj function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad2</span>
+<span class="w">      </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad3</span>
+<span class="w">      </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad4</span>
+<span class="w">      </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="w">      </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="w">      </span><span class="n">cc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_maj&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">bb</span><span class="p">,</span><span class="n">cc</span><span class="p">))</span><span class="o">==</span><span class="n">maj</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">),</span><span class="s1">&#39;test the maj function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad3</span>
+<span class="w">      </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad4</span>
+<span class="w">      </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad5</span>
+<span class="w">      </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="w">      </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="w">      </span><span class="n">cc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_maj&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">bb</span><span class="p">,</span><span class="n">cc</span><span class="p">))</span><span class="o">==</span><span class="n">maj</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">),</span><span class="s1">&#39;test the maj function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad4</span>
+<span class="w">      </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad5</span>
+<span class="w">      </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipad6</span>
+<span class="w">      </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="w">      </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="w">      </span><span class="n">cc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">iand</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_maj&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">bb</span><span class="p">,</span><span class="n">cc</span><span class="p">))</span><span class="o">==</span><span class="n">maj</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">),</span><span class="s1">&#39;test the maj function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_maj&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_maj</span>
+
+<span class="c">! Test the major sigma-0 function.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_cs0</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_cs0&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">22</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs0</span><span class="p">(</span><span class="n">ipad1</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">22</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs0</span><span class="p">(</span><span class="n">ipad2</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">22</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs0</span><span class="p">(</span><span class="n">ipad3</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">22</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs0</span><span class="p">(</span><span class="n">ipad4</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">22</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs0</span><span class="p">(</span><span class="n">ipad5</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">22</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs0</span><span class="p">(</span><span class="n">ipad6</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_cs0&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_cs0</span>
+
+<span class="c">! Test the major sigma-1 function.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_cs1</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_cs1&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">11</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs1</span><span class="p">(</span><span class="n">ipad1</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">11</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs1</span><span class="p">(</span><span class="n">ipad2</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">11</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs1</span><span class="p">(</span><span class="n">ipad3</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">11</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs1</span><span class="p">(</span><span class="n">ipad4</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">11</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs1</span><span class="p">(</span><span class="n">ipad5</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">11</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_cs1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">cs1</span><span class="p">(</span><span class="n">ipad6</span><span class="p">),</span><span class="s1">&#39;test the major sigma-9 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_cs1&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_cs1</span>
+
+<span class="c">! Test the minor sigma-0 function.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_ms0</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_ms0&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">18</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms0</span><span class="p">(</span><span class="n">ipad1</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-0 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">18</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms0</span><span class="p">(</span><span class="n">ipad2</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-0 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">18</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms0</span><span class="p">(</span><span class="n">ipad3</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-0 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">18</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms0</span><span class="p">(</span><span class="n">ipad4</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-0 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">18</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms0</span><span class="p">(</span><span class="n">ipad5</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-0 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">18</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms0&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms0</span><span class="p">(</span><span class="n">ipad6</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-0 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_ms0&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_ms0</span>
+
+<span class="c">! Test the minor sigma-1 function.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_ms1</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_ms1&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">17</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms1</span><span class="p">(</span><span class="n">ipad1</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-1 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">17</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms1</span><span class="p">(</span><span class="n">ipad2</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-1 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">17</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms1</span><span class="p">(</span><span class="n">ipad3</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-1 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">17</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms1</span><span class="p">(</span><span class="n">ipad4</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-1 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">17</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad5</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms1</span><span class="p">(</span><span class="n">ipad5</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-1 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">17</span><span class="p">)</span>
+<span class="w">      </span><span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">ishftc</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+<span class="w">      </span><span class="n">c</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="nb">ishft</span><span class="p">(</span><span class="n">ipad6</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_ms1&#39;</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">ieor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span><span class="o">==</span><span class="n">ms1</span><span class="p">(</span><span class="n">ipad6</span><span class="p">),</span><span class="s1">&#39;test the minor sigma-1 function&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_ms1&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_ms1</span>
+
+<span class="c">! Test the sha256 function with a set of reference strings.</span>
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_sha256_1</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_sha256_1&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_1&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 1&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;abc&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_1&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 2&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_1&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;248D6A61D20638B8E5C026930C3E6039A33CE45964FF2167F6ECEDD419DB06C1&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 3&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_1&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;CF5B16A778AF8380036CE59E7B0492370B249B11E8F07A51AFAC45037AFEE9D1&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 4&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_sha256_1&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_sha256_1</span>
+
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_sha256_5</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">ref</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_sha256_5&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000000</span>
+<span class="w">         </span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;a&quot;</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_5&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;CDC76E5C9914FB9281A1C7E284D73E67F1809A48A497200E046D39CCC7112CD0&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 5&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="c">! Check the quick and dirty implementation as well.</span>
+<span class="w">      </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;69E3FACD5F08321F78117BD53476E5321845433356F106E7013E68EC367F3017&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_5&#39;</span><span class="p">,</span><span class="n">dirty_sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="n">ref</span><span class="p">,</span><span class="s1">&#39;test sha256 6&#39;</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_sha256_5&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_sha256_5</span>
+
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_sha256_6</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_sha256_6&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;message digest&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_6&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;F7846F55CF23E14EEBEAB5B4E1550CAD5B509E3348FBC4EFA3A1413D393CB650&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 6&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;secure hash algorithm&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_6&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;F30CEB2BB2829E79E4CA9753D35A8ECC00262D164CC077080295381CBD643F0D&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 7 &#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SHA256 is considered to be safe&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_6&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;6819D915C73F4D1E77E4E1B52D1FA0F9CF9BEAEAD3939F15874BD988E2A23630&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 8 &#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;For this sample, this 63-byte string will be used as input data&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_6&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;F08A78CBBAEE082B052AE0708F32FA1E50C5C421AA772BA5DBB406A2EA6BE342&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 9 &#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;This is exactly 64 bytes long, not counting the terminating byte&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_6&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;AB64EFF7E88E2E46165E29F2BCE41826BD4C7B3552F6B382A9E7D3AF47C245F8&quot;</span><span class="p">,</span><span class="s1">&#39;sha256 10 &#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_sha256_6&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_sha256_6</span>
+
+<span class="w">   </span><span class="k">subroutine </span><span class="n">test_sha256_11</span>
+<span class="w">      </span><span class="c">!integer,parameter     :: big=16777216  ! too big for ifort</span>
+<span class="w">      </span><span class="c">!integer,parameter     :: big=167777  ! too big for ifort</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">big</span><span class="o">=</span><span class="mi">16777</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">big</span><span class="o">*</span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_start</span><span class="p">(</span><span class="s1">&#39;test_sha256_11&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!write(*,*)&#39;A long test&#39;</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">big</span>
+<span class="w">         </span><span class="n">str</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">64</span><span class="p">:</span><span class="n">i</span><span class="o">*</span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno&quot;</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="w">      </span><span class="c">!call unit_check(&#39;test_sha256_11&#39;,sha256(str)==&quot;50E72A0E26442FE2552DC3938AC58658228C0CBFB1D2CA872AE435266FCD055E&quot;,&#39;sha256 11&#39;)</span>
+
+<span class="w">      </span><span class="c">!call unit_check(&#39;test_sha256_11&#39;,sha256(str)==&quot;6BC568C54C0BB123FBCA27DAD40067345DD9FBE61E1376FE3C27902943FCF6A5&quot;,&amp;</span>
+<span class="w">      </span><span class="c">!&amp; &#39;sha256 11 GOT&#39;,sha256(str),&#39;expected 6BC568C54C0BB123FBCA27DAD40067345DD9FBE61E1376FE3C27902943FCF6A5&#39;)</span>
+
+
+<span class="w">      </span><span class="c">! add //&#39;&#39; to avoid gfortran-11 bug</span>
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check</span><span class="p">(</span><span class="s1">&#39;test_sha256_11&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;711CC2AB7E0A98D1EDBDA435A7B219E8AAA12661F347339A14041208751373C6&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="p">&amp;</span><span class="w"> </span><span class="s1">&#39;sha256 11 GOT&#39;</span><span class="p">,</span><span class="n">sha256</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;expected 711CC2AB7E0A98D1EDBDA435A7B219E8AAA12661F347339A14041208751373C6&#39;</span><span class="p">)</span>
+
+
+
+<span class="w">      </span><span class="k">call </span><span class="n">unit_check_done</span><span class="p">(</span><span class="s1">&#39;test_sha256_11&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">test_sha256_11</span>
+
+<span class="k">end subroutine </span><span class="n">test_suite_sha256</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col"><p>M_hashkeys was developed by John S. Urban<br>&copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-03-29 03:50              </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
