@@ -76,19 +76,19 @@
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title=" 4.5% of total for programs.">10 statements</a>
+                 title=" 3.6% of total for programs.">8 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/test_suite_M_hashkeys.f90"> Source File</a>
+              <a href="../src/test_suite_M_hashkeys__M_sha3.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/test_suite_m_hashkeys.f90.html'>test_suite_M_hashkeys.f90</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/test_suite_m_hashkeys__m_sha3.f90.html'>test_suite_M_hashkeys__M_sha3.f90</a></li>
             <li class="breadcrumb-item active" aria-current="page">runtest</li>
           </ol>
         </nav>
@@ -146,8 +146,8 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='../module/m_hashkeys.html'>M_hashkeys</a></li>
                   <li class="list-inline-item">M_framework__verify</li>
+                  <li class="list-inline-item"><a href='../module/m_hashkeys__sha3.html'>M_hashkeys__sha3</a></li>
               </ul>
             </li>
         </ul>
@@ -169,13 +169,11 @@
     <section>
     <h2 id="src">Source Code</h2>
     <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">runtest</span>
-<span class="k">use </span><span class="n">M_hashkeys</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">test_suite_M_hashkeys</span>
-<span class="k">use </span><span class="n">M_hashkeys</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">test_suite_sha256</span>
+<span class="k">use </span><span class="n">M_hashkeys__sha3</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">test_suite_M_hashkeys__sha3</span>
 <span class="k">use </span><span class="n">M_framework__verify</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">unit_check_stop</span>
-<span class="w">   </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;STARTED test_suite_M_hashkeys&#39;</span>
-<span class="w">   </span><span class="k">call </span><span class="n">test_suite_M_hashkeys</span><span class="p">()</span>
-<span class="w">   </span><span class="k">call </span><span class="n">test_suite_sha256</span><span class="p">()</span>
-<span class="w">   </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;COMPLETED test_suite_M_hashkeys&#39;</span>
+<span class="w">   </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;STARTED test_suite_M_hashkeys__sha3&#39;</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test_suite_M_hashkeys__sha3</span><span class="p">()</span>
+<span class="w">   </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;COMPLETED test_suite_M_hashkeys__sha3&#39;</span>
 <span class="w">   </span><span class="k">call </span><span class="n">unit_check_stop</span><span class="p">()</span>
 <span class="k">end program </span><span class="n">runtest</span>
 </pre></div>
