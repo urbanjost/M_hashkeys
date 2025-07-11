@@ -1,0 +1,396 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="hash algorithms">
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>djb2_hash &ndash; M_hashkeys</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">M_hashkeys </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>djb2_hash
+      <small>Interface</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="<p> 0.5% of total for procedures.</p>Including implementation: 44 statements,  5.0% of total for procedures.">4 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/M_hashkeys.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/m_hashkeys.f90.html'>M_hashkeys.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/m_hashkeys.html'>M_hashkeys</a></li>
+            <li class="breadcrumb-item active" aria-current="page">djb2_hash</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#modprocs-0"
+         aria-expanded="false" aria-controls="modprocs-0">
+         <h4 class="card-header bg-primary text-white">Module Procedures</h4>
+      </a>
+      <div id="modprocs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../interface/djb2_hash.html#moduleprocedure-djb2_hash_arr">djb2_hash_arr</a>
+            <a class="list-group-item" href="../interface/djb2_hash.html#moduleprocedure-djb2_hash_scalar">djb2_hash_scalar</a>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <h2>public interface djb2_hash</h2>
+      
+
+
+
+        <h2>Module Procedures</h2>
+            <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-djb2_hash_arr"></span> <h3>private  function djb2_hash_arr(anything, continue) result(hash_128)  
+</h3></div>
+    <div class="card-body">
+        <h2 id="name">NAME</h2>
+<div class="codehilite"><pre><span></span><code>djb2_hash(3f) - [M_hashkeys:bucket_hash] djb2 string hash (algorithm by Daniel J. Bernstein)
+(LICENSE:PD)
+</code></pre></div>
+
+<h2 id="synopsis">SYNOPSIS</h2>
+<div class="codehilite"><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="nf">djb2_hash_arr(anything,continue) result</span><span class="p">(</span>hash_128<span class="p">)</span><span class="w"></span>
+
+<span class="w"> </span><span class="nb">class</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="n">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">          </span><span class="p">::</span><span class="w"> </span><span class="n">anything</span><span class="p">(:)</span><span class="w"></span>
+<span class="w"> </span><span class="nb">logical</span><span class="p">,</span><span class="n">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="n">optional</span><span class="w">  </span><span class="p">::</span><span class="w"> </span><span class="k">continue</span><span class="w"></span>
+<span class="w"> </span>!!<span class="w"> </span><span class="n">use</span><span class="p">,</span><span class="n">intrinsic</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ISO_FORTRAN_ENV</span><span class="p">,</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">int64</span><span class="w"></span>
+<span class="w"> </span><span class="n">integer</span><span class="p">(</span><span class="n">kind</span><span class="p">=</span><span class="n">int128</span><span class="p">)</span><span class="w">         </span><span class="p">::</span><span class="w"> </span><span class="n">hash_128</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="description">DESCRIPTION</h2>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">djb2_hash</span><span class="p">(</span><span class="mf">3f</span><span class="p">)</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">string</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span><span class="n">routine</span><span class="w"> </span><span class="n">commonly</span><span class="w"> </span><span class="n">known</span><span class="w"> </span><span class="n">as</span><span class="w"></span>
+<span class="w"> </span><span class="n">djb2</span><span class="p">(</span><span class="mh">3</span><span class="n">c</span><span class="p">).</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">algorithm</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">described</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">Dan</span><span class="w"> </span><span class="n">J</span><span class="p">.</span><span class="w"> </span><span class="n">Bernstein</span><span class="w"> </span><span class="n">many</span><span class="w"></span>
+<span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="n">ago</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">comp</span><span class="p">.</span><span class="n">lang</span><span class="p">.</span><span class="n">c</span><span class="p">.</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="n">returns</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">calculated</span><span class="w"></span>
+<span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="mh">64</span><span class="o">-</span><span class="kt">bit</span><span class="w"> </span><span class="n">hash</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">returned</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="mh">128</span><span class="kt">bit</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="k">always</span><span class="w"></span>
+<span class="w"> </span><span class="n">available</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">Fortran</span><span class="p">)</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">allow</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="k">always</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">positive</span><span class="w"></span>
+<span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">Fortran</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="p">(</span><span class="n">currently</span><span class="p">)</span><span class="w"> </span><span class="n">support</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">standard</span><span class="w"> </span><span class="k">unsigned</span><span class="w"></span>
+<span class="w"> </span><span class="k">integer</span><span class="p">.</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">changed</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="mh">64</span><span class="o">-</span><span class="kt">bit</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">platforms</span><span class="w"></span>
+<span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">support</span><span class="w"> </span><span class="mh">128</span><span class="o">-</span><span class="kt">bit</span><span class="w"> </span><span class="n">INTEGER</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">negative</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">otherwise</span><span class="w"> </span><span class="n">usable</span><span class="p">.</span><span class="w"></span>
+
+<span class="w"> </span><span class="n">Such</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">reversible</span><span class="w"> </span><span class="n">hashes</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">fingerprints</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">confirm</span><span class="w"> </span><span class="n">unchanging</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">during</span><span class="w"> </span><span class="n">regression</span><span class="w"> </span><span class="n">testing</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+
+<span class="w"> </span><span class="n">More</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">widely</span><span class="w"> </span><span class="n">available</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="k">string</span><span class="w"> </span><span class="n">hashes</span><span class="w"> </span><span class="p">(</span><span class="n">including</span><span class="w"> </span><span class="n">the</span><span class="w"></span>
+<span class="w"> </span><span class="n">well</span><span class="o">-</span><span class="n">known</span><span class="w"> </span><span class="n">djb2</span><span class="p">(</span><span class="mh">3</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="n">algorithm</span><span class="p">)</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">sources</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">Wikipedia</span><span class="p">.</span><span class="w"> </span><span class="n">Consult</span><span class="w"></span>
+<span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">resources</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">confirm</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">suitability</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">algorithm</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">your</span><span class="w"></span>
+<span class="w"> </span><span class="n">use</span><span class="p">.</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">algorithm</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">probably</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">proposed</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">bucket</span><span class="w"> </span><span class="n">hash</span><span class="p">.</span><span class="w"></span>
+
+<span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">algorithm</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">consider</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Endian</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">programming</span><span class="w"></span>
+<span class="w"> </span><span class="n">environment</span><span class="p">.</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="options">OPTIONS</h2>
+<div class="codehilite"><pre><span></span><code> <span class="nv">STR</span>    <span class="nv">May</span> <span class="nv">be</span> <span class="nv">a</span> <span class="nv">CHARACTER</span> <span class="nv">string</span> <span class="nv">or</span> <span class="nv">an</span> <span class="nv">array</span> <span class="nv">of</span> <span class="nv">common</span> <span class="nv">intrinsic</span>
+        <span class="nv">types</span>. <span class="nv">Currently</span>, <span class="nv">the</span> <span class="nv">types</span> <span class="nv">defined</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">procedure</span>
+        <span class="nv">are</span> <span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=*</span><span class="ss">)</span><span class="c1">; complex; integer(kind=int8);</span>
+        <span class="nv">integer</span><span class="ss">(</span><span class="nv">kind</span><span class="o">=</span><span class="nv">int16</span><span class="ss">)</span><span class="c1">; integer(kind=int32); integer(kind=int64);</span>
+        <span class="nv">integer</span><span class="ss">(</span><span class="nv">kind</span><span class="o">=</span><span class="nv">int128</span><span class="ss">)</span><span class="c1">; real(kind=real32); real(kind=real64);</span>
+        <span class="nv">real</span><span class="ss">(</span><span class="nv">kind</span><span class="o">=</span><span class="nv">real128</span><span class="ss">)</span>.
+
+ <span class="k">CONTINUE</span>   <span class="nv">indicate</span> <span class="nv">whether</span> <span class="nv">to</span> <span class="k">continue</span> <span class="nv">accumulating</span> <span class="nv">the</span> <span class="nv">hash</span> <span class="nv">value</span>
+            <span class="nv">from</span> <span class="nv">the</span> <span class="nv">last</span> <span class="nv">call</span>. <span class="nv">This</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">threadsafe</span>. <span class="nv">This</span> <span class="nv">allows</span>
+            <span class="k">for</span> <span class="nv">continued</span> <span class="nv">hashes</span> <span class="nv">so</span> <span class="nv">that</span> <span class="nv">a</span> <span class="nv">hash</span> <span class="nv">can</span> <span class="nv">be</span> <span class="nv">calculated</span> <span class="k">for</span>
+            <span class="nv">a</span> <span class="nv">series</span> <span class="nv">of</span> <span class="nv">calls</span>.
+</code></pre></div>
+
+<h2 id="returns">RETURNS</h2>
+<div class="codehilite"><pre><span></span><code> <span class="nv">djb2_hash</span>   <span class="nv">A</span> <span class="mi">128</span><span class="o">-</span><span class="nv">bit</span> <span class="nv">INTEGER</span> <span class="nv">hash</span> <span class="nv">value</span> <span class="k">for</span> <span class="nv">the</span> <span class="ss">(</span><span class="nv">possibly</span> <span class="nv">accumulated</span><span class="ss">)</span> <span class="nv">data</span>.
+</code></pre></div>
+
+<h2 id="example">EXAMPLE</h2>
+<div class="codehilite"><pre><span></span><code><span class="nv">Sample</span> <span class="nv">program</span>:
+
+ <span class="nv">program</span> <span class="nv">demo_djb2_hash</span>
+ <span class="nv">use</span> <span class="nv">M_hashkeys</span>, <span class="nv">only</span> : <span class="nv">djb2_hash</span>, <span class="nv">int128</span>
+ <span class="nv">implicit</span> <span class="nv">none</span>
+ <span class="nv">integer</span><span class="ss">(</span><span class="nv">kind</span><span class="o">=</span><span class="nv">int128</span><span class="ss">)</span>         :: <span class="nv">hash</span>
+ <span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=</span>:<span class="ss">)</span>,<span class="nv">allocatable</span> :: <span class="nv">string</span>
+ <span class="nv">integer</span>                      :: <span class="nv">i</span>
+ <span class="o">!</span> <span class="nv">string</span>
+ <span class="nv">string</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">test djb2_hash</span><span class="s1">&#39;</span>
+ <span class="nv">hash</span><span class="o">=</span><span class="nv">djb2_hash</span><span class="ss">(</span><span class="nv">string</span><span class="ss">)</span>
+ <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">string=</span><span class="s1">&#39;</span>,<span class="nv">string</span>,<span class="s1">&#39;</span><span class="s"> hash=</span><span class="s1">&#39;</span>,<span class="nv">hash</span>
+ <span class="o">!</span> <span class="nv">array</span> <span class="nv">of</span> <span class="nv">characters</span>
+ <span class="nv">hash</span><span class="o">=</span><span class="nv">djb2_hash</span><span class="ss">(</span>[<span class="s1">&#39;</span><span class="s">t</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">e</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">s</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">t</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s"> </span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">d</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">j</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">b</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">2</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">_</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">h</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">a</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">s</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">h</span><span class="s1">&#39;</span>]<span class="ss">)</span>
+ <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">string=</span><span class="s1">&#39;</span>,<span class="nv">string</span>,<span class="s1">&#39;</span><span class="s"> hash=</span><span class="s1">&#39;</span>,<span class="nv">hash</span>
+ <span class="o">!</span> <span class="nv">continued</span> <span class="nv">hash</span>
+ <span class="nv">hash</span><span class="o">=</span><span class="nv">djb2_hash</span><span class="ss">(</span>[<span class="s1">&#39;</span><span class="s">t</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">e</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">s</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">t</span><span class="s1">&#39;</span>]<span class="ss">)</span>
+ <span class="nv">hash</span><span class="o">=</span><span class="nv">djb2_hash</span><span class="ss">(</span>[<span class="s1">&#39;</span><span class="s"> </span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">d</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">j</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">b</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">2</span><span class="s1">&#39;</span>],<span class="k">continue</span><span class="o">=</span>.<span class="nv">true</span>.<span class="ss">)</span>
+ <span class="nv">hash</span><span class="o">=</span><span class="nv">djb2_hash</span><span class="ss">(</span>[<span class="s1">&#39;</span><span class="s">_</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">h</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">a</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">s</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">h</span><span class="s1">&#39;</span>],<span class="k">continue</span><span class="o">=</span>.<span class="nv">true</span>.<span class="ss">)</span>
+ <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">string=</span><span class="s1">&#39;</span>,<span class="nv">string</span>,<span class="s1">&#39;</span><span class="s"> hash=</span><span class="s1">&#39;</span>,<span class="nv">hash</span>
+ <span class="o">!</span> <span class="nv">array</span> <span class="nv">of</span> <span class="nv">integers</span>
+ <span class="nv">hash</span><span class="o">=</span><span class="nv">djb2_hash</span><span class="ss">(</span>[<span class="ss">(</span><span class="nv">i</span>,<span class="nv">i</span><span class="o">=</span><span class="mi">0</span>,<span class="mi">100</span><span class="ss">)</span>]<span class="ss">)</span>
+ <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">hash for values 0 to 100 is </span><span class="s1">&#39;</span>,<span class="nv">hash</span>
+ <span class="o">!</span>
+ <span class="k">end</span> <span class="nv">program</span> <span class="nv">demo_djb2_hash</span>
+</code></pre></div>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-anything"></span>
+              class(*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>anything</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-continue"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>continue</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer(kind=int128)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-djb2_hash_scalar"></span> <h3>private  function djb2_hash_scalar(anything, continue) result(hash_128)  
+</h3></div>
+    <div class="card-body">
+        
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-anything~2"></span>
+              class(*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>anything</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-continue~2"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>continue</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer(kind=int128)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+</div>
+  </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              M_hashkeys
+ was developed by John S. Urban<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-07-11 00:20 +0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
